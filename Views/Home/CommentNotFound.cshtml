@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = @GlobalAppSettings.SystemSettings.OrganizationName + " - [[[Comment Not Found]]]";
+}
+
+@section scripts{
+    @Scripts.Render("~/scripts/bootstrapjs")
+}
+
+@section MainSection{
+    <div>
+        <div class="col-md-12">
+            <div class="col-xs-12 text-center" style="color: #ff0000; margin-top: 60px ; font-size: 30px">[[[The mentioned comment could not be opened as the dashboard or widget has been removed from the Dashboard Server.]]]</div>
+        </div>
+    </div>
+}

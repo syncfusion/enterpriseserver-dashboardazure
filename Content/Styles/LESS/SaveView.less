@@ -1,0 +1,26 @@
+﻿@import (reference) "Mixins.less";
+@import (reference) "Variables/FontSize.less";
+
+#save-view-container {
+    #save-view-form {
+    .validation-errors {
+         color: @validation-text-color;
+         font-size: @app-text-size;
+    }
+    #item-name-division {
+         padding-top: 0px;
+    }
+   }
+    .rightAlign {
+        margin-right: 15px;
+    }
+}
+
+.has-error {
+    border: 1px solid @validation-text-color;
+}
+
+.has-error.form-control:focus {
+    border-color: @validation-text-color !important;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset !important;
+}

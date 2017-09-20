@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Syncfusion.DashboardService.DashboardService" CodeBehind="DashboardService.svc.cs"%>
