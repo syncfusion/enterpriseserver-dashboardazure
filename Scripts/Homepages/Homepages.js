@@ -676,9 +676,7 @@ function renderItem(itemDetail) {
                             }
                         },
                         localeSettings: {
-                            resourcePath: "",
-                            dateFormat: dateFormat,
-                            timeFormat: timeFormat
+                            resourcePath: ""
                         },
                         enableWidgetMode: column[i].Item[j].Id == null ? false : true,
                         showTab: column[i].Item[j].TabId == null ? true : false,
@@ -768,9 +766,7 @@ function renderItem(itemDetail) {
                 enablePrint: false,
                 showGetLinkIcon: false,
                 localeSettings: {
-                    resourcePath: "",
-                    dateFormat: dateFormat,
-                    timeFormat: timeFormat
+                    resourcePath: ""
                  },
                 interactionSettings: {
                     allowHistoryMaintenance: false,
