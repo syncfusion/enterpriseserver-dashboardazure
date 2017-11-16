@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataSources xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DataSource Name="Patient Experience Analysis (Random data)" Version="1.1.0.170" Type="Relational" IsEncrypted="true">
+    <Description>Analyze patient satisfaction trends during hospital visits</Description>
+    <ConnectionProperties IsEncrypted="true" IsInternalEncrypted="true">
+      <QueryParameters />
+      <ConnectOption>ConnectionString</ConnectOption>
+      <ConnectionOption>TablesAndViews</ConnectionOption>
+      <ConnectionString>gmR5fjcihmX885P/elOISzmlMqhUkoSo1Eu7eJHzUWfOLB7lGC/BqDyWhj67U2xaCCzKWn7ZSQ1iRms2JbX/Nl5mrbCClZoE+IjNvvGUCVOBNvHJMGpGjNgnRfxQGq0HltA0PyeZgYF8p2H7w3UEis+sEE2jNINboGYb/DnfzuThEBDdPNE6yg==</ConnectionString>
+      <ConnectionType>SqlServer</ConnectionType>
+      <IsServerModeEnabled>true</IsServerModeEnabled>
+      <ConnectionParameters>
+        <IsEncrypted>true</IsEncrypted>
+        <AuthenticationType>1</AuthenticationType>
+        <Password>/7Sjj2+m81Dmi9al5en0kQ==</Password>
+        <Database>DashboardSampleDB</Database>
+        <ServerName>uFeDc8je1gagg6XHdRFlGqWJEz+IscDxRk1Nz1UxVBYLNmjviOTG7A==</ServerName>
+        <UserName>7jmxTxNP1rWPdLLBrkWPSg==</UserName>
+        <ServerType>0</ServerType>
+        <IsDnsConnection>false</IsDnsConnection>
+        <Url>87s5XrVGuJkfzRv8J4pWBQ==</Url>
+        <sourceConnectionType>Files</sourceConnectionType>
+      </ConnectionParameters>
+      <IsQueryMode>false</IsQueryMode>
+      <OdbcDbmsServerType>None</OdbcDbmsServerType>
+      <IsLoadAllData>false</IsLoadAllData>
+    </ConnectionProperties>
+    <LiveConnectionProperties>
+      <LiveConnectionType>Files</LiveConnectionType>
+      <IsPublish>false</IsPublish>
+    </LiveConnectionProperties>
+    <TreeViewSchemaInfo>
+      <Table>
+        <Caption>PatientAnalysis</Caption>
+        <TableKey>[dbo].[PatientAnalysis20151029175044676]</TableKey>
+        <Header>PatientAnalysis20151029175044676</Header>
+        <UniqueColumnName>dbo_PatientAnalysis20151029175044676</UniqueColumnName>
+        <Xposition>179.25</Xposition>
+        <Yposition>0</Yposition>
+        <Fields>
+          <FieldInfo>
+            <Key>[dbo_PatientAnalysis20151029175044676].[Name]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>Name</ColumnName>
+            <UniqueColumnName>dbo_PatientAnalysis20151029175044676_Name</UniqueColumnName>
+            <ActualDataType>varchar</ActualDataType>
+            <DataType>String</DataType>
+            <DefaultDataType>String</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>DistinctCount</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>Name</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[dbo_PatientAnalysis20151029175044676].[Age]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>Age</ColumnName>
+            <UniqueColumnName>dbo_PatientAnalysis20151029175044676_Age</UniqueColumnName>
+            <ActualDataType>float</ActualDataType>
+            <DataType>Double</DataType>
+            <DefaultDataType>Double</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>Sum</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>Age</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[dbo_PatientAnalysis20151029175044676].[Gender]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>Gender</ColumnName>
+            <UniqueColumnName>dbo_PatientAnalysis20151029175044676_Gender</UniqueColumnName>
+            <ActualDataType>varchar</ActualDataType>
+            <DataType>String</DataType>
+            <DefaultDataType>String</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>DistinctCount</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>Gender</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[dbo_PatientAnalysis20151029175044676].[MailId]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>MailId</ColumnName>
+            <UniqueColumnName>dbo_PatientAnalysis20151029175044676_MailId</UniqueColumnName>
+            <ActualDataType>varchar</ActualDataType>
+            <DataType>String</DataType>
+            <DefaultDataType>String</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>DistinctCount</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>MailId</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[dbo_PatientAnalysis20151029175044676].[Department]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>Department</ColumnName>
+            <UniqueColumnName>dbo_PatientAnalysis20151029175044676_Department</UniqueColumnName>
+            <ActualDataType>varchar</ActualDataType>
+            <DataType>String</DataType>
+            <DefaultDataType>String</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>DistinctCount</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>Department</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[dbo_PatientAnalysis20151029175044676].[Waiting Time(mins)]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>Waiting Time(mins)</ColumnName>
+            <UniqueColumnName>dbo_PatientAnalysis20151029175044676_Waiting Time(mins)</UniqueColumnName>
+            <ActualDataType>float</ActualDataType>
+            <DataType>Double</DataType>
+            <DefaultDataType>Double</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>Sum</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>Waiting Time(mins)</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[dbo_PatientAnalysis20151029175044676].[Consulting Time(mins)]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>Consulting Time(mins)</ColumnName>
+            <UniqueColumnName>dbo_PatientAnalysis20151029175044676_Consulting Time(mins)</UniqueColumnName>
+            <ActualDataType>float</ActualDataType>
+            <DataType>Double</DataType>
+            <DefaultDataType>Double</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>Sum</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>Consulting Time(mins)</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[dbo_PatientAnalysis20151029175044676].[Others Spending Time(mins)]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>Others Spending Time(mins)</ColumnName>
+            <UniqueColumnName>dbo_PatientAnalysis20151029175044676_Others Spending Time(mins)</UniqueColumnName>
+            <ActualDataType>float</ActualDataType>
+            <DataType>Double</DataType>
+            <DefaultDataType>Double</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>Sum</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>Others Spending Time(mins)</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[dbo_PatientAnalysis20151029175044676].[Tolal Stay(mins)]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>Tolal Stay(mins)</ColumnName>
+            <UniqueColumnName>dbo_PatientAnalysis20151029175044676_Tolal Stay(mins)</UniqueColumnName>
+            <ActualDataType>float</ActualDataType>
+            <DataType>Double</DataType>
+            <DefaultDataType>Double</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>Sum</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>Tolal Stay(mins)</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[dbo_PatientAnalysis20151029175044676].[Date]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>Date</ColumnName>
+            <UniqueColumnName>dbo_PatientAnalysis20151029175044676_Date</UniqueColumnName>
+            <ActualDataType>date</ActualDataType>
+            <DataType>DateTime</DataType>
+            <DefaultDataType>DateTime</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>DistinctCount</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>Date</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[dbo_PatientAnalysis20151029175044676].[Customer FeedBack]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>Customer FeedBack</ColumnName>
+            <UniqueColumnName>dbo_PatientAnalysis20151029175044676_Customer FeedBack</UniqueColumnName>
+            <ActualDataType>varchar</ActualDataType>
+            <DataType>String</DataType>
+            <DefaultDataType>String</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>DistinctCount</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>Customer FeedBack</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[dbo_PatientAnalysis20151029175044676].[Paied Amount($)]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>Paied Amount($)</ColumnName>
+            <UniqueColumnName>dbo_PatientAnalysis20151029175044676_Paied Amount($)</UniqueColumnName>
+            <ActualDataType>float</ActualDataType>
+            <DataType>Double</DataType>
+            <DefaultDataType>Double</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>Sum</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>Paied Amount($)</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[PatientAnalysis20151029175044676].[FeedBack Count]</Key>
+            <PrimaryKeyColumn />
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>FeedBack Count</ColumnName>
+            <UniqueColumnName>FeedBack Count</UniqueColumnName>
+            <DataType>numeric</DataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>Sum</SummaryType>
+            <AxisType>None</AxisType>
+            <DataSourceName>Patient Experience Analysis (Random data)</DataSourceName>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>FeedBack Count</Caption>
+            <IsExpression>true</IsExpression>
+            <IsAggregation>true</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <RootParentName>[PatientAnalysis]</RootParentName>
+              <FormattedExpression>COUNT([dbo_PatientAnalysis20151029175044676].[Customer FeedBack])</FormattedExpression>
+              <Expression>COUNT([dbo_PatientAnalysis20151029175044676_Customer FeedBack])</Expression>
+              <DisplayText>COUNT([Customer FeedBack])</DisplayText>
+              <Tables />
+              <PivotExpressionKeys />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>2</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>CalculatedMeasure</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[PatientAnalysis20151029175044676].[Patients Count]</Key>
+            <PrimaryKeyColumn />
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>Patients Count</ColumnName>
+            <UniqueColumnName>Patients Count</UniqueColumnName>
+            <DataType>numeric</DataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>Sum</SummaryType>
+            <AxisType>None</AxisType>
+            <DataSourceName>Patient Experience Analysis (Random data)</DataSourceName>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>Patients Count</Caption>
+            <IsExpression>true</IsExpression>
+            <IsAggregation>true</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <RootParentName>[PatientAnalysis]</RootParentName>
+              <FormattedExpression>COUNT([dbo_PatientAnalysis20151029175044676].[Name])</FormattedExpression>
+              <Expression>COUNT([dbo_PatientAnalysis20151029175044676_Name])</Expression>
+              <DisplayText>COUNT([Name])</DisplayText>
+              <Tables />
+              <PivotExpressionKeys />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>CalculatedMeasure</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+        </Fields>
+        <NodeType>Table</NodeType>
+        <TableRelationships />
+        <RelatedChildren />
+      </Table>
+    </TreeViewSchemaInfo>
+    <TempConnectionType>Files</TempConnectionType>
+    <TempOdbcDbmsServerType>None</TempOdbcDbmsServerType>
+    <PublishSettings>
+      <CredentialRetrievalType>Embedded</CredentialRetrievalType>
+    </PublishSettings>
+  </DataSource>
+</DataSources>

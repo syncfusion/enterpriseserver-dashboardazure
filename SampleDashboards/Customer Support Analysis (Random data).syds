@@ -1,0 +1,780 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataSources xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DataSource Name="Customer Support Analysis (Random data)" Version="1.1.0.170" Type="Relational" IsEncrypted="true">
+    <Description>Analyze the efficiency of customer support</Description>
+    <ConnectionProperties IsEncrypted="true" IsInternalEncrypted="true">
+      <QueryParameters />
+      <ConnectOption>ConnectionString</ConnectOption>
+      <ConnectionOption>TablesAndViews</ConnectionOption>
+      <ConnectionString>gmR5fjcihmX885P/elOISzmlMqhUkoSo1Eu7eJHzUWfOLB7lGC/BqK18AGqcz4SUY61WwJSevDqSgkmINdKy8Le+qEELo+R2ZujMqNfcJfqdl0/qG5//eWj4gmNT7O3vGaQiZXjfdpy58QgkqZ/RSzcfzt3dXhCP/IDJOu/QAV7C3wskRPARmg==</ConnectionString>
+      <ConnectionType>SqlServer</ConnectionType>
+      <IsServerModeEnabled>true</IsServerModeEnabled>
+      <ConnectionParameters>
+        <IsEncrypted>true</IsEncrypted>
+        <AuthenticationType>1</AuthenticationType>
+        <Password>/7Sjj2+m81Dmi9al5en0kQ==</Password>
+        <Database>DashboardSampleDB</Database>
+        <ServerName>uFeDc8je1gagg6XHdRFlGqWJEz+IscDxRk1Nz1UxVBan1j/jEMi8CA==</ServerName>
+        <UserName>7jmxTxNP1rWPdLLBrkWPSg==</UserName>
+        <ServerType>0</ServerType>
+        <IsDnsConnection>false</IsDnsConnection>
+        <Url>87s5XrVGuJkfzRv8J4pWBQ==</Url>
+        <sourceConnectionType>Files</sourceConnectionType>
+      </ConnectionParameters>
+      <IsQueryMode>false</IsQueryMode>
+      <OdbcDbmsServerType>None</OdbcDbmsServerType>
+      <IsLoadAllData>false</IsLoadAllData>
+    </ConnectionProperties>
+    <LiveConnectionProperties>
+      <LiveConnectionType>Files</LiveConnectionType>
+      <IsPublish>false</IsPublish>
+    </LiveConnectionProperties>
+    <TreeViewSchemaInfo>
+      <Table>
+        <Caption>CustomerSupportAnalysis</Caption>
+        <TableKey>[dbo].[CustomerSupportAnalysis20151029182232538]</TableKey>
+        <Header>CustomerSupportAnalysis20151029182232538</Header>
+        <UniqueColumnName>dbo_CustomerSupportAnalysis20151029182232538</UniqueColumnName>
+        <Xposition>100</Xposition>
+        <Yposition>100</Yposition>
+        <Fields>
+          <FieldInfo>
+            <Key>[dbo_CustomerSupportAnalysis20151029182232538].[CustomerName]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>CustomerName</ColumnName>
+            <UniqueColumnName>dbo_CustomerSupportAnalysis20151029182232538_CustomerName</UniqueColumnName>
+            <ActualDataType>varchar</ActualDataType>
+            <DataType>String</DataType>
+            <DefaultDataType>String</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>DistinctCount</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>CustomerName</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[dbo_CustomerSupportAnalysis20151029182232538].[ProductName]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>ProductName</ColumnName>
+            <UniqueColumnName>dbo_CustomerSupportAnalysis20151029182232538_ProductName</UniqueColumnName>
+            <ActualDataType>varchar</ActualDataType>
+            <DataType>String</DataType>
+            <DefaultDataType>String</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>DistinctCount</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>ProductName</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[dbo_CustomerSupportAnalysis20151029182232538].[TicketType]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>TicketType</ColumnName>
+            <UniqueColumnName>dbo_CustomerSupportAnalysis20151029182232538_TicketType</UniqueColumnName>
+            <ActualDataType>varchar</ActualDataType>
+            <DataType>String</DataType>
+            <DefaultDataType>String</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>DistinctCount</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>TicketType</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[dbo_CustomerSupportAnalysis20151029182232538].[Status]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>Status</ColumnName>
+            <UniqueColumnName>dbo_CustomerSupportAnalysis20151029182232538_Status</UniqueColumnName>
+            <ActualDataType>varchar</ActualDataType>
+            <DataType>String</DataType>
+            <DefaultDataType>String</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>DistinctCount</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>Status</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[dbo_CustomerSupportAnalysis20151029182232538].[ArrivalDate]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>ArrivalDate</ColumnName>
+            <UniqueColumnName>dbo_CustomerSupportAnalysis20151029182232538_ArrivalDate</UniqueColumnName>
+            <ActualDataType>date</ActualDataType>
+            <DataType>DateTime</DataType>
+            <DefaultDataType>DateTime</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>DistinctCount</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>ArrivalDate</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[dbo_CustomerSupportAnalysis20151029182232538].[CompletedDate]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>CompletedDate</ColumnName>
+            <UniqueColumnName>dbo_CustomerSupportAnalysis20151029182232538_CompletedDate</UniqueColumnName>
+            <ActualDataType>date</ActualDataType>
+            <DataType>DateTime</DataType>
+            <DefaultDataType>DateTime</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>DistinctCount</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>CompletedDate</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[dbo_CustomerSupportAnalysis20151029182232538].[DurationTime]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>DurationTime</ColumnName>
+            <UniqueColumnName>dbo_CustomerSupportAnalysis20151029182232538_DurationTime</UniqueColumnName>
+            <ActualDataType>float</ActualDataType>
+            <DataType>Double</DataType>
+            <DefaultDataType>Double</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>Sum</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>DurationTime</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[dbo_CustomerSupportAnalysis20151029182232538].[RepresentativeName]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>RepresentativeName</ColumnName>
+            <UniqueColumnName>dbo_CustomerSupportAnalysis20151029182232538_RepresentativeName</UniqueColumnName>
+            <ActualDataType>varchar</ActualDataType>
+            <DataType>String</DataType>
+            <DefaultDataType>String</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>DistinctCount</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>RepresentativeName</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[dbo_CustomerSupportAnalysis20151029182232538].[FeedbackRating]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>FeedbackRating</ColumnName>
+            <UniqueColumnName>dbo_CustomerSupportAnalysis20151029182232538_FeedbackRating</UniqueColumnName>
+            <ActualDataType>float</ActualDataType>
+            <DataType>Double</DataType>
+            <DefaultDataType>Double</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>Sum</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>FeedbackRating</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[CustomerSupportAnalysis20151029182232538].[Tickets]</Key>
+            <PrimaryKeyColumn />
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>Tickets</ColumnName>
+            <UniqueColumnName>Tickets</UniqueColumnName>
+            <DataType>numeric</DataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>Sum</SummaryType>
+            <AxisType>None</AxisType>
+            <DataSourceName>Customer Support Analysis (Random data)</DataSourceName>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>Tickets</Caption>
+            <IsExpression>true</IsExpression>
+            <IsAggregation>true</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <RootParentName>[CustomerSupportAnalysis]</RootParentName>
+              <FormattedExpression>COUNT([dbo_CustomerSupportAnalysis20151029182232538].[Status])</FormattedExpression>
+              <Expression>COUNT([dbo_CustomerSupportAnalysis20151029182232538_Status])</Expression>
+              <DisplayText>COUNT([Status])</DisplayText>
+              <Tables />
+              <PivotExpressionKeys />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>CalculatedMeasure</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[CustomerSupportAnalysis20151029182232538].[Completed Task]</Key>
+            <PrimaryKeyColumn />
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>Completed Task</ColumnName>
+            <UniqueColumnName>Completed Task</UniqueColumnName>
+            <DataType>numeric</DataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>Sum</SummaryType>
+            <AxisType>None</AxisType>
+            <DataSourceName>Customer Support Analysis (Random data)</DataSourceName>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>Completed Task</Caption>
+            <IsExpression>true</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <RootParentName>[CustomerSupportAnalysis]</RootParentName>
+              <FormattedExpression> CASE WHEN [dbo_CustomerSupportAnalysis20151029182232538].[Status]='Closed' THEN 1 ELSE 0 END </FormattedExpression>
+              <Expression> CASE WHEN [dbo_CustomerSupportAnalysis20151029182232538_Status]='Closed' THEN 1 ELSE 0 END </Expression>
+              <DisplayText>IF([Status]='Closed',1,0)</DisplayText>
+              <Tables />
+              <PivotExpressionKeys />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>CalculatedMeasure</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[CustomerSupportAnalysis20151029182232538].[NonCompleted Task]</Key>
+            <PrimaryKeyColumn />
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>NonCompleted Task</ColumnName>
+            <UniqueColumnName>NonCompleted Task</UniqueColumnName>
+            <DataType>numeric</DataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>Sum</SummaryType>
+            <AxisType>None</AxisType>
+            <DataSourceName>Customer Support Analysis (Random data)</DataSourceName>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>NonCompleted Task</Caption>
+            <IsExpression>true</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <RootParentName>[CustomerSupportAnalysis]</RootParentName>
+              <FormattedExpression> CASE WHEN [dbo_CustomerSupportAnalysis20151029182232538].[Status]='Open' THEN 1 ELSE 0 END </FormattedExpression>
+              <Expression> CASE WHEN [dbo_CustomerSupportAnalysis20151029182232538_Status]='Open' THEN 1 ELSE 0 END </Expression>
+              <DisplayText>IF([Status]='Open',1,0)</DisplayText>
+              <Tables />
+              <PivotExpressionKeys />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>CalculatedMeasure</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[CustomerSupportAnalysis20151029182232538].[Rating]</Key>
+            <PrimaryKeyColumn />
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <TableName>CustomerSupportAnalysis20151029182232538</TableName>
+            <ColumnName>Rating</ColumnName>
+            <UniqueColumnName>Rating</UniqueColumnName>
+            <DataType>numeric</DataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>Sum</SummaryType>
+            <AxisType>None</AxisType>
+            <DataSourceName>Customer Support Analysis (Random data)</DataSourceName>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>Rating</Caption>
+            <IsExpression>true</IsExpression>
+            <IsAggregation>true</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <RootParentName>[dbo].[CustomerSupportAnalysis20151029182232538]</RootParentName>
+              <FormattedExpression>SUM(CAST([dbo_CustomerSupportAnalysis20151029182232538].[FeedbackRating] AS decimal(38,6)))/NULLIF(SUM(CAST( CASE WHEN [dbo_CustomerSupportAnalysis20151029182232538].[Status]='Closed' THEN 1 ELSE 0 END  AS decimal(38,6))),0)</FormattedExpression>
+              <Expression>SUM([dbo_CustomerSupportAnalysis20151029182232538_FeedbackRating])/NULLIF(SUM([Completed Task]),0)</Expression>
+              <DisplayText>SUM([FeedbackRating])/SUM([Completed Task])</DisplayText>
+              <Tables />
+              <PivotExpressionKeys />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>CalculatedMeasure</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[CustomerSupportAnalysis20151029182232538].[Average Resolution Time]</Key>
+            <PrimaryKeyColumn />
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <TableName>CustomerSupportAnalysis20151029182232538</TableName>
+            <ColumnName>Average Resolution Time</ColumnName>
+            <UniqueColumnName>Average Resolution Time</UniqueColumnName>
+            <DataType>numeric</DataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>Sum</SummaryType>
+            <AxisType>None</AxisType>
+            <DataSourceName>Customer Support Analysis (Random data)</DataSourceName>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>Average Resolution Time</Caption>
+            <IsExpression>true</IsExpression>
+            <IsAggregation>true</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <RootParentName>[dbo].[CustomerSupportAnalysis20151029182232538]</RootParentName>
+              <FormattedExpression>SUM(CAST([dbo_CustomerSupportAnalysis20151029182232538].[DurationTime] AS decimal(38,6)))/NULLIF(SUM(CAST( CASE WHEN [dbo_CustomerSupportAnalysis20151029182232538].[Status]='Closed' THEN 1 ELSE 0 END  AS decimal(38,6))),0)</FormattedExpression>
+              <Expression>SUM([dbo_CustomerSupportAnalysis20151029182232538_DurationTime])/NULLIF(SUM([Completed Task]),0)</Expression>
+              <DisplayText>SUM([DurationTime])/SUM([Completed Task])</DisplayText>
+              <Tables />
+              <PivotExpressionKeys />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>2</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>CalculatedMeasure</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+        </Fields>
+        <NodeType>Table</NodeType>
+        <TableRelationships />
+        <RelatedChildren />
+      </Table>
+    </TreeViewSchemaInfo>
+    <TempConnectionType>Files</TempConnectionType>
+    <TempOdbcDbmsServerType>None</TempOdbcDbmsServerType>
+    <PublishSettings>
+      <CredentialRetrievalType>Embedded</CredentialRetrievalType>
+    </PublishSettings>
+  </DataSource>
+</DataSources>

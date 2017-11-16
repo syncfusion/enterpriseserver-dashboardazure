@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataSources xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DataSource Name="Website Visitor Analysis (Random data)" Version="1.1.0.170" Type="Relational" IsEncrypted="true">
+    <Description>Analyze the user behavior for a fictitious ecommerce website</Description>
+    <ConnectionProperties IsEncrypted="true" IsInternalEncrypted="true">
+      <QueryParameters />
+      <ConnectOption>ConnectionString</ConnectOption>
+      <ConnectionOption>TablesAndViews</ConnectionOption>
+      <ConnectionString>gmR5fjcihmX885P/elOISzmlMqhUkoSo1Eu7eJHzUWfOLB7lGC/BqK18AGqcz4SUY61WwJSevDqSgkmINdKy8Le+qEELo+R2ZujMqNfcJfqdl0/qG5//eWj4gmNT7O3vGaQiZXjfdpy58QgkqZ/RSzcfzt3dXhCP/IDJOu/QAV7C3wskRPARmg==</ConnectionString>
+      <ConnectionType>SqlServer</ConnectionType>
+      <IsServerModeEnabled>true</IsServerModeEnabled>
+      <ConnectionParameters>
+        <IsEncrypted>true</IsEncrypted>
+        <AuthenticationType>1</AuthenticationType>
+        <Password>/7Sjj2+m81Dmi9al5en0kQ==</Password>
+        <Database>DashboardSampleDB</Database>
+        <ServerName>uFeDc8je1gagg6XHdRFlGqWJEz+IscDxRk1Nz1UxVBan1j/jEMi8CA==</ServerName>
+        <UserName>7jmxTxNP1rWPdLLBrkWPSg==</UserName>
+        <ServerType>0</ServerType>
+        <IsDnsConnection>false</IsDnsConnection>
+        <Url>87s5XrVGuJkfzRv8J4pWBQ==</Url>
+        <sourceConnectionType>Files</sourceConnectionType>
+      </ConnectionParameters>
+      <IsQueryMode>false</IsQueryMode>
+      <OdbcDbmsServerType>None</OdbcDbmsServerType>
+      <IsLoadAllData>false</IsLoadAllData>
+    </ConnectionProperties>
+    <LiveConnectionProperties>
+      <LiveConnectionType>Files</LiveConnectionType>
+      <IsPublish>false</IsPublish>
+    </LiveConnectionProperties>
+    <TreeViewSchemaInfo>
+      <Table>
+        <Caption>WebsiteVisitorAnalysisTable</Caption>
+        <TableKey>[dbo].[WebsiteVisitorAnalysisTable20151029210625356]</TableKey>
+        <Header>WebsiteVisitorAnalysisTable20151029210625356</Header>
+        <UniqueColumnName>dbo_WebsiteVisitorAnalysisTable20151029210625356</UniqueColumnName>
+        <Xposition>247</Xposition>
+        <Yposition>37</Yposition>
+        <Fields>
+          <FieldInfo>
+            <Key>[dbo_WebsiteVisitorAnalysisTable20151029210625356].[Date]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>Date</ColumnName>
+            <UniqueColumnName>dbo_WebsiteVisitorAnalysisTable20151029210625356_Date</UniqueColumnName>
+            <ActualDataType>date</ActualDataType>
+            <DataType>DateTime</DataType>
+            <DefaultDataType>DateTime</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>DistinctCount</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>Date</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[dbo_WebsiteVisitorAnalysisTable20151029210625356].[Category]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>Category</ColumnName>
+            <UniqueColumnName>dbo_WebsiteVisitorAnalysisTable20151029210625356_Category</UniqueColumnName>
+            <ActualDataType>varchar</ActualDataType>
+            <DataType>String</DataType>
+            <DefaultDataType>String</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>DistinctCount</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>Category</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[dbo_WebsiteVisitorAnalysisTable20151029210625356].[SubCategory]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>SubCategory</ColumnName>
+            <UniqueColumnName>dbo_WebsiteVisitorAnalysisTable20151029210625356_SubCategory</UniqueColumnName>
+            <ActualDataType>varchar</ActualDataType>
+            <DataType>String</DataType>
+            <DefaultDataType>String</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>DistinctCount</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>SubCategory</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[dbo_WebsiteVisitorAnalysisTable20151029210625356].[Product]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>Product</ColumnName>
+            <UniqueColumnName>dbo_WebsiteVisitorAnalysisTable20151029210625356_Product</UniqueColumnName>
+            <ActualDataType>varchar</ActualDataType>
+            <DataType>String</DataType>
+            <DefaultDataType>String</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>DistinctCount</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>Product</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[dbo_WebsiteVisitorAnalysisTable20151029210625356].[VisitorsCount]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>VisitorsCount</ColumnName>
+            <UniqueColumnName>dbo_WebsiteVisitorAnalysisTable20151029210625356_VisitorsCount</UniqueColumnName>
+            <ActualDataType>float</ActualDataType>
+            <DataType>Double</DataType>
+            <DefaultDataType>Double</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>Sum</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>VisitorsCount</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[dbo_WebsiteVisitorAnalysisTable20151029210625356].[PurchaserCount]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>PurchaserCount</ColumnName>
+            <UniqueColumnName>dbo_WebsiteVisitorAnalysisTable20151029210625356_PurchaserCount</UniqueColumnName>
+            <ActualDataType>float</ActualDataType>
+            <DataType>Double</DataType>
+            <DefaultDataType>Double</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>Sum</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>PurchaserCount</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[dbo_WebsiteVisitorAnalysisTable20151029210625356].[AddedToCartCount]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>AddedToCartCount</ColumnName>
+            <UniqueColumnName>dbo_WebsiteVisitorAnalysisTable20151029210625356_AddedToCartCount</UniqueColumnName>
+            <ActualDataType>float</ActualDataType>
+            <DataType>Double</DataType>
+            <DefaultDataType>Double</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>Sum</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>AddedToCartCount</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[dbo_WebsiteVisitorAnalysisTable20151029210625356].[Referrer]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>Referrer</ColumnName>
+            <UniqueColumnName>dbo_WebsiteVisitorAnalysisTable20151029210625356_Referrer</UniqueColumnName>
+            <ActualDataType>varchar</ActualDataType>
+            <DataType>String</DataType>
+            <DefaultDataType>String</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>DistinctCount</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>Referrer</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[dbo_WebsiteVisitorAnalysisTable20151029210625356].[DeviceType]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>DeviceType</ColumnName>
+            <UniqueColumnName>dbo_WebsiteVisitorAnalysisTable20151029210625356_DeviceType</UniqueColumnName>
+            <ActualDataType>varchar</ActualDataType>
+            <DataType>String</DataType>
+            <DefaultDataType>String</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>DistinctCount</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>DeviceType</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[dbo_Expression Fields20151029210625356].[Current Year Visitors Count]</Key>
+            <PrimaryKeyColumn />
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>Current Year Visitors Count</ColumnName>
+            <UniqueColumnName>dbo_Expression Fields20151029210625356_Current Year Visitors Count</UniqueColumnName>
+            <DataType>numeric</DataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>Sum</SummaryType>
+            <AxisType>None</AxisType>
+            <DataSourceName>Website Visitor Analysis (Random data)</DataSourceName>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>Current Year Visitors Count</Caption>
+            <IsExpression>true</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <RootParentName>[WebsiteVisitorAnalysisTable]</RootParentName>
+              <FormattedExpression> CASE WHEN YEAR([dbo_WebsiteVisitorAnalysisTable20151029210625356].[Date])='2015' THEN CAST([dbo_WebsiteVisitorAnalysisTable20151029210625356].[VisitorsCount] AS decimal(38,6)) ELSE 0 END </FormattedExpression>
+              <Expression> CASE WHEN YEAR([dbo_WebsiteVisitorAnalysisTable20151029210625356_Date])='2015' THEN [dbo_WebsiteVisitorAnalysisTable20151029210625356_VisitorsCount] ELSE 0 END </Expression>
+              <DisplayText>IF(YEAR([Date])='2015',[VisitorsCount],0)</DisplayText>
+              <Tables />
+              <PivotExpressionKeys />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>CalculatedMeasure</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[dbo_Expression Fields20151029210625356].[Current Year Purchasers Count]</Key>
+            <PrimaryKeyColumn />
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>Current Year Purchasers Count</ColumnName>
+            <UniqueColumnName>dbo_Expression Fields20151029210625356_Current Year Purchasers Count</UniqueColumnName>
+            <DataType>numeric</DataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>Sum</SummaryType>
+            <AxisType>None</AxisType>
+            <DataSourceName>Website Visitor Analysis (Random data)</DataSourceName>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>Current Year Purchasers Count</Caption>
+            <IsExpression>true</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <RootParentName>[WebsiteVisitorAnalysisTable]</RootParentName>
+              <FormattedExpression> CASE WHEN YEAR([dbo_WebsiteVisitorAnalysisTable20151029210625356].[Date])='2015' THEN CAST([dbo_WebsiteVisitorAnalysisTable20151029210625356].[PurchaserCount] AS decimal(38,6)) ELSE 0 END </FormattedExpression>
+              <Expression> CASE WHEN YEAR([dbo_WebsiteVisitorAnalysisTable20151029210625356_Date])='2015' THEN [dbo_WebsiteVisitorAnalysisTable20151029210625356_PurchaserCount] ELSE 0 END </Expression>
+              <DisplayText>IF(YEAR([Date])='2015',[PurchaserCount],0)</DisplayText>
+              <Tables />
+              <PivotExpressionKeys />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>CalculatedMeasure</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+        </Fields>
+        <NodeType>Table</NodeType>
+        <TableRelationships />
+        <RelatedChildren />
+      </Table>
+    </TreeViewSchemaInfo>
+    <TempConnectionType>Files</TempConnectionType>
+    <TempOdbcDbmsServerType>None</TempOdbcDbmsServerType>
+    <PublishSettings>
+      <CredentialRetrievalType>Embedded</CredentialRetrievalType>
+    </PublishSettings>
+  </DataSource>
+</DataSources>

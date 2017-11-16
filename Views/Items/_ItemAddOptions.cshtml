@@ -1,0 +1,70 @@
+﻿@{ var model = Model as Dictionary<ItemType, bool>; }
+
+@if (model[ItemType.Dashboard] || model[ItemType.Datasource] || model[ItemType.File] || model[ItemType.Category] || model[ItemType.Widget] || model[ItemType.Schedule])
+{
+    <div id="upload-item-section" class="dropdown no-padding pull-right">
+        <button id="btn-item-upload" type="button" class="dropdown-toggle" style="" data-toggle="dropdown" title="[[[Create]]]">
+            <span>
+                [[[CREATE]]]
+            </span>
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu" id="createButtonOptions">
+            @if (model[ItemType.Category])
+            {
+                <li id="CreateDashboard" onclick="openNewCategoryPopup()">
+                    <a href="javascript:void(0)" title="">
+                        <i class="su su-categoried-dashboard"> </i>
+                        <span>[[[Category]]]</span>
+                    </a>
+                </li>
+            }
+            @if (model[ItemType.Dashboard])
+            {
+                <li id="CreateDashboard" onclick="openNewDashboardPopup()">
+                    <a href="javascript:void(0)" title="">
+                        <i class="su su-nav-dashboard"> </i>
+                        <span>[[[Dashboard]]]</span>
+                    </a>
+                </li>
+            }
+            @if (model[ItemType.Widget])
+            {
+                <li id="CreateWidget" onclick="openNewWidgetPopup()">
+                    <a href="javascript:void(0)" title="">
+                        <i class="su su-widget"> </i>
+                        <span>[[[Widget]]]</span>
+                    </a>
+                </li>
+            }
+            @if (model[ItemType.Datasource])
+            {
+                <li id="create_datasource" onclick="openNewDataSourcePopup()">
+                    <a href="javascript:void(0)" title="">
+                        <i class="su su-nav-datasource"> </i>
+                        <span>[[[Data Source]]]</span>
+                    </a>
+                </li>
+            }
+            @if (model[ItemType.Schedule])
+            {
+                <li id="create_schedule">
+                    <a href="javascript:void(0)" title="">
+                        <i class="su su-nav-schedule"> </i>
+                        <span>[[[Schedule]]]</span>
+                    </a>
+                </li>
+            }
+            @if (Model[ItemType.File])
+            {
+                <li id="CreateFile" onclick="openNewFilePopup()">
+                    <a href="javascript:void(0)" title="">
+                        <i class="su su-document"> </i>
+                        <span>[[[File]]]</span>
+                    </a>
+                </li>
+            }
+        </ul>
+    </div>
+
+}
