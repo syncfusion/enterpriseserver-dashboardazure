@@ -12,7 +12,7 @@ This repository holds the Azure App Service package of the Dashboard Server whic
 
 >**Note**: This repository holds Dashboard Server Azure App Service package from version v2.3.0.32
 
-New Syncfsuion Dashboard Server Azure App Service Deployment can be done [here](https://help.syncfusion.com/dashboard-platform/dashboard-server/azure-deployment/app-service/arm-template).
+New Syncfusion Dashboard Server Azure App Service Deployment can be done [here](https://help.syncfusion.com/dashboard-platform/dashboard-server/azure-deployment/app-service/arm-template).
 
 To Upgrade the Syncfsuion Dashboard Server to Latest Version [here](https://help.syncfusion.com/dashboard-platform/dashboard-server/azure-deployment/app-service/migration-to-latest).
 
