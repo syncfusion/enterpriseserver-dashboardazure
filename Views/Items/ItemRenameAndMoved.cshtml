@@ -1,0 +1,21 @@
+﻿﻿@{
+    ViewBag.Title = @GlobalAppSettings.SystemSettings.OrganizationName + " - [[[Item Moved]]]";
+    ViewBag.MessageBox = false;
+}
+@if (Layout == null)
+{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section scripts{
+    @Scripts.Render("~/scripts/bootstrapjs")
+}
+@section MainSection{
+    <div>
+        <div class="text-center">
+            <div class="response-div">
+                <div class="response-header">[[[Sorry, we could not find your dashboard.]]]</div>
+                <div class="response">[[[Possible reason:]]]<br><span>[[[The dashboard could have been renamed or moved to another category.]]]</span></div>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,1230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataSources xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DataSource DatabaseType="Relational" IsEncrypted="true" Id="00000000-0000-0000-0000-000000000000" Name="Personal Expense Analysis (Random data)" Version="2.3.0.32">
+    <CanWrite>true</CanWrite>
+    <IsDipMode>false</IsDipMode>
+    <ConnectionProperties IsEncrypted="true" IsInternalEncrypted="true">
+      <ConnectionOption>TablesAndViews</ConnectionOption>
+      <ConnectionParameters>
+        <AuthenticationType>1</AuthenticationType>
+        <IsSecuredLogin>false</IsSecuredLogin>
+        <Database>SampleDB</Database>
+        <DsnType>UserDsn</DsnType>
+        <IsDnsConnection>false</IsDnsConnection>
+        <IsEncrypted>true</IsEncrypted>
+        <Password>WZqAYemH9NKE2gL5UjqVRA==</Password>
+        <ServerName>ts4/FGRpLDoWUkIMmTNQK1tf9nDLYTxQvqTFjVS/94X6n/Kn9R1cfg==</ServerName>
+        <ServerType>0</ServerType>
+        <Separator>0</Separator>
+        <SourceConnectionTypeOfAgent>Files</SourceConnectionTypeOfAgent>
+        <UserName>Ge3YOi0hspRvup5SjhsRk0BTFhiDD86NoJv0b2BEZLY=</UserName>
+        <WebResourcesType>0</WebResourcesType>
+        <IsRegisteredApp>false</IsRegisteredApp>
+        <IsChecked>false</IsChecked>
+        <IsCloud>false</IsCloud>
+        <IsLocal>false</IsLocal>
+      </ConnectionParameters>
+      <ConnectionString>gmR5fjcihmX885P/elOIS9lk8FwnNh0JwCCg7CCSg/XDW3ApI6GRUSs+kRqDdVIVpLtDw4VCYRVqPL+Tp7OZkZ6X3QFLr2IzEGuXQp6VMs6xNfrXTg4JwFikAPSE8dERnfIaBF5F+6NLw7bwQApdgSgiATovteuzsm1F2Q0ut6YvOPQRqkmOBiJoSszAm50hVXvlh1cbHwaYobVB4fNjBK8OXGAVN54Iy1KcD0rXu8agwjEfUcdYVw==</ConnectionString>
+      <ConnectionType>SqlServer</ConnectionType>
+      <IsExtractMode>false</IsExtractMode>
+      <ConnectOption>ConnectionString</ConnectOption>
+      <IsLoadAllData>false</IsLoadAllData>
+      <IsQueryMode>false</IsQueryMode>
+      <OdbcDbmsServerType>None</OdbcDbmsServerType>
+      <QueryParameters />
+      <DashboardParameters />
+      <RelationalReports />
+      <TableName>ExpenseAnalysisData</TableName>
+    </ConnectionProperties>
+    <InitialFilters />
+    <UserFilters />
+    <IsAlreadyChecked>false</IsAlreadyChecked>
+    <LiveConnectionProperties>
+      <IsPublish>false</IsPublish>
+      <LiveConnectionType>Files</LiveConnectionType>
+    </LiveConnectionProperties>
+    <PublishSettings>
+      <CredentialRetrievalType>Embedded</CredentialRetrievalType>
+    </PublishSettings>
+    <TempConnectionString>gmR5fjcihmX885P/elOIS9lk8FwnNh0JwCCg7CCSg/XDW3ApI6GRUSs+kRqDdVIVpLtDw4VCYRVqPL+Tp7OZkZ6X3QFLr2IzEGuXQp6VMs6xNfrXTg4JwFikAPSE8dERnfIaBF5F+6NLw7bwQApdgSgiATovteuzsm1F2Q0ut6YvOPQRqkmOBiJoSszAm50hVXvlh1cbHwaYobVB4fNjBK8OXGAVN54Iy1KcD0rXu8agwjEfUcdYVw==</TempConnectionString>
+    <TempConnectionType>SqlServer</TempConnectionType>
+    <TempOdbcDbmsServerType>None</TempOdbcDbmsServerType>
+    <TreeViewSchemaInfo>
+      <Table>
+        <Caption>ExpenseAnalysisData</Caption>
+        <Fields>
+          <FieldInfo>
+            <ActualDataType>smalldatetime</ActualDataType>
+            <AxisType>None</AxisType>
+            <Caption>Date</Caption>
+            <ColumnName>DateTime</ColumnName>
+            <ColumnType>Dimension</ColumnType>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <CustomColumnType>Dimension</CustomColumnType>
+            <IsCustomDateApplied>false</IsCustomDateApplied>
+            <DataType>DateTime</DataType>
+            <DateTimeFormat>None</DateTimeFormat>
+            <DefaultDataType>DateTime</DefaultDataType>
+            <DefaultHierarchyName>DateTime</DefaultHierarchyName>
+            <DisplaySeries>None</DisplaySeries>
+            <Expression>
+              <ColumnNames />
+              <IsUserFilter>false</IsUserFilter>
+              <PivotExpressionKeys />
+              <Tables />
+              <IsDashboardParameter>false</IsDashboardParameter>
+              <UserFunctionType>CurrentUser</UserFunctionType>
+            </Expression>
+            <IsCustomSortApplied>false</IsCustomSortApplied>
+            <FilterValues />
+            <Format>Default</Format>
+            <FormatProperties>
+              <Culture>en-US</Culture>
+              <DecimalPoints>0</DecimalPoints>
+              <FormatType>Default</FormatType>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+              <Unit>Auto</Unit>
+            </FormatProperties>
+            <HasCondition>false</HasCondition>
+            <IsAggregation>false</IsAggregation>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <IsExpression>false</IsExpression>
+            <IsFilter>false</IsFilter>
+            <IsForeignKey>false</IsForeignKey>
+            <IsInclude>false</IsInclude>
+            <IsKpiSchema>false</IsKpiSchema>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsSelected>true</IsSelected>
+            <IsTop>false</IsTop>
+            <IsTopNDateFormat>false</IsTopNDateFormat>
+            <Key>[dbo_ExpenseAnalysisData].[DateTime]</Key>
+            <LevelDepth>0</LevelDepth>
+            <MeasureConditions>Equals</MeasureConditions>
+            <NullValue>Default</NullValue>
+            <Parent>
+              <AxisType>None</AxisType>
+              <Caption>ExpenseAnalysisData</Caption>
+              <ColumnName>ExpenseAnalysisData</ColumnName>
+              <ColumnType>None</ColumnType>
+              <ConditionSummaryType>None</ConditionSummaryType>
+              <CustomColumnType>None</CustomColumnType>
+              <IsCustomDateApplied>false</IsCustomDateApplied>
+              <DataSourceName>ExpenseAnalysis</DataSourceName>
+              <DateTimeFormat>None</DateTimeFormat>
+              <DisplaySeries>None</DisplaySeries>
+              <Expression>
+                <ColumnNames />
+                <IsUserFilter>false</IsUserFilter>
+                <PivotExpressionKeys />
+                <Tables />
+                <IsDashboardParameter>false</IsDashboardParameter>
+                <UserFunctionType>CurrentUser</UserFunctionType>
+              </Expression>
+              <IsCustomSortApplied>false</IsCustomSortApplied>
+              <FilterValues />
+              <Format>Default</Format>
+              <FormatProperties>
+                <Culture>en-US</Culture>
+                <DecimalPoints>0</DecimalPoints>
+                <FormatType>Default</FormatType>
+                <NegativeValueFormat>Default</NegativeValueFormat>
+                <Prefix />
+                <Suffix />
+                <Unit>Auto</Unit>
+              </FormatProperties>
+              <HasCondition>false</HasCondition>
+              <IsAggregation>false</IsAggregation>
+              <IsDataTypeChanged>false</IsDataTypeChanged>
+              <IsExpression>false</IsExpression>
+              <IsFilter>false</IsFilter>
+              <IsForeignKey>false</IsForeignKey>
+              <IsInclude>false</IsInclude>
+              <IsKpiSchema>false</IsKpiSchema>
+              <IsMeasureFilter>false</IsMeasureFilter>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+              <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+              <IsSelected>true</IsSelected>
+              <IsTop>false</IsTop>
+              <IsTopNDateFormat>false</IsTopNDateFormat>
+              <Key>[dbo].[ExpenseAnalysisData]</Key>
+              <LevelDepth>0</LevelDepth>
+              <MeasureConditions>Equals</MeasureConditions>
+              <NullValue>Default</NullValue>
+              <RelativeDateItems />
+              <ShowGrandTotal>false</ShowGrandTotal>
+              <ShowOtherGroup>false</ShowOtherGroup>
+              <SortDirection>Ascending</SortDirection>
+              <SummaryType>None</SummaryType>
+              <TopCount>0</TopCount>
+              <TopNSummaryType>None</TopNSummaryType>
+              <TopNDateFormat>None</TopNDateFormat>
+              <TreeNodeType>Table</TreeNodeType>
+              <UniqueColumnName>dbo_ExpenseAnalysisData</UniqueColumnName>
+              <Values />
+            </Parent>
+            <RelativeDateItems />
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <SortDirection>Ascending</SortDirection>
+            <SummaryType>DistinctCount</SummaryType>
+            <TopCount>0</TopCount>
+            <TopNSummaryType>None</TopNSummaryType>
+            <TopNDateFormat>None</TopNDateFormat>
+            <TreeNodeType>TableColumn</TreeNodeType>
+            <UniqueColumnName>dbo_ExpenseAnalysisData_DateTime</UniqueColumnName>
+            <Values />
+          </FieldInfo>
+          <FieldInfo>
+            <ActualDataType>varchar</ActualDataType>
+            <AxisType>None</AxisType>
+            <Caption>Category</Caption>
+            <ColumnName>CategoryName</ColumnName>
+            <ColumnType>Dimension</ColumnType>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <CustomColumnType>Dimension</CustomColumnType>
+            <IsCustomDateApplied>false</IsCustomDateApplied>
+            <DataType>String</DataType>
+            <DateTimeFormat>None</DateTimeFormat>
+            <DefaultDataType>String</DefaultDataType>
+            <DefaultHierarchyName>String</DefaultHierarchyName>
+            <DisplaySeries>None</DisplaySeries>
+            <Expression>
+              <ColumnNames />
+              <IsUserFilter>false</IsUserFilter>
+              <PivotExpressionKeys />
+              <Tables />
+              <IsDashboardParameter>false</IsDashboardParameter>
+              <UserFunctionType>CurrentUser</UserFunctionType>
+            </Expression>
+            <IsCustomSortApplied>false</IsCustomSortApplied>
+            <FilterValues />
+            <Format>Default</Format>
+            <FormatProperties>
+              <Culture>en-US</Culture>
+              <DecimalPoints>0</DecimalPoints>
+              <FormatType>Default</FormatType>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+              <Unit>Auto</Unit>
+            </FormatProperties>
+            <HasCondition>false</HasCondition>
+            <IsAggregation>false</IsAggregation>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <IsExpression>false</IsExpression>
+            <IsFilter>false</IsFilter>
+            <IsForeignKey>false</IsForeignKey>
+            <IsInclude>false</IsInclude>
+            <IsKpiSchema>false</IsKpiSchema>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsSelected>true</IsSelected>
+            <IsTop>false</IsTop>
+            <IsTopNDateFormat>false</IsTopNDateFormat>
+            <Key>[dbo_ExpenseAnalysisData].[CategoryName]</Key>
+            <LevelDepth>0</LevelDepth>
+            <MeasureConditions>Equals</MeasureConditions>
+            <NullValue>Default</NullValue>
+            <Parent>
+              <AxisType>None</AxisType>
+              <Caption>ExpenseAnalysisData</Caption>
+              <ColumnName>ExpenseAnalysisData</ColumnName>
+              <ColumnType>None</ColumnType>
+              <ConditionSummaryType>None</ConditionSummaryType>
+              <CustomColumnType>None</CustomColumnType>
+              <IsCustomDateApplied>false</IsCustomDateApplied>
+              <DataSourceName>ExpenseAnalysis</DataSourceName>
+              <DateTimeFormat>None</DateTimeFormat>
+              <DisplaySeries>None</DisplaySeries>
+              <Expression>
+                <ColumnNames />
+                <IsUserFilter>false</IsUserFilter>
+                <PivotExpressionKeys />
+                <Tables />
+                <IsDashboardParameter>false</IsDashboardParameter>
+                <UserFunctionType>CurrentUser</UserFunctionType>
+              </Expression>
+              <IsCustomSortApplied>false</IsCustomSortApplied>
+              <FilterValues />
+              <Format>Default</Format>
+              <FormatProperties>
+                <Culture>en-US</Culture>
+                <DecimalPoints>0</DecimalPoints>
+                <FormatType>Default</FormatType>
+                <NegativeValueFormat>Default</NegativeValueFormat>
+                <Prefix />
+                <Suffix />
+                <Unit>Auto</Unit>
+              </FormatProperties>
+              <HasCondition>false</HasCondition>
+              <IsAggregation>false</IsAggregation>
+              <IsDataTypeChanged>false</IsDataTypeChanged>
+              <IsExpression>false</IsExpression>
+              <IsFilter>false</IsFilter>
+              <IsForeignKey>false</IsForeignKey>
+              <IsInclude>false</IsInclude>
+              <IsKpiSchema>false</IsKpiSchema>
+              <IsMeasureFilter>false</IsMeasureFilter>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+              <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+              <IsSelected>true</IsSelected>
+              <IsTop>false</IsTop>
+              <IsTopNDateFormat>false</IsTopNDateFormat>
+              <Key>[dbo].[ExpenseAnalysisData]</Key>
+              <LevelDepth>0</LevelDepth>
+              <MeasureConditions>Equals</MeasureConditions>
+              <NullValue>Default</NullValue>
+              <RelativeDateItems />
+              <ShowGrandTotal>false</ShowGrandTotal>
+              <ShowOtherGroup>false</ShowOtherGroup>
+              <SortDirection>Ascending</SortDirection>
+              <SummaryType>None</SummaryType>
+              <TopCount>0</TopCount>
+              <TopNSummaryType>None</TopNSummaryType>
+              <TopNDateFormat>None</TopNDateFormat>
+              <TreeNodeType>Table</TreeNodeType>
+              <UniqueColumnName>dbo_ExpenseAnalysisData</UniqueColumnName>
+              <Values />
+            </Parent>
+            <RelativeDateItems />
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <SortDirection>Ascending</SortDirection>
+            <SummaryType>DistinctCount</SummaryType>
+            <TopCount>0</TopCount>
+            <TopNSummaryType>None</TopNSummaryType>
+            <TopNDateFormat>None</TopNDateFormat>
+            <TreeNodeType>TableColumn</TreeNodeType>
+            <UniqueColumnName>dbo_ExpenseAnalysisData_CategoryName</UniqueColumnName>
+            <Values />
+          </FieldInfo>
+          <FieldInfo>
+            <ActualDataType>varchar</ActualDataType>
+            <AxisType>None</AxisType>
+            <Caption>SubCategory</Caption>
+            <ColumnName>SubCategory</ColumnName>
+            <ColumnType>Dimension</ColumnType>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <CustomColumnType>Dimension</CustomColumnType>
+            <IsCustomDateApplied>false</IsCustomDateApplied>
+            <DataType>String</DataType>
+            <DateTimeFormat>None</DateTimeFormat>
+            <DefaultDataType>String</DefaultDataType>
+            <DefaultHierarchyName>String</DefaultHierarchyName>
+            <DisplaySeries>None</DisplaySeries>
+            <Expression>
+              <ColumnNames />
+              <IsUserFilter>false</IsUserFilter>
+              <PivotExpressionKeys />
+              <Tables />
+              <IsDashboardParameter>false</IsDashboardParameter>
+              <UserFunctionType>CurrentUser</UserFunctionType>
+            </Expression>
+            <IsCustomSortApplied>false</IsCustomSortApplied>
+            <FilterValues />
+            <Format>Default</Format>
+            <FormatProperties>
+              <Culture>en-US</Culture>
+              <DecimalPoints>0</DecimalPoints>
+              <FormatType>Default</FormatType>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+              <Unit>Auto</Unit>
+            </FormatProperties>
+            <HasCondition>false</HasCondition>
+            <IsAggregation>false</IsAggregation>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <IsExpression>false</IsExpression>
+            <IsFilter>false</IsFilter>
+            <IsForeignKey>false</IsForeignKey>
+            <IsInclude>false</IsInclude>
+            <IsKpiSchema>false</IsKpiSchema>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsSelected>true</IsSelected>
+            <IsTop>false</IsTop>
+            <IsTopNDateFormat>false</IsTopNDateFormat>
+            <Key>[dbo_ExpenseAnalysisData].[SubCategory]</Key>
+            <LevelDepth>0</LevelDepth>
+            <MeasureConditions>Equals</MeasureConditions>
+            <NullValue>Default</NullValue>
+            <Parent>
+              <AxisType>None</AxisType>
+              <Caption>ExpenseAnalysisData</Caption>
+              <ColumnName>ExpenseAnalysisData</ColumnName>
+              <ColumnType>None</ColumnType>
+              <ConditionSummaryType>None</ConditionSummaryType>
+              <CustomColumnType>None</CustomColumnType>
+              <IsCustomDateApplied>false</IsCustomDateApplied>
+              <DataSourceName>ExpenseAnalysis</DataSourceName>
+              <DateTimeFormat>None</DateTimeFormat>
+              <DisplaySeries>None</DisplaySeries>
+              <Expression>
+                <ColumnNames />
+                <IsUserFilter>false</IsUserFilter>
+                <PivotExpressionKeys />
+                <Tables />
+                <IsDashboardParameter>false</IsDashboardParameter>
+                <UserFunctionType>CurrentUser</UserFunctionType>
+              </Expression>
+              <IsCustomSortApplied>false</IsCustomSortApplied>
+              <FilterValues />
+              <Format>Default</Format>
+              <FormatProperties>
+                <Culture>en-US</Culture>
+                <DecimalPoints>0</DecimalPoints>
+                <FormatType>Default</FormatType>
+                <NegativeValueFormat>Default</NegativeValueFormat>
+                <Prefix />
+                <Suffix />
+                <Unit>Auto</Unit>
+              </FormatProperties>
+              <HasCondition>false</HasCondition>
+              <IsAggregation>false</IsAggregation>
+              <IsDataTypeChanged>false</IsDataTypeChanged>
+              <IsExpression>false</IsExpression>
+              <IsFilter>false</IsFilter>
+              <IsForeignKey>false</IsForeignKey>
+              <IsInclude>false</IsInclude>
+              <IsKpiSchema>false</IsKpiSchema>
+              <IsMeasureFilter>false</IsMeasureFilter>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+              <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+              <IsSelected>true</IsSelected>
+              <IsTop>false</IsTop>
+              <IsTopNDateFormat>false</IsTopNDateFormat>
+              <Key>[dbo].[ExpenseAnalysisData]</Key>
+              <LevelDepth>0</LevelDepth>
+              <MeasureConditions>Equals</MeasureConditions>
+              <NullValue>Default</NullValue>
+              <RelativeDateItems />
+              <ShowGrandTotal>false</ShowGrandTotal>
+              <ShowOtherGroup>false</ShowOtherGroup>
+              <SortDirection>Ascending</SortDirection>
+              <SummaryType>None</SummaryType>
+              <TopCount>0</TopCount>
+              <TopNSummaryType>None</TopNSummaryType>
+              <TopNDateFormat>None</TopNDateFormat>
+              <TreeNodeType>Table</TreeNodeType>
+              <UniqueColumnName>dbo_ExpenseAnalysisData</UniqueColumnName>
+              <Values />
+            </Parent>
+            <RelativeDateItems />
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <SortDirection>Ascending</SortDirection>
+            <SummaryType>DistinctCount</SummaryType>
+            <TopCount>0</TopCount>
+            <TopNSummaryType>None</TopNSummaryType>
+            <TopNDateFormat>None</TopNDateFormat>
+            <TreeNodeType>TableColumn</TreeNodeType>
+            <UniqueColumnName>dbo_ExpenseAnalysisData_SubCategory</UniqueColumnName>
+            <Values />
+          </FieldInfo>
+          <FieldInfo>
+            <ActualDataType>float</ActualDataType>
+            <AxisType>None</AxisType>
+            <Caption>Amount</Caption>
+            <ColumnName>Amount</ColumnName>
+            <ColumnType>Measure</ColumnType>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <CustomColumnType>Measure</CustomColumnType>
+            <IsCustomDateApplied>false</IsCustomDateApplied>
+            <DataType>Double</DataType>
+            <DateTimeFormat>None</DateTimeFormat>
+            <DefaultDataType>Double</DefaultDataType>
+            <DefaultHierarchyName>Double</DefaultHierarchyName>
+            <DisplaySeries>None</DisplaySeries>
+            <Expression>
+              <ColumnNames />
+              <IsUserFilter>false</IsUserFilter>
+              <PivotExpressionKeys />
+              <Tables />
+              <IsDashboardParameter>false</IsDashboardParameter>
+              <UserFunctionType>CurrentUser</UserFunctionType>
+            </Expression>
+            <IsCustomSortApplied>false</IsCustomSortApplied>
+            <FilterValues />
+            <Format>Default</Format>
+            <FormatProperties>
+              <Culture>en-US</Culture>
+              <DecimalPoints>0</DecimalPoints>
+              <FormatType>Default</FormatType>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+              <Unit>Auto</Unit>
+            </FormatProperties>
+            <HasCondition>false</HasCondition>
+            <IsAggregation>false</IsAggregation>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <IsExpression>false</IsExpression>
+            <IsFilter>false</IsFilter>
+            <IsForeignKey>false</IsForeignKey>
+            <IsInclude>false</IsInclude>
+            <IsKpiSchema>false</IsKpiSchema>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsSelected>true</IsSelected>
+            <IsTop>false</IsTop>
+            <IsTopNDateFormat>false</IsTopNDateFormat>
+            <Key>[dbo_ExpenseAnalysisData].[Amount]</Key>
+            <LevelDepth>0</LevelDepth>
+            <MeasureConditions>Equals</MeasureConditions>
+            <NullValue>Default</NullValue>
+            <Parent>
+              <AxisType>None</AxisType>
+              <Caption>ExpenseAnalysisData</Caption>
+              <ColumnName>ExpenseAnalysisData</ColumnName>
+              <ColumnType>None</ColumnType>
+              <ConditionSummaryType>None</ConditionSummaryType>
+              <CustomColumnType>None</CustomColumnType>
+              <IsCustomDateApplied>false</IsCustomDateApplied>
+              <DataSourceName>ExpenseAnalysis</DataSourceName>
+              <DateTimeFormat>None</DateTimeFormat>
+              <DisplaySeries>None</DisplaySeries>
+              <Expression>
+                <ColumnNames />
+                <IsUserFilter>false</IsUserFilter>
+                <PivotExpressionKeys />
+                <Tables />
+                <IsDashboardParameter>false</IsDashboardParameter>
+                <UserFunctionType>CurrentUser</UserFunctionType>
+              </Expression>
+              <IsCustomSortApplied>false</IsCustomSortApplied>
+              <FilterValues />
+              <Format>Default</Format>
+              <FormatProperties>
+                <Culture>en-US</Culture>
+                <DecimalPoints>0</DecimalPoints>
+                <FormatType>Default</FormatType>
+                <NegativeValueFormat>Default</NegativeValueFormat>
+                <Prefix />
+                <Suffix />
+                <Unit>Auto</Unit>
+              </FormatProperties>
+              <HasCondition>false</HasCondition>
+              <IsAggregation>false</IsAggregation>
+              <IsDataTypeChanged>false</IsDataTypeChanged>
+              <IsExpression>false</IsExpression>
+              <IsFilter>false</IsFilter>
+              <IsForeignKey>false</IsForeignKey>
+              <IsInclude>false</IsInclude>
+              <IsKpiSchema>false</IsKpiSchema>
+              <IsMeasureFilter>false</IsMeasureFilter>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+              <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+              <IsSelected>true</IsSelected>
+              <IsTop>false</IsTop>
+              <IsTopNDateFormat>false</IsTopNDateFormat>
+              <Key>[dbo].[ExpenseAnalysisData]</Key>
+              <LevelDepth>0</LevelDepth>
+              <MeasureConditions>Equals</MeasureConditions>
+              <NullValue>Default</NullValue>
+              <RelativeDateItems />
+              <ShowGrandTotal>false</ShowGrandTotal>
+              <ShowOtherGroup>false</ShowOtherGroup>
+              <SortDirection>Ascending</SortDirection>
+              <SummaryType>None</SummaryType>
+              <TopCount>0</TopCount>
+              <TopNSummaryType>None</TopNSummaryType>
+              <TopNDateFormat>None</TopNDateFormat>
+              <TreeNodeType>Table</TreeNodeType>
+              <UniqueColumnName>dbo_ExpenseAnalysisData</UniqueColumnName>
+              <Values />
+            </Parent>
+            <RelativeDateItems />
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <SortDirection>Ascending</SortDirection>
+            <SummaryType>Sum</SummaryType>
+            <TopCount>0</TopCount>
+            <TopNSummaryType>None</TopNSummaryType>
+            <TopNDateFormat>None</TopNDateFormat>
+            <TreeNodeType>TableColumn</TreeNodeType>
+            <UniqueColumnName>dbo_ExpenseAnalysisData_Amount</UniqueColumnName>
+            <Values />
+          </FieldInfo>
+          <FieldInfo>
+            <ActualDataType>varchar</ActualDataType>
+            <AxisType>None</AxisType>
+            <Caption>Account Type</Caption>
+            <ColumnName>AccountType</ColumnName>
+            <ColumnType>Dimension</ColumnType>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <CustomColumnType>Dimension</CustomColumnType>
+            <IsCustomDateApplied>false</IsCustomDateApplied>
+            <DataType>String</DataType>
+            <DateTimeFormat>None</DateTimeFormat>
+            <DefaultDataType>String</DefaultDataType>
+            <DefaultHierarchyName>String</DefaultHierarchyName>
+            <DisplaySeries>None</DisplaySeries>
+            <Expression>
+              <ColumnNames />
+              <IsUserFilter>false</IsUserFilter>
+              <PivotExpressionKeys />
+              <Tables />
+              <IsDashboardParameter>false</IsDashboardParameter>
+              <UserFunctionType>CurrentUser</UserFunctionType>
+            </Expression>
+            <IsCustomSortApplied>false</IsCustomSortApplied>
+            <FilterValues />
+            <Format>Default</Format>
+            <FormatProperties>
+              <Culture>en-US</Culture>
+              <DecimalPoints>0</DecimalPoints>
+              <FormatType>Default</FormatType>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+              <Unit>Auto</Unit>
+            </FormatProperties>
+            <HasCondition>false</HasCondition>
+            <IsAggregation>false</IsAggregation>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <IsExpression>false</IsExpression>
+            <IsFilter>false</IsFilter>
+            <IsForeignKey>false</IsForeignKey>
+            <IsInclude>false</IsInclude>
+            <IsKpiSchema>false</IsKpiSchema>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsSelected>true</IsSelected>
+            <IsTop>false</IsTop>
+            <IsTopNDateFormat>false</IsTopNDateFormat>
+            <Key>[dbo_ExpenseAnalysisData].[AccountType]</Key>
+            <LevelDepth>0</LevelDepth>
+            <MeasureConditions>Equals</MeasureConditions>
+            <NullValue>Default</NullValue>
+            <Parent>
+              <AxisType>None</AxisType>
+              <Caption>ExpenseAnalysisData</Caption>
+              <ColumnName>ExpenseAnalysisData</ColumnName>
+              <ColumnType>None</ColumnType>
+              <ConditionSummaryType>None</ConditionSummaryType>
+              <CustomColumnType>None</CustomColumnType>
+              <IsCustomDateApplied>false</IsCustomDateApplied>
+              <DataSourceName>ExpenseAnalysis</DataSourceName>
+              <DateTimeFormat>None</DateTimeFormat>
+              <DisplaySeries>None</DisplaySeries>
+              <Expression>
+                <ColumnNames />
+                <IsUserFilter>false</IsUserFilter>
+                <PivotExpressionKeys />
+                <Tables />
+                <IsDashboardParameter>false</IsDashboardParameter>
+                <UserFunctionType>CurrentUser</UserFunctionType>
+              </Expression>
+              <IsCustomSortApplied>false</IsCustomSortApplied>
+              <FilterValues />
+              <Format>Default</Format>
+              <FormatProperties>
+                <Culture>en-US</Culture>
+                <DecimalPoints>0</DecimalPoints>
+                <FormatType>Default</FormatType>
+                <NegativeValueFormat>Default</NegativeValueFormat>
+                <Prefix />
+                <Suffix />
+                <Unit>Auto</Unit>
+              </FormatProperties>
+              <HasCondition>false</HasCondition>
+              <IsAggregation>false</IsAggregation>
+              <IsDataTypeChanged>false</IsDataTypeChanged>
+              <IsExpression>false</IsExpression>
+              <IsFilter>false</IsFilter>
+              <IsForeignKey>false</IsForeignKey>
+              <IsInclude>false</IsInclude>
+              <IsKpiSchema>false</IsKpiSchema>
+              <IsMeasureFilter>false</IsMeasureFilter>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+              <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+              <IsSelected>true</IsSelected>
+              <IsTop>false</IsTop>
+              <IsTopNDateFormat>false</IsTopNDateFormat>
+              <Key>[dbo].[ExpenseAnalysisData]</Key>
+              <LevelDepth>0</LevelDepth>
+              <MeasureConditions>Equals</MeasureConditions>
+              <NullValue>Default</NullValue>
+              <RelativeDateItems />
+              <ShowGrandTotal>false</ShowGrandTotal>
+              <ShowOtherGroup>false</ShowOtherGroup>
+              <SortDirection>Ascending</SortDirection>
+              <SummaryType>None</SummaryType>
+              <TopCount>0</TopCount>
+              <TopNSummaryType>None</TopNSummaryType>
+              <TopNDateFormat>None</TopNDateFormat>
+              <TreeNodeType>Table</TreeNodeType>
+              <UniqueColumnName>dbo_ExpenseAnalysisData</UniqueColumnName>
+              <Values />
+            </Parent>
+            <RelativeDateItems />
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <SortDirection>Ascending</SortDirection>
+            <SummaryType>DistinctCount</SummaryType>
+            <TopCount>0</TopCount>
+            <TopNSummaryType>None</TopNSummaryType>
+            <TopNDateFormat>None</TopNDateFormat>
+            <TreeNodeType>TableColumn</TreeNodeType>
+            <UniqueColumnName>dbo_ExpenseAnalysisData_AccountType</UniqueColumnName>
+            <Values />
+          </FieldInfo>
+          <FieldInfo>
+            <ActualDataType>varchar</ActualDataType>
+            <AxisType>None</AxisType>
+            <Caption>Description</Caption>
+            <ColumnName>Description</ColumnName>
+            <ColumnType>Dimension</ColumnType>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <CustomColumnType>Dimension</CustomColumnType>
+            <IsCustomDateApplied>false</IsCustomDateApplied>
+            <DataType>String</DataType>
+            <DateTimeFormat>None</DateTimeFormat>
+            <DefaultDataType>String</DefaultDataType>
+            <DefaultHierarchyName>String</DefaultHierarchyName>
+            <DisplaySeries>None</DisplaySeries>
+            <Expression>
+              <ColumnNames />
+              <IsUserFilter>false</IsUserFilter>
+              <PivotExpressionKeys />
+              <Tables />
+              <IsDashboardParameter>false</IsDashboardParameter>
+              <UserFunctionType>CurrentUser</UserFunctionType>
+            </Expression>
+            <IsCustomSortApplied>false</IsCustomSortApplied>
+            <FilterValues />
+            <Format>Default</Format>
+            <FormatProperties>
+              <Culture>en-US</Culture>
+              <DecimalPoints>0</DecimalPoints>
+              <FormatType>Default</FormatType>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+              <Unit>Auto</Unit>
+            </FormatProperties>
+            <HasCondition>false</HasCondition>
+            <IsAggregation>false</IsAggregation>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <IsExpression>false</IsExpression>
+            <IsFilter>false</IsFilter>
+            <IsForeignKey>false</IsForeignKey>
+            <IsInclude>false</IsInclude>
+            <IsKpiSchema>false</IsKpiSchema>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsSelected>true</IsSelected>
+            <IsTop>false</IsTop>
+            <IsTopNDateFormat>false</IsTopNDateFormat>
+            <Key>[dbo_ExpenseAnalysisData].[Description]</Key>
+            <LevelDepth>0</LevelDepth>
+            <MeasureConditions>Equals</MeasureConditions>
+            <NullValue>Default</NullValue>
+            <Parent>
+              <AxisType>None</AxisType>
+              <Caption>ExpenseAnalysisData</Caption>
+              <ColumnName>ExpenseAnalysisData</ColumnName>
+              <ColumnType>None</ColumnType>
+              <ConditionSummaryType>None</ConditionSummaryType>
+              <CustomColumnType>None</CustomColumnType>
+              <IsCustomDateApplied>false</IsCustomDateApplied>
+              <DataSourceName>ExpenseAnalysis</DataSourceName>
+              <DateTimeFormat>None</DateTimeFormat>
+              <DisplaySeries>None</DisplaySeries>
+              <Expression>
+                <ColumnNames />
+                <IsUserFilter>false</IsUserFilter>
+                <PivotExpressionKeys />
+                <Tables />
+                <IsDashboardParameter>false</IsDashboardParameter>
+                <UserFunctionType>CurrentUser</UserFunctionType>
+              </Expression>
+              <IsCustomSortApplied>false</IsCustomSortApplied>
+              <FilterValues />
+              <Format>Default</Format>
+              <FormatProperties>
+                <Culture>en-US</Culture>
+                <DecimalPoints>0</DecimalPoints>
+                <FormatType>Default</FormatType>
+                <NegativeValueFormat>Default</NegativeValueFormat>
+                <Prefix />
+                <Suffix />
+                <Unit>Auto</Unit>
+              </FormatProperties>
+              <HasCondition>false</HasCondition>
+              <IsAggregation>false</IsAggregation>
+              <IsDataTypeChanged>false</IsDataTypeChanged>
+              <IsExpression>false</IsExpression>
+              <IsFilter>false</IsFilter>
+              <IsForeignKey>false</IsForeignKey>
+              <IsInclude>false</IsInclude>
+              <IsKpiSchema>false</IsKpiSchema>
+              <IsMeasureFilter>false</IsMeasureFilter>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+              <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+              <IsSelected>true</IsSelected>
+              <IsTop>false</IsTop>
+              <IsTopNDateFormat>false</IsTopNDateFormat>
+              <Key>[dbo].[ExpenseAnalysisData]</Key>
+              <LevelDepth>0</LevelDepth>
+              <MeasureConditions>Equals</MeasureConditions>
+              <NullValue>Default</NullValue>
+              <RelativeDateItems />
+              <ShowGrandTotal>false</ShowGrandTotal>
+              <ShowOtherGroup>false</ShowOtherGroup>
+              <SortDirection>Ascending</SortDirection>
+              <SummaryType>None</SummaryType>
+              <TopCount>0</TopCount>
+              <TopNSummaryType>None</TopNSummaryType>
+              <TopNDateFormat>None</TopNDateFormat>
+              <TreeNodeType>Table</TreeNodeType>
+              <UniqueColumnName>dbo_ExpenseAnalysisData</UniqueColumnName>
+              <Values />
+            </Parent>
+            <RelativeDateItems />
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <SortDirection>Ascending</SortDirection>
+            <SummaryType>DistinctCount</SummaryType>
+            <TopCount>0</TopCount>
+            <TopNSummaryType>None</TopNSummaryType>
+            <TopNDateFormat>None</TopNDateFormat>
+            <TreeNodeType>TableColumn</TreeNodeType>
+            <UniqueColumnName>dbo_ExpenseAnalysisData_Description</UniqueColumnName>
+            <Values />
+          </FieldInfo>
+          <FieldInfo>
+            <ActualDataType>Double</ActualDataType>
+            <AxisType>None</AxisType>
+            <Caption>Positive</Caption>
+            <ColumnName>Positive</ColumnName>
+            <ColumnType>CalculatedMeasure</ColumnType>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <CustomColumnType>Measure</CustomColumnType>
+            <IsCustomDateApplied>false</IsCustomDateApplied>
+            <DataSourceName>Personal Expense Analysis (Random data)</DataSourceName>
+            <DataType>Double</DataType>
+            <DateTimeFormat>None</DateTimeFormat>
+            <DefaultDataType>Double</DefaultDataType>
+            <DisplaySeries>None</DisplaySeries>
+            <Expression>
+              <ColumnNames />
+              <DisplayText>IF([Account Type]='Positive',[Amount],0)</DisplayText>
+              <Expression> CASE WHEN [dbo_ExpenseAnalysisData_AccountType]='Positive' THEN [dbo_ExpenseAnalysisData_Amount] ELSE 0 END </Expression>
+              <FormattedExpression> CASE WHEN [dbo_ExpenseAnalysisData].[AccountType]='Positive' THEN [dbo_ExpenseAnalysisData].[Amount] ELSE 0 END </FormattedExpression>
+              <IsUserFilter>false</IsUserFilter>
+              <PivotExpressionKeys />
+              <RootParentName>[dbo].[ExpenseAnalysisData]</RootParentName>
+              <Tables />
+              <DashboardParameter />
+              <IsDashboardParameter>false</IsDashboardParameter>
+              <UserFunctionType>CurrentUser</UserFunctionType>
+            </Expression>
+            <IsCustomSortApplied>false</IsCustomSortApplied>
+            <FilterValues />
+            <Format>Default</Format>
+            <FormatProperties>
+              <Culture>en-US</Culture>
+              <DecimalPoints>0</DecimalPoints>
+              <FormatType>Default</FormatType>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+              <Unit>Auto</Unit>
+            </FormatProperties>
+            <HasCondition>false</HasCondition>
+            <IsAggregation>false</IsAggregation>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <IsExpression>true</IsExpression>
+            <IsFilter>false</IsFilter>
+            <IsForeignKey>false</IsForeignKey>
+            <IsInclude>false</IsInclude>
+            <IsKpiSchema>false</IsKpiSchema>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsSelected>true</IsSelected>
+            <IsTop>false</IsTop>
+            <IsTopNDateFormat>false</IsTopNDateFormat>
+            <Key>[ExpenseAnalysisData].[Positive]</Key>
+            <LevelDepth>0</LevelDepth>
+            <MeasureConditions>Equals</MeasureConditions>
+            <NullValue>Default</NullValue>
+            <Parent>
+              <AxisType>None</AxisType>
+              <Caption>Expression Fields</Caption>
+              <ColumnName>Expression Fields</ColumnName>
+              <ColumnType>None</ColumnType>
+              <ConditionSummaryType>None</ConditionSummaryType>
+              <CustomColumnType>None</CustomColumnType>
+              <IsCustomDateApplied>false</IsCustomDateApplied>
+              <DateTimeFormat>None</DateTimeFormat>
+              <DisplaySeries>None</DisplaySeries>
+              <Expression>
+                <ColumnNames />
+                <IsUserFilter>false</IsUserFilter>
+                <PivotExpressionKeys />
+                <Tables />
+                <IsDashboardParameter>false</IsDashboardParameter>
+                <UserFunctionType>CurrentUser</UserFunctionType>
+              </Expression>
+              <IsCustomSortApplied>false</IsCustomSortApplied>
+              <FilterValues />
+              <Format>Default</Format>
+              <FormatProperties>
+                <Culture>en-US</Culture>
+                <DecimalPoints>0</DecimalPoints>
+                <FormatType>Default</FormatType>
+                <NegativeValueFormat>Default</NegativeValueFormat>
+                <Prefix />
+                <Suffix />
+                <Unit>Auto</Unit>
+              </FormatProperties>
+              <HasCondition>false</HasCondition>
+              <IsAggregation>false</IsAggregation>
+              <IsDataTypeChanged>false</IsDataTypeChanged>
+              <IsExpression>true</IsExpression>
+              <IsFilter>false</IsFilter>
+              <IsForeignKey>false</IsForeignKey>
+              <IsInclude>false</IsInclude>
+              <IsKpiSchema>false</IsKpiSchema>
+              <IsMeasureFilter>false</IsMeasureFilter>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+              <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+              <IsSelected>true</IsSelected>
+              <IsTop>false</IsTop>
+              <IsTopNDateFormat>false</IsTopNDateFormat>
+              <Key>[Expression].[Fields]</Key>
+              <LevelDepth>0</LevelDepth>
+              <MeasureConditions>Equals</MeasureConditions>
+              <NullValue>Default</NullValue>
+              <RelativeDateItems />
+              <ShowGrandTotal>false</ShowGrandTotal>
+              <ShowOtherGroup>false</ShowOtherGroup>
+              <SortDirection>Ascending</SortDirection>
+              <SummaryType>None</SummaryType>
+              <TopCount>0</TopCount>
+              <TopNSummaryType>None</TopNSummaryType>
+              <TopNDateFormat>None</TopNDateFormat>
+              <TreeNodeType>Table</TreeNodeType>
+              <UniqueColumnName>Expression Fields</UniqueColumnName>
+              <Values />
+            </Parent>
+            <PrimaryKeyColumn />
+            <RelativeDateItems />
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <SortDirection>Ascending</SortDirection>
+            <SummaryType>Sum</SummaryType>
+            <TableName>ExpenseAnalysisData</TableName>
+            <TopCount>0</TopCount>
+            <TopNSummaryType>None</TopNSummaryType>
+            <TopNDateFormat>None</TopNDateFormat>
+            <TreeNodeType>Folder</TreeNodeType>
+            <UniqueColumnName>Positive</UniqueColumnName>
+            <Values />
+          </FieldInfo>
+          <FieldInfo>
+            <ActualDataType>Double</ActualDataType>
+            <AxisType>None</AxisType>
+            <Caption>Negative</Caption>
+            <ColumnName>Negative</ColumnName>
+            <ColumnType>CalculatedMeasure</ColumnType>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <CustomColumnType>Measure</CustomColumnType>
+            <IsCustomDateApplied>false</IsCustomDateApplied>
+            <DataSourceName>Personal Expense Analysis (Random data)</DataSourceName>
+            <DataType>Double</DataType>
+            <DateTimeFormat>None</DateTimeFormat>
+            <DefaultDataType>Double</DefaultDataType>
+            <DisplaySeries>None</DisplaySeries>
+            <Expression>
+              <ColumnNames />
+              <DisplayText>IF([Account Type]='Negative',[Amount],0)</DisplayText>
+              <Expression> CASE WHEN [dbo_ExpenseAnalysisData_AccountType]='Negative' THEN [dbo_ExpenseAnalysisData_Amount] ELSE 0 END </Expression>
+              <FormattedExpression> CASE WHEN [dbo_ExpenseAnalysisData].[AccountType]='Negative' THEN [dbo_ExpenseAnalysisData].[Amount] ELSE 0 END </FormattedExpression>
+              <IsUserFilter>false</IsUserFilter>
+              <PivotExpressionKeys />
+              <RootParentName>[dbo].[ExpenseAnalysisData]</RootParentName>
+              <Tables />
+              <DashboardParameter />
+              <IsDashboardParameter>false</IsDashboardParameter>
+              <UserFunctionType>CurrentUser</UserFunctionType>
+            </Expression>
+            <IsCustomSortApplied>false</IsCustomSortApplied>
+            <FilterValues />
+            <Format>Default</Format>
+            <FormatProperties>
+              <Culture>en-US</Culture>
+              <DecimalPoints>0</DecimalPoints>
+              <FormatType>Default</FormatType>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+              <Unit>Auto</Unit>
+            </FormatProperties>
+            <HasCondition>false</HasCondition>
+            <IsAggregation>false</IsAggregation>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <IsExpression>true</IsExpression>
+            <IsFilter>false</IsFilter>
+            <IsForeignKey>false</IsForeignKey>
+            <IsInclude>false</IsInclude>
+            <IsKpiSchema>false</IsKpiSchema>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsSelected>true</IsSelected>
+            <IsTop>false</IsTop>
+            <IsTopNDateFormat>false</IsTopNDateFormat>
+            <Key>[ExpenseAnalysisData].[Negative]</Key>
+            <LevelDepth>0</LevelDepth>
+            <MeasureConditions>Equals</MeasureConditions>
+            <NullValue>Default</NullValue>
+            <Parent>
+              <AxisType>None</AxisType>
+              <Caption>Expression Fields</Caption>
+              <ColumnName>Expression Fields</ColumnName>
+              <ColumnType>None</ColumnType>
+              <ConditionSummaryType>None</ConditionSummaryType>
+              <CustomColumnType>None</CustomColumnType>
+              <IsCustomDateApplied>false</IsCustomDateApplied>
+              <DateTimeFormat>None</DateTimeFormat>
+              <DisplaySeries>None</DisplaySeries>
+              <Expression>
+                <ColumnNames />
+                <IsUserFilter>false</IsUserFilter>
+                <PivotExpressionKeys />
+                <Tables />
+                <IsDashboardParameter>false</IsDashboardParameter>
+                <UserFunctionType>CurrentUser</UserFunctionType>
+              </Expression>
+              <IsCustomSortApplied>false</IsCustomSortApplied>
+              <FilterValues />
+              <Format>Default</Format>
+              <FormatProperties>
+                <Culture>en-US</Culture>
+                <DecimalPoints>0</DecimalPoints>
+                <FormatType>Default</FormatType>
+                <NegativeValueFormat>Default</NegativeValueFormat>
+                <Prefix />
+                <Suffix />
+                <Unit>Auto</Unit>
+              </FormatProperties>
+              <HasCondition>false</HasCondition>
+              <IsAggregation>false</IsAggregation>
+              <IsDataTypeChanged>false</IsDataTypeChanged>
+              <IsExpression>true</IsExpression>
+              <IsFilter>false</IsFilter>
+              <IsForeignKey>false</IsForeignKey>
+              <IsInclude>false</IsInclude>
+              <IsKpiSchema>false</IsKpiSchema>
+              <IsMeasureFilter>false</IsMeasureFilter>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+              <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+              <IsSelected>true</IsSelected>
+              <IsTop>false</IsTop>
+              <IsTopNDateFormat>false</IsTopNDateFormat>
+              <Key>[Expression].[Fields]</Key>
+              <LevelDepth>0</LevelDepth>
+              <MeasureConditions>Equals</MeasureConditions>
+              <NullValue>Default</NullValue>
+              <RelativeDateItems />
+              <ShowGrandTotal>false</ShowGrandTotal>
+              <ShowOtherGroup>false</ShowOtherGroup>
+              <SortDirection>Ascending</SortDirection>
+              <SummaryType>None</SummaryType>
+              <TopCount>0</TopCount>
+              <TopNSummaryType>None</TopNSummaryType>
+              <TopNDateFormat>None</TopNDateFormat>
+              <TreeNodeType>Table</TreeNodeType>
+              <UniqueColumnName>Expression Fields</UniqueColumnName>
+              <Values />
+            </Parent>
+            <PrimaryKeyColumn />
+            <RelativeDateItems />
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <SortDirection>Ascending</SortDirection>
+            <SummaryType>Sum</SummaryType>
+            <TableName>ExpenseAnalysisData</TableName>
+            <TopCount>0</TopCount>
+            <TopNSummaryType>None</TopNSummaryType>
+            <TopNDateFormat>None</TopNDateFormat>
+            <TreeNodeType>Folder</TreeNodeType>
+            <UniqueColumnName>Negative</UniqueColumnName>
+            <Values />
+          </FieldInfo>
+          <FieldInfo>
+            <ActualDataType>Double</ActualDataType>
+            <AxisType>None</AxisType>
+            <Caption>Balance</Caption>
+            <ColumnName>Balance</ColumnName>
+            <ColumnType>CalculatedMeasure</ColumnType>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <CustomColumnType>Measure</CustomColumnType>
+            <IsCustomDateApplied>false</IsCustomDateApplied>
+            <DataSourceName>Personal Expense Analysis (Random data)</DataSourceName>
+            <DataType>Double</DataType>
+            <DateTimeFormat>None</DateTimeFormat>
+            <DefaultDataType>Double</DefaultDataType>
+            <DisplaySeries>None</DisplaySeries>
+            <Expression>
+              <ColumnNames />
+              <DisplayText>[Positive]-[Negative]</DisplayText>
+              <Expression>[Positive]-[Negative]</Expression>
+              <FormattedExpression>( CASE WHEN [dbo_ExpenseAnalysisData].[AccountType]='Positive' THEN [dbo_ExpenseAnalysisData].[Amount] ELSE 0 END )-( CASE WHEN [dbo_ExpenseAnalysisData].[AccountType]='Negative' THEN [dbo_ExpenseAnalysisData].[Amount] ELSE 0 END )</FormattedExpression>
+              <IsUserFilter>false</IsUserFilter>
+              <PivotExpressionKeys />
+              <RootParentName>[dbo].[ExpenseAnalysisData]</RootParentName>
+              <Tables />
+              <DashboardParameter />
+              <IsDashboardParameter>false</IsDashboardParameter>
+              <UserFunctionType>CurrentUser</UserFunctionType>
+            </Expression>
+            <IsCustomSortApplied>false</IsCustomSortApplied>
+            <FilterValues />
+            <Format>Default</Format>
+            <FormatProperties>
+              <Culture>en-US</Culture>
+              <DecimalPoints>0</DecimalPoints>
+              <FormatType>Default</FormatType>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+              <Unit>Auto</Unit>
+            </FormatProperties>
+            <HasCondition>false</HasCondition>
+            <IsAggregation>false</IsAggregation>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <IsExpression>true</IsExpression>
+            <IsFilter>false</IsFilter>
+            <IsForeignKey>false</IsForeignKey>
+            <IsInclude>false</IsInclude>
+            <IsKpiSchema>false</IsKpiSchema>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsSelected>true</IsSelected>
+            <IsTop>false</IsTop>
+            <IsTopNDateFormat>false</IsTopNDateFormat>
+            <Key>[ExpenseAnalysisData].[Balance]</Key>
+            <LevelDepth>0</LevelDepth>
+            <MeasureConditions>Equals</MeasureConditions>
+            <NullValue>Default</NullValue>
+            <Parent>
+              <AxisType>None</AxisType>
+              <Caption>Expression Fields</Caption>
+              <ColumnName>Expression Fields</ColumnName>
+              <ColumnType>None</ColumnType>
+              <ConditionSummaryType>None</ConditionSummaryType>
+              <CustomColumnType>None</CustomColumnType>
+              <IsCustomDateApplied>false</IsCustomDateApplied>
+              <DateTimeFormat>None</DateTimeFormat>
+              <DisplaySeries>None</DisplaySeries>
+              <Expression>
+                <ColumnNames />
+                <IsUserFilter>false</IsUserFilter>
+                <PivotExpressionKeys />
+                <Tables />
+                <IsDashboardParameter>false</IsDashboardParameter>
+                <UserFunctionType>CurrentUser</UserFunctionType>
+              </Expression>
+              <IsCustomSortApplied>false</IsCustomSortApplied>
+              <FilterValues />
+              <Format>Default</Format>
+              <FormatProperties>
+                <Culture>en-US</Culture>
+                <DecimalPoints>0</DecimalPoints>
+                <FormatType>Default</FormatType>
+                <NegativeValueFormat>Default</NegativeValueFormat>
+                <Prefix />
+                <Suffix />
+                <Unit>Auto</Unit>
+              </FormatProperties>
+              <HasCondition>false</HasCondition>
+              <IsAggregation>false</IsAggregation>
+              <IsDataTypeChanged>false</IsDataTypeChanged>
+              <IsExpression>true</IsExpression>
+              <IsFilter>false</IsFilter>
+              <IsForeignKey>false</IsForeignKey>
+              <IsInclude>false</IsInclude>
+              <IsKpiSchema>false</IsKpiSchema>
+              <IsMeasureFilter>false</IsMeasureFilter>
+              <IsPrimaryKey>false</IsPrimaryKey>
+              <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+              <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+              <IsSelected>true</IsSelected>
+              <IsTop>false</IsTop>
+              <IsTopNDateFormat>false</IsTopNDateFormat>
+              <Key>[Expression].[Fields]</Key>
+              <LevelDepth>0</LevelDepth>
+              <MeasureConditions>Equals</MeasureConditions>
+              <NullValue>Default</NullValue>
+              <RelativeDateItems />
+              <ShowGrandTotal>false</ShowGrandTotal>
+              <ShowOtherGroup>false</ShowOtherGroup>
+              <SortDirection>Ascending</SortDirection>
+              <SummaryType>None</SummaryType>
+              <TopCount>0</TopCount>
+              <TopNSummaryType>None</TopNSummaryType>
+              <TopNDateFormat>None</TopNDateFormat>
+              <TreeNodeType>Table</TreeNodeType>
+              <UniqueColumnName>Expression Fields</UniqueColumnName>
+              <Values />
+            </Parent>
+            <PrimaryKeyColumn />
+            <RelativeDateItems />
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <SortDirection>Ascending</SortDirection>
+            <SummaryType>Sum</SummaryType>
+            <TableName>ExpenseAnalysisData</TableName>
+            <TopCount>0</TopCount>
+            <TopNSummaryType>None</TopNSummaryType>
+            <TopNDateFormat>None</TopNDateFormat>
+            <TreeNodeType>Folder</TreeNodeType>
+            <UniqueColumnName>Balance</UniqueColumnName>
+            <Values />
+          </FieldInfo>
+        </Fields>
+        <Header>ExpenseAnalysisData</Header>
+        <NodeType>Table</NodeType>
+        <TableKey>[dbo].[ExpenseAnalysisData]</TableKey>
+        <TableRelationships />
+        <UniqueColumnName>dbo_ExpenseAnalysisData</UniqueColumnName>
+        <LocationX>302.25</LocationX>
+        <LocationY>115.25</LocationY>
+      </Table>
+    </TreeViewSchemaInfo>
+    <TableRelationshipInformation />
+    <DashboardParameters />
+  </DataSource>
+</DataSources>
