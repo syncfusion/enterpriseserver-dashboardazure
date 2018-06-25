@@ -1,0 +1,292 @@
+﻿@{
+    ViewBag.Title = GlobalAppSettings.SystemSettings.OrganizationName + " - [[[Homepages]]]";
+    ViewBag.MessageBox = true;
+    var baseUrl = ViewBag.BaseUrl;
+    var dashboardServiceUrl = GlobalAppSettings.SystemSettings.DashboardServiceUrl;
+    var dashboardServiceResourceUrl = GlobalAppSettings.SystemSettings.DashboardServiceResourceUrl;
+    var isDebug = GlobalAppSettings.SystemSettings.IsDebug;
+    var urlContent = Url.Content("~/");
+    var isHomepageExists = Convert.ToBoolean(ViewBag.IsHomepageExists);
+    var isDefaultHomepage = Convert.ToBoolean(ViewBag.IsDefaultHomepage);
+    var isHomePageInfoByName = Convert.ToBoolean(ViewBag.IsHomepageInfoByName);
+    var defaultHomepageDetail = (HomepageDetail)ViewBag.DefaultHomepageDetail;
+    var homepageInfo = (HomepageDetail)ViewBag.HomepageInfo;
+    var allHomepagesCount = ViewBag.UserHomepageCount;
+}
+@section styles{
+    @Styles.Render("~/styles/homepages-page")
+}
+@section scripts{
+    @Scripts.Render("~/scripts/homepages-page", "~/scripts/dashboard-render-ejviewer", "~/scripts/dashboard-render-ejvisualizationcontrols", "~/scripts/dashboard-render-ejchart")
+@if (isDebug)
+{
+    <script src="@(dashboardServiceResourceUrl + "/scripts/ej.dashboardViewer.all.min.js")"></script>
+}
+    <script type="text/javascript">
+        var allHomepages = @Html.Raw(@ViewBag.UserHomepages);
+        var allHomepagesCount = allHomepagesCount;
+        var baseUrl = "@baseUrl";
+        var dashboardServiceUrl = "@dashboardServiceUrl";
+        var urlContent = "@Url.Content("~/")";
+        var deleteHomepageUrl = "@Url.Action("deletehomepage", "homepages")";
+        var changeLayoutUrl = "@Url.Action("onlayoutchange", "homepages")";
+        var dragAndDropUrl = "@Url.Action("ondraganddrop","homepages")";
+        var unPinUrl = "@Url.Action("onunpin","homepages")";
+        var homepageActionUrl = "@Url.Action("homepageaction","homepages")";
+        var setRemoveDefaultHomepageUrl="@Url.Action("setremovedefaulthomepage","homepages")";
+        var homepageAddItemUrl = "@Url.Action("homepageadditem","homepages")";
+        var addCategoryIframeUrl = "@Url.Action("addcategory", "category")";
+        var addDatasourceIframeUrl = "@Url.Action("adddatasource", "datasources")";
+        var addFileIframeUrl = "@Url.Action("AddFile", "Files")";
+        var addDashboardIframeUrl = "@Url.Action("AddDashboard", "dashboards")";
+        var schedulerIframeUrl = "@Url.Action("GetSchedulerDialog", "scheduler")";
+        var addWidgetUrl = "@Url.Action("addwidget", "widgets")";
+        var addHomepageUrl = "@Url.Action("addhomepage", "homepages")";
+        var getHomepageDetails = "@Url.Action("gethomepagedetails", "homepages")";
+        var checkHomepageNameExistsUrl = "@Url.Action("checkhomepagenameexist", "homepages")";
+        var renameHomepageUrl = "@Url.Action("edithomepage", "homepages")";
+        var duplicateHomepageUrl = "@Url.Action("duplicatehomepage", "homepages")";
+        var addHomepageUrl = "@Url.Action("addhomepage", "homepages")";
+        var pinWidgetUrl = "@Url.Action("pinitemtohomepage", "homepages")";
+        var dashboards = "@Url.Action("Dashboards","Dashboards")";
+        var widgets = "@Url.Action("widgets","widgets")";
+        var homepages = "@Url.Action("homepages","homepages")";
+        var dashboardViewerObject = null;
+
+        serverApp.controller("homepagesController", ["$scope", function ($scope) {
+            $scope.allHomepages=allHomepages;
+        }]);
+        window.IsHomepagesPage = true;
+    </script>
+}
+@section MainSection{
+    <div id="homepage-page-container" ng-app="serverApp" ng-controller="homepagesController">
+        <div id="homepage-header">
+            <div id="element-container">
+                <div id="homepage-menu" class="su su-mobile-menu-icon">
+                    <span id="homepage-list-container">
+                        <select data-live-search="true" class="selectpicker" id="homepage-list" data-size="11" title="" data-original-value="null" style="float: right; display:none;">
+                            <option data-hidden="true" value=""></option>
+                            <option ng-repeat="homepage in allHomepages|orderBy:'Name'" data-homepage-id="{{homepage.Id}}" value="{{homepage.Name}}">{{homepage.Name}}</option>
+                        </select>
+                    </span>
+                </div>
+                <div id="homepage-name" data-toggle="tooltip" data-placement="top" data-original-title=""></div>
+                <div id="options-container">
+                    <span id="homepage-options" class="dropdown-toggle su su-options-menu" data-toggle="dropdown"></span>
+                    <ul class="dropdown-menu" id="options" role="menu">
+                        @if (!DeviceDetection.IsMobile)
+                        {
+                            <li id="rename">[[[Rename]]]</li>
+                            <li id="duplicate">[[[Duplicate]]]</li>
+                            <li id="delete">[[[Delete]]]</li>
+                        }
+                        @if ((!isDefaultHomepage && defaultHomepageDetail != null) || (isHomePageInfoByName && !homepageInfo.IsDefaultHomepage) || (!isDefaultHomepage && !isHomePageInfoByName))
+                        {
+                            <li id="make-default" class="make-default">
+                                [[[Set as default homepage]]]
+                            </li>
+                        }
+                        else
+                        {
+                            <li id="remove-default" class="make-default">
+                                [[[Remove default homepage]]]
+                            </li>
+                        }
+                    </ul>
+                </div>
+                @if (!DeviceDetection.IsMobile)
+                {
+                    <div id="button-container">
+                        <div id="layout-container">
+                            <div id="layout" class="dropdown-toggle" data-toggle="dropdown">[[[Edit Layout]]]</div>
+                            <div class="dropdown-menu" id="layout-items" role="menu">
+                                <span class="su su-single-column" id="1"></span>
+                                <span class="su su-two-column" id="11"></span>
+                                <span class="su su-small-big-column" id="12"></span>
+                                <span class="su su-big-small-column" id="21"></span>
+                                <span class="su su-three-column" id="111"></span>
+                            </div>
+                        </div>
+                        <div id="divider"></div>
+                        <div id="add-button-container">
+                            <button class="dropdown-toggle primary-button" data-toggle="dropdown" id="add-button">
+                                <span>[[[Add Homepage]]] </span>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" id="add-homepage-options" role="menu">
+                                <li id="add-homepage">[[[Empty Homepage]]]</li>
+                                <li id="add-dashboard-homepage">[[[Pin Dashboard]]]</li>
+                            </ul>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        @if (!DeviceDetection.IsMobile)
+        {
+            <div id="initial-message" class="hidden"><span id="message"><span class="su su-info"></span><span>[[[You have not pinned any widget to the homepage yet. Start tracking data from multiple dashboards. Click pin icon on dashboard widgets to pin widgets to home screen.]]]</span><span id="close-icon"><span class="su su-close" data-toggle="tooltip" data-placement="top" data-container="body" title="[[[Close]]]"></span></span></span></div>
+        }
+        <div id="widget-container" data-homepage-id="" data-current-layout="" data-virtual-homepage="">
+            @if (allHomepagesCount != 0 && (!isDefaultHomepage && !isHomePageInfoByName) && isHomepageExists)
+    {
+                <div id="default-homepage-detail">
+                    <div>[[[The homepage is the initial screen that is seen when a dashboard server is launched. It can either contain individual widgets from other dashboards or have entire dashboards pinned to it.]]]</div>
+                    <div id="select-default-content">[[[Select a homepage to set as default.]]]</div>
+                </div>
+                <div id="no-default-homepage-container">
+                    <select class="selectpicker" id="select-default-homepage" data-live-search="true" data-size="10" title="" data-original-value="">
+                        <option data-hidden="true" value="">Select a default homepage</option>
+                        <option ng-repeat="homepage in allHomepages|orderBy:'Name'" value="{{homepage.Id}}">{{homepage.Name}}</option>
+                    </select>
+                    <input type="button" id="set-default-button" class="btn primary-button" value="[[[Apply]]]">
+                </div>
+            }
+            @if (allHomepagesCount <= 0 && isHomepageExists)
+    {
+                <div id="homepage-detail">
+                    <div id="default-content-detail">
+                        <div>
+                            [[[The homepage is the initial screen that is seen when a dashboard server is launched. It can either contain individual widgets from other dashboards or have entire dashboards pinned to it. It is possible to create multiple homepages, but only one can be active.]]]
+                        </div>
+                        @if (DeviceDetection.IsMobile)
+                        {
+                            <div id="login-message">[[[You need to log in with a desktop client to be able to create and configure homepages.]]]</div>
+                        }
+                    </div>
+                </div>
+                if (!DeviceDetection.IsMobile)
+                {
+                    <div id="add-button-wrapper">
+                        <div id="add-button-container">
+                            <button class="dropdown-toggle primary-button" data-toggle="dropdown" id="add-button">
+                                <span>[[[Add Homepage]]] </span>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" id="add-homepage-options" role="menu">
+                                <li id="add-homepage">[[[Empty Homepage]]]</li>
+                                <li id="add-dashboard-homepage">[[[From Dashboard]]]</li>
+                            </ul>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+    <div id="homepage-action-popup" class="no-padding">
+        <div id="homepage-option-container" class="dialog">
+            <div class="col-md-12 dialog-header">
+                <span class="su su-nav-home Head-icon"></span>
+                <span class="PopupTitle"></span>
+                <a href="javascript:void(0);" data-toggle="tooltip" data-placement="left" data-container="body" title="[[[Close]]]" class="PopupClose" onclick="closeHomepageActionPopup()"><span class="su su-close"></span></a>
+                <div id="homepage-name"><div id="name" data-toggle="tooltip" data-placement="bottom" data-original-title="" title=""></div></div>
+            </div>
+
+            <form class="dialog-body col-xs-12 no-padding" id="homepage-option-form" data-homepage-id="">
+                <div>
+                    <div class="col-xs-12 padding20 no-bottom-padding" id="item-name-division">
+                        <div class="col-xs-4 no-padding text-right text-label">[[[Name]]]<span class="mandatory">*</span></div>
+                        <div class="col-xs-1 no-padding"></div>
+                        <div class="col-xs-7 no-padding">
+                            <input type="text" id="homepage-new-name" name="homepagenewname" maxlength="255" value="" class="form-control site-orgname-fields text" autofocus />
+                            <span class="validation-errors"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12" id="default-homepage-section">
+                        @Html.Label("makedefault", "[[[Make default]]]", new { @class = "col-xs-4 no-padding text-right text-label", @id = "make-default-label" })
+                        <div class="col-xs-4 makedefault switch-align">
+                            <span class="material-switch text-left">
+                                <input type="checkbox" id="makedefault" name="make-default" />
+                                <label for="makedefault" class="label-primary"></label>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 display-none" id="filter-container">
+                        @Html.Label("keepfilter", "[[[Keep filters]]]", new { @class = "col-xs-4 no-padding text-right text-label", @id = "keep-filter-label" })
+                        <div class="col-xs-4 keepfilter switch-align">
+                            <span class="material-switch text-left">
+                                <input type="checkbox" id="keepfilter" name="keep-filter" checked />
+                                <label for="keepfilter" class="label-primary"></label>
+                            </span>
+                        </div>
+                        <div id="info-tag">
+                            <span id="filter-info" class="su su-info info-popup" data-toggle="popover" data-placement="top" data-content="[[[When keep filter is switched on, the widget will be pinned into the Homepage in the current filtered state.]]]"></span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="col-xs-12 dialog-footer no-right-padding no-left-padding" id="action-button-division">
+                <div class="rightAlign">
+                    <input type="button" title="" data-value="" id="save-button" class="btn primary-button" value=[[[Save]]] />
+                    <input type="button" id="cancel-button" title="" class="btn secondary-button" value="[[[Cancel]]]" onclick="closeHomepageActionPopup()" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="add-item-popup" class="no-padding">
+        <iframe id="add-item-popup-iframe" class="" style="width: 100%;height: 100%;border: none"></iframe>
+    </div>
+    <div id="maximize" class="display-none">
+        <div id="wrapper-div"></div>
+        <div id="maximize_container"></div>
+    </div>
+    <div id="popup-container" style="display:none" class="no-padding">
+        <iframe id="scheduler-popup-iframe" class="datasource-popup-frame"></iframe>
+    </div>
+    <div>
+    <input type="hidden" value="@GlobalAppSettings.SystemSettings.DateFormat" id="dateFormat" />
+    <input type="hidden" value="@GlobalAppSettings.SystemSettings.TimeFormat.ToString()" id="timeFormat" />
+</div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            window.IsMobile = @Json.Encode(DeviceDetection.IsMobile);
+            if((@Json.Encode(DeviceDetection.IsMobile))){
+                window.screen.availWidth < 360 ? $("#set-default-button").addClass("align-button") : "";
+                $("#server-app-container").removeClass("avoid-overflow");
+            }
+            if((@Json.Encode(isDefaultHomepage))){
+                var defaultHomepageDetail = @Html.Raw(Json.Encode(defaultHomepageDetail));
+                $("#homepage-list").val(defaultHomepageDetail.Name);
+                $("#homepage-list").selectpicker("refresh");
+                createHomepageDom(defaultHomepageDetail);
+                renderItem(defaultHomepageDetail);
+                $("#server-app-container").removeClass("avoid-overflow");
+            }
+            else if((@Json.Encode(homepageInfo != null))) {
+                var homepageInfo = @Html.Raw(Json.Encode(homepageInfo));
+                $("#homepage-list").val(homepageInfo.Name);
+                $("#homepage-list").selectpicker("refresh");
+                createHomepageDom(homepageInfo);
+                renderItem(homepageInfo);
+                $("#server-app-container").removeClass("avoid-overflow");
+            }
+            else if((@Json.Encode(isHomepageExists))){
+                $("#homepage-options, #layout-container, #add-item, #divider").hide();
+                $("#server-app-container").removeClass("avoid-overflow");
+            }
+            else{
+                $("#options li#duplicate,#options li#delete").hide();
+                createVirtualHomepage();
+                $("#server-app-container").addClass("avoid-overflow");
+            }
+            addToolTip();
+            $('[data-toggle="tooltip"]').tooltip();
+            var maxIndex = getMaxZIndex() + 2;
+            $("#homepage-option-container a.PopupClose").trigger('mouseover').mouseover(function () { $(".tooltip").css("z-index", maxIndex); });
+            var itemType = $("#widget-container").attr("data-item-type").toLowerCase();
+            if (itemType != "dashboard") {
+                changeListOnWindowResize();
+            }
+        });
+    </script>
+    @Html.Partial("../Items/_AddItems")
+    @Styles.Render("~/styles/homepages-page-viewer-files")
+    @if (isDebug)
+    {
+        <link rel="stylesheet" type="text/css" href="@(dashboardServiceResourceUrl + "/themes/default-theme/ej.theme.min.css")" />
+        <link rel="stylesheet" type="text/css" href="@(dashboardServiceResourceUrl + "/themes/default-theme/ej.dashboardViewer.all.min.css")" />
+        <link rel="stylesheet" type="text/css" href="@(dashboardServiceResourceUrl + "/themes/ej.widgets.core.min.css")" />
+    }
+}

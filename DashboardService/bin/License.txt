@@ -1,0 +1,6 @@
+This prerequisite setup contains the packages forked from CefSharp (https://github.com/syncfusion/CefSharp) and precompiled executable file from PhantomJS (https://github.com/ariya/phantomjs). Please refer the respective license details.
+1) CefSharp
+   https://github.com/syncfusion/CefSharp/blob/master/LICENSE
+2) PhantomJS
+   https://github.com/ariya/phantomjs/blob/master/LICENSE.BSD
+   https://github.com/ariya/phantomjs/blob/master/third-party.txt

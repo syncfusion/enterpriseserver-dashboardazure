@@ -1,0 +1,12 @@
+﻿@{
+    if (!(HttpContext.Current.Request.IsAuthenticated && HttpContext.Current.User != null && HttpContext.Current.User.Identity != null && HttpContext.Current.User.Identity.IsAuthenticated))
+    {
+        Layout = null;   
+    }
+}
+
+<html>
+<body>
+    <div class="col-xs-12 text-center embedmessage" style="color: #ff0000; margin-top: 60px; font-size: 30px;display:none;">[[[Public Dashboards/Widgets disabled by the system administrator. Please contact your system administrator to enable this.]]]</div>
+</body>
+</html>

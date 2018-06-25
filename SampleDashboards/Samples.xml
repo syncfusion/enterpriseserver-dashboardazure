@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Samples>
+  <Categories>
+    <Category>
+      <Name>Sample Dashboards</Name>
+      <Description>Check our sample dashboards in this category</Description>
+      <Dashboards>
+        <Dashboard>
+          <Name>Website Visitor Analysis (Random data)</Name>
+          <Description>Analyze the user behavior for a fictitious ecommerce website</Description>
+          <FileName>Website Visitor Analysis (Random data).sydx</FileName>
+        </Dashboard>
+		<Dashboard>
+          <Name>Northwind Traders Sales Analysis</Name>
+          <Description>Analyze sales trends for different products</Description>
+          <FileName>Northwind Traders Sales Analysis.sydx</FileName>
+        </Dashboard>
+        <Dashboard>
+          <Name>Northwind Products and Suppliers Dashboard</Name>
+          <Description>Analyze the sales performance of different products    Information: This dashboard shows the popularity of different products sold in a fictitious company.</Description>
+          <FileName>Northwind Products and Suppliers Dashboard.sydx</FileName>
+        </Dashboard>
+        <Dashboard>
+          <Name>Customer Support Analysis (Random data)</Name>
+          <Description>Analyze the efficiency of customer support</Description>
+          <FileName>Customer Support Analysis (Random data).sydx</FileName>
+        </Dashboard>
+        <Dashboard>
+          <Name>London Olympic 2012 Medals Analysis</Name>
+          <Description>Analyze the final medals tally for the London Olympics 2012</Description>
+          <FileName>London Olympic 2012 Medals Analysis.sydx</FileName>
+        </Dashboard>
+	<Dashboard>
+          <Name>Manufacturing Dashboard</Name>
+          <Description>This dashboard shows, Production Quantity Vs Target Quantity- Current month, Rework Quantity - Current month vs Last Month, Manufacturing cost - Current Month vs Last Month and Labor Cost - Current Month vs Last Month, Run Time Vs Down Time in each Line (Hours) - Current Month, Production Quantity - Last 12 Months, Availability, Performance, Quality and Overall Equipment Effectiveness of Process.</Description>
+          <FileName>Manufacturing Dashboard.sydx</FileName>
+        </Dashboard>
+	<Dashboard>
+          <Name>Marketing Dashboard</Name>
+          <Description>Company A is selling different varieties of skating boards. This dashboard shows Current Month details of  Adcost, Clicks, Impressions, Leads, Cost per 1000 Impressions(CPM), Cost per Lead (CPL), Cost per Click (CPC), Click Through Rate (CTR), Return on Investment (ROI), Leads vs Won by Month, CPC vs CPM vs CPL by Month, Visitors vs New Visitors by Month.</Description>
+          <FileName>Marketing Dashboard.sydx</FileName>
+        </Dashboard>
+	<Dashboard>
+          <Name>Online Food Ordering Analysis</Name>
+          <Description>This Dashboard shows, Current Month details of Total Revenue, Total Expense, Bounces – Web Site, Entrances – Web Site, Total Customers Downloading the App, Order Accuracy, Total Restaurant by City, Web Site Vs Mobile App Orders - Last 3 Months, Total Orders by City - Last 3 Months, Rate of Return, Customer Rating vs Delivery Time in Minutes by Restaurant, Customer Satisfaction Rate, Refund % with Reason</Description>
+          <FileName>Online Food Ordering Analysis.sydx</FileName>
+        </Dashboard>
+	<Dashboard>
+          <Name>Sales Management Dashboard</Name>
+          <Description>This dashboard gives you insight over the Revenue and Expense details, Online vs. Store Sales comparison, Region-wise Revenue and Predicted Revenue for next 3 months.</Description>
+          <FileName>Sales Management Dashboard.sydx</FileName>
+        </Dashboard>
+	<Dashboard>
+          <Name>Telecom Dashboard</Name>
+          <Description>This dashboard shows the details of Subscribers,  Current Year -Total Revenue and Total Expense, Total Subscriber by State, Subscriber Segmentation by Service Type and Text, Voice and Data Service Utilization  by Quarter and Network Utilization by Subscribers per Month.Churn Rate: The churn rate, also known as the rate of attrition, is the percentage of subscribers to a service who discontinue their subscriptions to that service within a given time period.</Description>
+          <FileName>Telecom Dashboard.sydx</FileName>
+        </Dashboard>
+        <Dashboard>
+          <Name>FIFA World Cup 2014 - Brazil</Name>
+          <Description>Visualize the FIFA World cup tournament statistics</Description>
+          <FileName>FIFA World Cup 2014 - Brazil.sydx</FileName>
+        </Dashboard>
+        <Dashboard>
+          <Name>Retail Sales Analysis (Random data)</Name>
+          <Description>Analyze retail sales of a fictitious company</Description>
+          <FileName>Retail Sales Analysis (Random data).sydx</FileName>
+        </Dashboard>
+        <Dashboard>
+          <Name>Personal Expense Analysis (Random data)</Name>
+          <Description>Analyze the spending patterns of an individual</Description>
+          <FileName>Personal Expense Analysis (Random data).sydx</FileName>
+        </Dashboard>
+        <Dashboard>
+          <Name>Patient Experience Analysis (Random data)</Name>
+          <Description>Analyze patient satisfaction trends during hospital visits</Description>
+          <FileName>Patient Experience Analysis (Random data).sydx</FileName>
+        </Dashboard>
+        <Dashboard>
+          <Name>Customer Support Representative Performance Analysis (Ranom data)</Name>
+          <Description>Analyze the performance of a support representative</Description>
+          <FileName>Customer Support Representative Performance Analysis (Ranom data).sydx</FileName>
+        </Dashboard>
+        <Dashboard>
+          <Name>Worldwide Car Sales (Random data)</Name>
+          <Description>Visualize trends in worldwide car sales</Description>
+          <FileName>Worldwide Car Sales (Random data).sydx</FileName>
+        </Dashboard>
+		<Dashboard>
+          <Name>Tickets Sold Analysis Dashboard</Name>
+          <Description>Analysis the tickets sold in theater</Description>
+          <FileName>Tickets Sold Analysis Dashboard.sydx</FileName>
+        </Dashboard>
+      </Dashboards>
+    </Category>
+    <!-- 	<Category>
+		<Name>Sample Dashboards - 1</Name>
+		<Description>Check our Sample dashboards 1</Description>
+		<Dashboards>
+		  <Dashboard>
+			<Name>Worldwide Car Sales (Random data)</Name>
+			<Description>Visualize trends in worldwide car sales</Description>
+			<FileName>Worldwide Car Sales (Random data).sydx</FileName>
+		  </Dashboard>
+		</Dashboards>
+	</Category> -->
+  </Categories>
+  <DataSources>
+    <Datasource>
+      <Name>Olympics 2012 Dashboard_MedalsPerCapita</Name>
+      <Description>This dashboard represents medals details in Olympics 2012</Description>
+      <FileName>Olympics 2012 Dashboard_MedalsPerCapita.syds</FileName>
+    </Datasource>
+    <Datasource>
+      <Name>Olympics 2012 Dashboard_OlympicsDS</Name>
+      <Description>This dashboard represents medals details in Olympics 2012</Description>
+      <FileName>Olympics 2012 Dashboard_OlympicsDS.syds</FileName>
+    </Datasource>
+    <Datasource>
+      <Name>Worldwide Car Sales (Random data)</Name>
+      <Description>Visualize trends in worldwide car sales</Description>
+      <FileName>Worldwide Car Sales (Random data).syds</FileName>
+    </Datasource>
+    <Datasource>
+      <Name>Patient Experience Analysis (Random data)</Name>
+      <Description>Analyze patient satisfaction trends during hospital visits</Description>
+      <FileName>Patient Experience Analysis (Random data).syds</FileName>
+    </Datasource>
+    <Datasource>
+      <Name>Customer Support representative performance analysis (Random data)</Name>
+      <Description>Analyze the performance of a support representative</Description>
+      <FileName>Customer Support representative performance analysis(Random data).syds</FileName>
+    </Datasource>
+    <Datasource>
+      <Name>Personal Expense Analysis (Random data)</Name>
+      <Description>Analyze the spending patterns of an individual</Description>
+      <FileName>Personal Expense Analysis (Random data).syds</FileName>
+    </Datasource>
+    <Datasource>
+      <Name>Northwind Products and Suppliers Dashboard</Name>
+      <Description>Analyze the sales performance of different products    Information: This dashboard shows the popularity of different products sold in a fictitious company.</Description>
+      <FileName>Northwind Products and Suppliers Dashboard.syds</FileName>
+    </Datasource>
+    <Datasource>
+      <Name>Northwind Traders Sales Analysis</Name>
+      <Description>Analyze sales trends for different products</Description>
+      <FileName>Northwind Traders Sales Analysis.syds</FileName>
+    </Datasource>
+    <Datasource>
+      <Name>Website Visitor Analysis (Random data)</Name>
+      <Description>Analyze the user behavior for a fictitious ecommerce website</Description>
+      <FileName>Website Visitor Analysis (Random data).syds</FileName>
+    </Datasource>
+    <Datasource>
+      <Name>Retail Sales Analysis (Random data)</Name>
+      <Description>Analyze retail sales of a fictitious company</Description>
+      <FileName>Retail Sales Analysis (Random data).syds</FileName>
+    </Datasource>
+    <Datasource>
+      <Name>Customer Support Analysis (Random data)</Name>
+      <Description>Analyze the efficiency of customer support</Description>
+      <FileName>Customer Support Analysis (Random data).syds</FileName>
+    </Datasource>
+    <Datasource>
+      <Name>FIFA World Cup 2014 - Brazil</Name>
+      <Description>Visualize the FIFA World cup tournament statistics</Description>
+      <FileName>FIFA World Cup 2014 - Brazil.syds</FileName>
+    </Datasource>
+  </DataSources>
+  <Widgets>
+    <Widget>
+      <Name>Patient Experience Analysis (Random data)</Name>
+      <Description>Average waiting time of a patient department-wise in hospital</Description>
+      <FileName>Average waiting time by Department.sydw</FileName>
+    </Widget>
+    <Widget>
+      <Name>Retail Sales Analysis (Random data)</Name>
+      <Description>Retail Sales Vs. Target by category</Description>
+      <FileName>Sales Vs Target per category.sydw</FileName>
+    </Widget>
+    <Widget>
+      <Name>Customer Support Analysis (Random data)</Name>
+      <Description>Top 5 Customer Support Representatives based on average resolution time</Description>
+      <FileName>Top 5 Support Representative.sydw</FileName>
+    </Widget>
+    <Widget>
+      <Name>North wind Products and Suppliers Dashboard</Name>
+      <Description>Top 5 Products based on their sales</Description>
+      <FileName>Top Products by Orders (maximum 5 products).sydw</FileName>
+    </Widget>
+    <Widget>
+      <Name>London Olympics 2012 medals analysis</Name>
+      <Description>Top 10 Medalists by Countries</Description>
+      <FileName>Total Medals by Top 10 Countries per capita.sydw</FileName>
+    </Widget>
+    <Widget>
+      <Name>North wind Traders Sales Analysis</Name>
+      <Description>North wind Traders Sales by Country</Description>
+      <FileName>Total sales by country.sydw</FileName>
+    </Widget>
+    <Widget>
+      <Name>FIFA World Cup 2014 – Brazil</Name>
+      <Description>Tournament statistics of FIFA World Cup 2014</Description>
+      <FileName>Tournament Summary.sydw</FileName>
+    </Widget>
+    <Widget>
+      <Name>Worldwide Car Sales (Random data)</Name>
+      <Description>Units sold country-wise across the world</Description>
+      <FileName>Units sold by country.sydw</FileName>
+    </Widget>
+    <Widget>
+      <Name>Website Visitor Analysis (Random data)</Name>
+      <Description>Website Visitors to Customers Conversion Rate</Description>
+      <FileName>Visitors to Customers Conversion Rate.sydw</FileName>
+    </Widget>
+  </Widgets>
+</Samples>
