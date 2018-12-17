@@ -60,7 +60,7 @@
     "SelectAppServiceNeedToDeploy": "[variables('AppServiceType')[parameters('SelectAppServiceNeedToDeploy')]]",
     "templatelink": "[concat('https://raw.githubusercontent.com/syncfusion/enterpriseserver-dashboardazure/master/armtemplates/v3.2.0.68/',parameters('StorageType'),'.json')]",
     "dsGithubUrl": "https://github.com/syncfusion/enterpriseserver-dashboardazure.git",
-    "umsGithubUrl": "https://github.com/syncfusion/enterpriseserver-umsazure.git",
+    "umsGithubUrl": "https://github.com/SyncfusionInstall/enterpriseserver-umsazure.git",
     "dsReleaseVersion": "v3.2.0.68",
     "umsReleaseVersion": "v2.1.0.23",
     "appSvcPlanSkuName": "B1",
