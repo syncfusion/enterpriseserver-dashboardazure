@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = GlobalAppSettings.SystemSettings.OrganizationName + " - [[[DashboardSettings]]]";
+    ViewBag.MessageBox = false;
+
+    var makepublic = GlobalAppSettings.SystemSettings.IsMarkItemsPublic;
+}
+
+@section styles{
+    @Styles.Render("~/styles/dashboard-settings")
+}
+
+@section scripts{
+   
+    @Scripts.Render("~/scripts/dashboard-settings")
+
+}
+
+@section MainSection{
+
+    @Html.Partial("_AdminMenu")
+
+    <div id="dashboard-settings-container" class="col-xs-12 admin-page-container">
+        <div id="dashboard-settings-header" class="col-xs-12 admin-page-header">
+            <hgroup>
+                <h1 class="h2 page-title">
+                    [[[DASHBOARD SETTINGS]]]
+                </h1>
+                <h5 class="page-description">
+                    [[[Configuration for the Dashboards]]]
+                </h5>
+            </hgroup>
+        </div>
+        <div id="dashboard-settings-body" class="admin-page-body">
+            <div class="row input-field-wrapper">
+                <div class="col-xs-8 field-container-dashboard bottom-width ">
+                    <div class="col-md-4">
+                    </div>
+
+                    <div class="col-md-2 text-center notification-header">
+                        <strong>[[[Allow]]]</strong>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8 field-container-dashboard">
+                        <label class="col-md-4 app-textbox-label activation">
+                            [[[Mark dashboards and widgets as public]]]
+
+                        </label>
+
+                        <div class="col-md-2 text-center switch-align">
+                            <span class="material-switch text-left">
+                               <input type="checkbox" id="restrict-makepublic-dashboard" @(makepublic ? "checked" : string.Empty) />
+
+                                <label for="restrict-makepublic-dashboard" class="label-primary"></label>
+                            </span>
+                            <div class="tool-tip col-xs-1">
+                                <span class="dropdown-toggle" data-toggle="dropdown"><span class="su su-info" title=""></span></span>
+                                <div class="dropdown-menu" role="menu">[[[If disabled, anonymous users cannot open current public dashboards and widgets. Click on public ]]] <a href="~/dashboards/public">[[[dashboards]]] </a> [[[and]]] <a href="~/widgets/public">[[[widgets]]]</a> [[[to view them.]]]</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="admin-page-actions col-xs-12 col-md-12">
+            <a href="@Url.Action("dashboards", "dashboards")" class="secondary-button pull-right" id="cancel-dashboard-settings" title="">[[[Cancel]]]</a>
+            <input type="button" title="" data-url="@Url.Action("updatedashboardsettings", "administration")" id="update-dashboard-settings" class="primary-button pull-right" value="[[[Save]]]" />
+        </div>
+    </div>
+}

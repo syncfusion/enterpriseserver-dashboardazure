@@ -1,0 +1,104 @@
+﻿@import (reference) "Mixins.less";
+
+body {
+    #notification-content-area .notification-content-container-partial, #notification-content {
+        #scroll-element {
+
+            .e-scrollbar .e-vhandlespace {
+                background: #ECEDEE !important;
+            }
+
+            .e-scrollbar .e-vhandle, .e-scrollbar .e-hhandle, .e-scrollbar .e-button {
+                border-radius: 10px;
+                border-top: 0px !important;
+                border-bottom: 0px !important;
+                background-color: @profile-border-color !important;
+            }
+
+            .e-content {
+                height: inherit !important;
+            }
+
+            .e-vup, .e-vdown {
+                display: none;
+            }
+        }
+
+        .notification-list-ul {
+            padding-left: 0;
+
+            li {
+                border-bottom: 1px solid @notification;
+                float: left;
+                list-style: none;
+                height: auto;
+                padding-bottom: 10px;
+                cursor: default;
+
+                p {
+                    padding-top: 10px;
+
+                    .notification-picture-menu {
+                        float: left;
+                        width: 15%;
+
+                        img {
+                            margin-left: 10px;
+                            margin-top: 6px;
+                        }
+                    }
+
+                    .notification-text-content {
+                        float: left;
+                        font-size: @app-large-text-size;
+                        width: 85%;
+                        color: #333;
+
+                        a {
+                            color: @primary-color;
+                            text-decoration: none;
+                        }
+                    }
+                }
+
+                .time-option {
+                    color: @header-bg;
+                    float: left;
+                    font-size: @info-large-text-size;
+                    margin-left: 55px;
+                }
+            }
+
+            li:last-child {
+                margin-bottom: 10px;
+            }
+        }
+
+        .additional-content {
+            text-align: center;
+            color: #333;
+
+            #action-btn {
+                color: @primary-color;
+                cursor: pointer;
+                width: 100%;
+            }
+        }
+
+        .e-waitpopup-pane .e-image {
+            background-position: center center;
+            background-repeat: no-repeat;
+            border-radius: 15px;
+            display: block;
+            height: 30px;
+            margin: 0 auto;
+            position: relative;
+            width: 30px;
+        }
+
+        .e-waitpopup-pane .e-image {
+            background-color: @secondary-btn-bg;
+            background-image: url("/content/styles/essentialjs/images/waitingpopup_small.gif");
+        }
+    }
+}

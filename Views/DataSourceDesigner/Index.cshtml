@@ -1,0 +1,310 @@
+﻿@{
+    Layout = null;
+    var displayName = HttpContext.Current.Session["displayname"] != null ? HttpContext.Current.Session["displayname"].ToString() : string.Empty;
+    var emailAddress = HttpContext.Current.Session["emailaddress"] != null ? HttpContext.Current.Session["emailaddress"].ToString() : string.Empty;
+    var userId = (HttpContext.Current.User as ServerPrincipal) != null ? (HttpContext.Current.User as ServerPrincipal).UserId : 0;
+    var userName = (HttpContext.Current.User as ServerPrincipal) != null ? (HttpContext.Current.User as ServerPrincipal).UserName : string.Empty;
+    var notificationCount = userId != 0 ? new NotificationManagement().GetUnreadNotificationCount() : 0;
+    var appLogo = GlobalAppSettings.SystemSettings.StorageType == (int)StorageType.AzureBlob ?
+            GlobalAppSettings.AzureBlob.AzureBlobStorageUri + "/" + GlobalAppSettings.AzureBlob.AzureBlobStorageContainerName + "/" + GlobalAppSettings.GetStorageMode() + "/Content/Images/Application/" + GlobalAppSettings.SystemSettings.MainScreenLogo :
+            Url.Content("~/Content/Images/Application/" + GlobalAppSettings.SystemSettings.MainScreenLogo);
+    var defaultAppLogo = Url.Content("~/Content/Images/Application/Main_Logo.png");
+    var currentUrlLocalPath = HttpContext.Current.Request.Url.LocalPath.ToLower();
+    var currentUrl = HttpContext.Current.Request.RawUrl.ToString();
+    var isDebug = GlobalAppSettings.SystemSettings.IsDebug;
+    var umsUrl = GlobalAppSettings.SystemSettings.UmsUrl;
+
+    var isImageRequest = currentUrl.IndexOf(".png", StringComparison.CurrentCultureIgnoreCase) > 0 ||
+                        currentUrl.IndexOf(".jpg", StringComparison.CurrentCultureIgnoreCase) > 0 ||
+                        currentUrl.IndexOf(".gif", StringComparison.CurrentCultureIgnoreCase) > 0;
+
+    var dashboardPageUrl = Url.Action("Dashboards", "Dashboards");
+    var widgetsPageUrl = Url.Action("Widgets", "Widgets");
+    var dataSourcesPageUrl = Url.Action("DataSources", "DataSources");
+    var schedulePageUrl = Url.Action("Schedules", "Scheduler");
+    var profilePageUrl = Url.Action("Profilepage", "User");
+    var filesPageUrl = Url.Action("Files", "Files");
+    var homepagePageUrl = Server.UrlDecode(Url.Action("Homepages", "Boards"));
+    var isMobile = DeviceDetection.IsMobile;
+    var slideshowPageUrl = Url.Action("Slideshows", "Slideshow");
+}
+<!DOCTYPE html>
+
+<html style="height:100%;width:100% ; overflow:hidden;">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" />
+
+    <meta name="dashboard_service:url" content="@GlobalAppSettings.SystemSettings.BaseUrl/api/DashboardService" />
+    <meta name="designer_service:url" content="@GlobalAppSettings.SystemSettings.BaseUrl/webdesignerservice/v1.0/design" />
+    <meta name="data_service:url" content="@GlobalAppSettings.SystemSettings.BaseUrl/webdesignerservice/v1.0/datahandler" />
+    <meta name="ums:url" content="@GlobalAppSettings.SystemSettings.UmsUrl" />
+    <meta name="designer_service:access_token" content="@ViewBag.AccessToken" />
+
+    <meta name="datasource:version" content="@ViewBag.Version" />
+    <meta name="datasource:id" content="@ViewBag.DataSourceId" />
+    <meta name="datasource:name" content="@ViewBag.DataSourceName" />
+    <meta name="datasource:discription" content="@ViewBag.Description" />
+    <meta name="datasource:is_draft" content="@ViewBag.IsDraft" />
+
+    <meta name="isurlchange" content="@ViewBag.IsUrlChange" />
+
+    <meta name="user:culture" content="@ViewBag.Culture" />
+    <meta name="globalization:date_format" content="@GlobalAppSettings.SystemSettings.DateFormat" />
+    <meta name="globalization:time_format" content="@GlobalAppSettings.SystemSettings.TimeFormat.ToString()" />
+
+
+
+    @if (ViewBag.DataSourceName != null)
+    {
+        <title>@ViewBag.DataSourceName - [[[Design Datasource]]] - @GlobalAppSettings.SystemSettings.OrganizationName</title>
+    }
+    else
+    {
+        <title>Untitled - [[[Design Datasource]]] - @GlobalAppSettings.SystemSettings.OrganizationName</title>
+    }
+    <style>
+        .loader-icon {
+            display: block;
+        }
+
+        .loader-icon {
+            left: 0px !important;
+            position: relative;
+            margin: 0px auto;
+            width: 54px;
+            height: 54px;
+        }
+
+            .loader-icon .circular {
+                -webkit-animation: rotate 2s linear infinite;
+                animation: rotate 2s linear infinite;
+                height: 54px;
+                width: 54px;
+                position: relative;
+            }
+
+            .loader-icon .path {
+                stroke-dasharray: 1,200;
+                stroke-dashoffset: 0;
+                -webkit-animation: dash 1.5s ease-in-out infinite;
+                animation: dash 1.5s ease-in-out infinite;
+                stroke: #5592FB;
+                stroke-linecap: square;
+            }
+
+        @@keyframes rotate {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @@-webkit-keyframes rotate {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @@keyframes dash {
+            0% {
+                stroke-dasharray: 1,200;
+                stroke-dashoffset: 0;
+            }
+
+            50% {
+                stroke-dasharray: 89,200;
+                stroke-dashoffset: -35;
+            }
+
+            100% {
+                stroke-dasharray: 89,200;
+                stroke-dashoffset: -124;
+            }
+        }
+
+        @@-webkit-keyframes dash {
+            0% {
+                stroke-dasharray: 1,200;
+                stroke-dashoffset: 0;
+            }
+
+            50% {
+                stroke-dasharray: 89,200;
+                stroke-dashoffset: -35;
+            }
+
+            100% {
+                stroke-dasharray: 89,200;
+                stroke-dashoffset: -124;
+            }
+        }
+    </style>
+    <script>
+        var dashboardDesignerUrl = "@Url.Action("DashboardDesigner", "Designer")";
+        var getUserNotificationsPartialViewResultUrl = "@Url.Action("GetUserNotificationsPartialViewResultInIframe", "notification")";
+		var baseUrl = "@GlobalAppSettings.SystemSettings.BaseUrl"; // If you are working on local developemnt change the baseurl as localsource url
+        var currentUrl = "@currentUrl";
+        var dataSourcesPageUrl = "@dataSourcesPageUrl";
+        var organizationName = "@GlobalAppSettings.SystemSettings.OrganizationName"
+        var viewerStyles = "@Styles.Url("~/bundles/styles/dashboard-viewer")";
+        var viewerScript = "@Scripts.Url("~/bundles/scripts/dashboard-designer-viewer")";
+        var isDebug = "@isDebug";
+        var displayName = "@displayName";
+        var userId = "@userId";
+        var userName = "@userName";
+    </script>
+    <script type="text/javascript">
+        window.addEventListener("beforeunload", function (e) {
+            var confirmationMessage = "Are you sure you want to close? The current progress will be lost if you continue.";
+
+            if ($('#datasourceDesigner').data('ejDashboardDesigner').hasReportChanges()) {
+                (e || window.event).returnValue = confirmationMessage;
+                return 'false';
+            }
+            else {
+                return;
+            }
+        });
+    </script>
+</head>
+<body style="overflow: hidden; position: static; margin: 0; padding: 0; height: 100%; width: 100%">
+    <div class="preloader-wrap" style="width: 100%;height: 100%; position: fixed; top: 0; bottom: 0; background: #fff; z-index : 2; ">
+        <div id="loader_image" align="center" style="position:relative;top:39%;">
+            <div class="loader-blue loader-icon" id="loader-icon">
+                <svg class="circular">
+                    <circle class="path" cx="27" cy="27" r="20" fill="none" stroke-width="4" stroke-miterlimit="10"></circle>
+                </svg>
+            </div>
+        </div>
+        <div id="loader_text" align="center" style="font-family:Segoe UI;position:relative;top: 42%;font-size:21px;font-weight:400;">Initializing Datasource Designer</div>
+    </div>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    @Styles.Render("~/bundles/styles/dashboard-designer-service")
+    @Styles.Render("~/bundles/styles/datasource-designer")
+
+    @Scripts.Render("~/bundles/scripts/dashboard-designer-service")
+    @Scripts.Render("~/bundles/scripts/datasource-designer")
+    <script>
+        $.getScript("/webdesignerservice/scripts/shapefiles/worldmap_countries.js", function () { });
+    </script>
+    <script src="~/signalr/hubs"></script>
+    @Scripts.Render("~/bundles/scripts/signalr-bundle")
+
+    <div id="designer-header" class="custom-bootstrap-styles">
+        <div class="user-account">
+            <div id="account-profile" class="dropdown no-padding">
+                <span class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="profile-picture">
+                        <img alt="Profile Picture" src="@umsUrl/User/Avatar?Username=@(((ServerPrincipal)HttpContext.Current.User).UserName)&ImageSize=64" />
+                    </span>
+                </span>
+                <div class="dropdown-menu" id="profile-info-section" role="menu">
+                    <div class="profile-info col-lg-12">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td class="profile-picture-area">
+                                        <img alt="Profile Picture" src="@umsUrl/User/Avatar?Username=@(((ServerPrincipal)HttpContext.Current.User).UserName)&ImageSize=64" />
+                                    </td>
+                                    <td class="profile-info-area">
+                                        <ul class="no-margin no-padding">
+                                            <li id="profile-name">@displayName</li>
+                                            <li id="profile-email">@emailAddress</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="profile-buttons">
+                        <a href="@Url.Action("ProfilePage", "User")" class="profile-menu-action col-lg-6" title="[[[View my profile]]]">
+                            [[[PROFILE]]]
+                        </a>
+                        <a href="@Url.Action("logout", "accounts")" class="profile-menu-action col-lg-6" title="[[[Log Out]]]">
+                            [[[LOG OUT]]]
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pull-right" id="notification-section">
+            <div id="notification-link" class="dropdown no-padding">
+                <span id="notification-icon" class="su su-notification-alert dropdown-toggle" data-toggle="dropdown">
+                    @if (notificationCount != 0)
+                    {
+                        <span id="notification-indicator"></span>
+                    }
+                </span>
+                <div id="notification-content-area" class="dropdown-menu notification-content-area" role="menu">
+                    <div id="notification-header">
+                        <span> [[[Notifications]]]</span>
+                        <a href="@Url.Action("getusernotifications", "notification")">[[[View all]]]</a>
+                    </div>
+                    <div id="initial-no-notification-info">
+                        <div>[[[No notifications found]]]</div>
+                    </div>
+                    <iframe id="notification-list" class="notification-list"></iframe>
+                </div>
+            </div>
+        </div>
+
+        @*<div id="my-dashboards-section" class="dropdown no-padding pull-right">
+                <a class="my-dashboards-button" href="@Url.Action("Dashboards", "Dashboards")">
+                    [[[My Dashboards]]]
+                </a>
+            </div>*@
+        <div class="main-screen-logo">
+            <a href="@Url.Action("Dashboards", "Dashboards")" class="home-link" data-toggle="tooltip" data-placement="bottom" title="@GlobalAppSettings.SystemSettings.OrganizationName">
+                <img alt="Application Logo" id="application-logo" src="@appLogo" onerror="if (this.src !== '@defaultAppLogo') this.src = '@defaultAppLogo';" />
+            </a>
+        </div>
+        <div class="datasource-name">
+            <span class="edit-datasource">@ViewBag.DataSourceName</span>
+            <span class="datasource-status">[[[(Edited)]]]</span>
+            <span class="datasource-unsave" style="display:none">Unsaved Changes</span>
+        </div>
+    </div>
+
+    <div id="datasourceDesigner"></div>
+
+    <div id="messageBox">
+        <div class="message-header"></div>
+        <div class="message-box-close"></div>
+        <div class="message-content text-center"></div>
+        <div class="message-box-btn-holder"></div>
+    </div>
+
+    <div class="custom-bootstrap-styles custom-server-style">
+        <div id="success-alert">
+            <div id="image-container">
+                <div class="image-holder">
+                    <span class="su su-tick" alt="Success Icon"></span>
+                </div>
+            </div>
+            <div id="message">
+                <h1 id="message-header"></h1>
+                <span id="message-content"></span>
+            </div>
+        </div>
+        <div id="warning-alert">
+            <div id="image-container">
+                <span class="su su-warning-alt" alt="Warning Icon"></span>
+            </div>
+            <div id="message" class="div-close">
+                <h1 id="message-header"></h1>
+                <span id="message-content"></span>
+            </div>
+            <div class="close-div">
+                <span id="close-content">[[[Close]]]</span>
+            </div>
+        </div>
+    </div>
+    @if (isDebug)
+    {
+        <link href="~/webdesignerservice/Content/ej.dashboardviewer.all.min.css" rel="stylesheet" />
+        <script src="~/webdesignerservice/Scripts/ej.dashboardviewer.all.min.js"></script>
+    }
+</body>
+
+
+</html>

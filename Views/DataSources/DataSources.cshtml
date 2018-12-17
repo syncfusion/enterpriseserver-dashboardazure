@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = GlobalAppSettings.SystemSettings.OrganizationName + " - [[[Data Sources]]]";
+    var itemPermissions = ViewBag.ItemAddOptions as Dictionary<ItemType, bool>;
+    var dataSourcesPageUrl = Url.Action("DataSources", "DataSources");
+}
+
+@model List<ItemDetail>
+
+@section styles{
+     @Styles.Render("~/styles/dataSources")
+}
+
+@section scripts{
+    @(!DeviceDetection.IsMobile ? Scripts.Render("~/scripts/datasource-page") : Scripts.Render("~/scripts/datasource-page-mobile"))
+    <script>
+        var getDataSourceDetailsUrl = "@Url.Action("GetDataSourceDetails", "DataSources")";
+        var datasourceId = "@ViewBag.DataSourceId";
+        var datasourceName = "@ViewBag.DataSourceName";
+
+        $(document).ready(function () {
+            if (datasourceId != "" && datasourceId != undefined && datasourceName != "" && datasourceName != undefined) {                 
+                history.pushState({}, "", "@dataSourcesPageUrl");
+                SuccessAlert("[[[Create Data Source]]]", "[[[Data Source has been added successfully.]]]", 7000);
+            }
+        });
+    </script>
+}
+@section MainSection{
+    <div id="item-grid-container" data-grid-name="datasources" class="row admin-page-container">
+        <input type="hidden" class="page-name" data-content="[[[DATA SOURCES]]]">
+        @if (!DeviceDetection.IsMobile)
+        {
+        <div class="import-area admin-page-header">
+            <h2 class="page-title">[[[DATA SOURCES]]]</h2>
+        </div>
+        <div class="admin-page-body">
+            <div id="search-area" class="pull-right">
+                <input type="text" id="search-items" class="pull-left no-margin" placeholder="[[[Search data sources]]]" />
+                <span class="su close-icon su-inner-close pull-left no-margin clear-search" id="clear-search" data-toggle="tooltip" data-placement="left" title="[[[Clear search]]]"></span>
+                <span class="su su-search search-item pull-left no-margin" data-toggle="tooltip" data-placement="left" title="[[[Search data sources]]]"></span>
+            </div>
+
+            <input type="hidden" id="user-id" value="@((HttpContext.Current.User as ServerPrincipal).UserId)" />
+
+            <div class="grid-container grid">
+                @Html.Partial("../Items/_ItemsGrid", new ViewDataDictionary { { "gridName", "datasources" }, { "Permissions", @itemPermissions } })
+            </div>
+        </div>
+        }
+        else
+        {
+            <div class="grid-container grid">
+                @Html.Partial("../Items/_ItemsGridForMobile", new ViewDataDictionary { { "gridName", "datasources" } })
+            </div>
+        }
+    </div>
+    <div id="datasource-edit-popup">
+        <iframe id="datasource-edit-popup-iframe" class="datasource-popup-frame"></iframe>
+    </div>
+    <div id="popup-container" style="display:none" class="no-padding">
+        <iframe id="scheduler-popup-iframe" class="datasource-popup-frame"></iframe>
+    </div>
+    @if (!DeviceDetection.IsMobile)
+    {
+        @Html.Partial("../Items/_AddItems")
+        @Html.Partial("../Items/_ItemVersion")
+        @Html.Partial("../Items/_ItemPermission")
+    }
+}

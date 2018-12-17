@@ -1,0 +1,172 @@
+@{
+    ViewBag.Title = GlobalAppSettings.SystemSettings.OrganizationName + " - [[[Groups]]]";
+}
+
+@section styles{
+    @Styles.Render("~/styles/groups")
+}
+
+@section scripts{
+<script>
+        var groupPageUrl = "@Url.Action("group", "group")";
+        var getAllGroupsUrl = "@Url.Action("GetAllActiveGroups", "group")";
+</script>
+    @Scripts.Render("~/scripts/groups")
+
+    <script type="text/x-jsrender" id="group-profile-template">
+        <a class="item-name grid-content" title="{{:~renderDoubleQuotes(GroupName)}}" data-toggle="tooltip" href="@Url.Action("viewgroup", "group")/{{:GroupId}}">{{:GroupName}}</a>
+    </script>
+    <script type="text/x-jsrender" id="group-description-template">
+        <span class="grid-content" title="{{:~renderDoubleQuotes(GroupDescription)}}" data-toggle="tooltip">
+            {{:GroupDescription}}
+        </span>
+    </script>
+    <script type="text/x-jsrender" id="actions-template">
+        <div class="dropdown">
+            <span class="dropdown-toggle option-icon" data-toggle="dropdown">
+                <span class="su su-options"> </span>
+            </span>
+            <ul class="dropdown-menu" role="menu">
+                <li>
+                    <a href="@Url.Action("grouppermission","permission")?groupId={{:GroupId}}" data-groupid="{{:GroupId}}">
+                        <i class="su su-settings-2"></i>
+                        <span>[[[Manage Permissions]]]</span>
+                    </a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a href="@Url.Action("viewgroup","group")/{{:GroupId}}" data-groupid="{{:GroupId}}">
+                        <i class="su su-eye"></i>
+                        <span>[[[View]]]</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </script>
+    <script type="text/javascript">
+        var groups = @Html.Raw(@ViewBag.groups)
+            GridLocalization();
+        $(document).ready(function () {
+            $("#search-groups").val("");
+            addPlacehoder("#search-area");
+            $("#Grid").ejGrid({
+                dataSource: ej.DataManager({ url: "@Url.Action("RefreshGroup", "Group")", adaptor: "UrlAdaptor" }),
+                gridLines: ej.Grid.GridLines.None,
+                allowPaging: true,
+                enableAltRow: false,
+                locale: "en-US",
+                allowSorting: true,
+                allowSearching: true,
+                allowSelection: true,
+                allowFiltering: true,
+                selectionType: ej.Grid.SelectionType.Multiple,
+                selectionSettings: { selectionMode: ["row"] },
+                enableRowHover: true,
+                enableAltRow: false,
+                dataBound: function (args) {
+                    $('[data-toggle="tooltip"]').tooltip();
+                },
+                rowDataBound: function () {
+                    var height = $(".e-gridcontent").height();
+                    if (height != null) {
+                        rowBound();
+                    }
+
+                },
+                rowSelecting: function (e) {
+                    this.multiSelectCtrlRequest = true;
+                },
+                recordClick: "fnGroupRecordClick",
+                load: "fnOnGroupfLoad",
+                pageSettings: { pageSize: 20 },
+                filterSettings: { filterType: "menu" },
+                actionBegin: "fnOnGroupGridActionBegin",
+                actionComplete: "fnOnGroupGridActionComplete",
+                columns: [
+                    {
+                        template: true,
+                        allowSorting: true,
+                        allowFiltering: true,
+                        headerText: "[[[Name]]]",
+                        width: 115,
+                        headerTemplateID: "#name-header",
+                        templateID: "#group-profile-template",
+                        field: "GroupName",
+                        type: "string"
+                    },
+                    {
+                        field: "GroupDescription",
+                        headerText: "[[[Description]]]",
+                        allowSorting: true,
+                        allowFiltering: true,
+                        type: "string",
+                        width: 250,
+                        templateID: "#group-description-template",
+                        headerTemplateID: "#description-header"
+                    },
+                    {
+                        allowSorting: false,
+                        allowFiltering: false,
+                        field: "UsersCount",
+                        headerText: "[[[Users]]]",
+                        type: "string",
+                        width: 30
+                    },
+                    {
+                        template: true,
+                        allowSorting: false,
+                        allowFiltering: false,
+                        templateID: "#actions-template",
+                        width: 20
+                    }
+
+                ]
+
+            });
+
+            $.views.helpers({
+                renderDoubleQuotes: function (inputString) {
+                    return inputString.replace(new RegExp("\"", 'g'), '&quot;');
+                }
+            });
+
+            $("#body").ejWaitingPopup();            
+        });
+
+
+    </script>
+
+    <script type="text/x-jsrender" id="name-header">
+        <div class="item-name">[[[Name]]]</div>
+    </script>
+    <script type="text/x-jsrender" id="description-header">
+        <div class="item-header">[[[Description]]]</div>
+    </script>
+}
+@section MainSection{
+    @Html.Partial("../UserManagement/_UserMenu")
+
+    <div id="group-directory-container" role="tabpanel" class="row admin-page-container no-padding col-lg-12 pull-left" aria-labelledby="active-directory-settings-link">
+
+        <div class="col-md-12 import-area admin-page-header">
+            <hgroup class="col-lg-4 col-md-4 col-sm-6 col-xs-12 no-padding">
+                <h2 class="page-title no-padding">[[[GROUPS]]] (<span id="group-count">@ViewBag.groupCount</span>)</h2>
+            </hgroup>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 no-padding">
+                <button class="primary-button pull-right" id="group-synchronization" title="[[[Synchronize groups]]]">
+                    <span>[[[Synchronize]]] </span>
+                </button>
+            </div>
+        </div>
+        <div id="grid-container" class="col-lg-12 admin-page-body">
+            <div id="search-area" class="pull-right">
+                <input type="text" id="search-groups" class="pull-left no-margin" placeholder="[[[Search groups]]]" />
+                <span class="su close-icon su-inner-close pull-left no-margin" id="clear-search" data-toggle="tooltip" data-placement="top" data-container="body" title="[[[Clear search]]]"></span>
+                <span class="su su-search search-group pull-left no-margin" data-toggle="tooltip" data-placement="top" data-container="body" title="[[[Search]]]"></span>
+            </div>
+            <div id="Grid" data-gridName="Group" class="pull-left">
+            </div>
+        </div>
+    </div>
+}

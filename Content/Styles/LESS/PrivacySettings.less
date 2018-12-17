@@ -1,0 +1,57 @@
+﻿#privacy-settings-container {
+
+    .dialog-header {
+        .PopupTitle {
+            font-size: 14px;
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .report-name {
+            font-size: 10px;
+        }
+    }
+
+    .dialog-body {
+        .body-content-padding {
+            padding: 10px 10px 10px 23px;
+
+            input[type=radio] {
+                margin-top: 10px;
+            }
+
+            input[type="radio"][class="css-radio"] + label {
+                font-size: 12px;
+            }
+
+            input[type="radio"][class="css-radio"] + label span {
+                float: left;
+                margin-top: 13px;
+                padding-left: 10px;
+            }
+
+            .description {
+                margin-left: 43px;
+                margin-top: 3px !important;
+                font-weight: 100;
+                width: 90%;
+            }
+
+            .su-private:before, .su-public:before, .su-unlisted-eye:before {
+                margin-right: 15px;
+                font-size: 18px;
+            }
+        }
+
+        .footer-padding{
+            padding-bottom: 15px;
+        }
+
+        .primary-button:disabled
+            {
+            cursor: not-allowed;
+        }
+    }
+}
