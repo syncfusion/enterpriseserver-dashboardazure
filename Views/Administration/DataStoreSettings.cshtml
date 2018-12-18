@@ -1,4 +1,7 @@
 ﻿@{
+    ViewBag.Title = GlobalAppSettings.SystemSettings.OrganizationName + " - [[[DataStore Settings]]]";
+    ViewBag.MessageBox = false;
+
     var dbDetails = ViewBag.DBConfig as DatabaseConfiguration;
     ViewBag.dbType = dbDetails.ServerType == DatabaseType.MSSQL ? "MSSQL" : "SQLite";
     ViewBag.authorizationType = !string.IsNullOrEmpty(dbDetails.UserName) ? "SQL" : "windows";
@@ -132,7 +135,7 @@
                                                 }
                                                 else
                                                 {
-                                                    <option value="" class="display-none">@ViewBag.databaseName</option>
+                                                    <option value="@ViewBag.databaseName" class="display-none" selected>@ViewBag.databaseName</option>
                                                 }
                                             }
                                         </select>
