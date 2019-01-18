@@ -1,0 +1,64 @@
+﻿@{
+    Layout = null;
+    var organizationName = GlobalAppSettings.SystemSettings.OrganizationName;
+}
+
+<script>
+    var i_am_ie9 = false;
+</script>
+
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    @Styles.Render("~/styles/accounts")
+    <title>
+        @organizationName - [[[Login]]]
+    </title>
+</head>
+
+<!--[if LT IE  10]>
+    <script>
+        i_am_ie9 = true;
+    </script>
+<![endif]-->
+
+<body ng-app="loginApp" ng-controller="loginController">
+    <div id="alert-notification"></div>
+    <div class="login-master">
+        <div class="login-main no-padding">
+            <div class="login-logo">
+                <div>
+                    @if (GlobalAppSettings.SystemSettings.StorageType == (int)StorageType.AzureBlob)
+                    {
+                        <img src="@GlobalAppSettings.AzureBlob.AzureBlobStorageUri/@GlobalAppSettings.AzureBlob.AzureBlobStorageContainerName/@GlobalAppSettings.GetStorageMode()/Content/Images/Application/@GlobalAppSettings.SystemSettings.LoginLogo" onerror="if (this.src != '/Content/Images/Application/Login_Logo.png') this.src = '/Content/Images/Application/Login_Logo.png';" />
+                    }
+                    else
+                    {
+                        <img src="@Url.Content("~/Content/Images/Application/" + GlobalAppSettings.SystemSettings.LoginLogo)" onerror="if (this.src != '@Url.Content("~/Content/Images/Application/Login_Logo.png")') this.src = '@Url.Content("~/Content/Images/Application/Login_Logo.png")';" />
+                    }
+                </div>
+            </div>
+            <div class="org-name">@GlobalAppSettings.SystemSettings.WelcomeNoteText</div>
+
+            <div id="login-container" class="login-container no-padding">
+                <div class="content">
+                    To log into the @GlobalAppSettings.SystemSettings.OrganizationName, please log in with User Management Server.
+                </div>
+                <div class="login-inner-container">
+                    <form method="post" name="loginForm" class="login-form" action="@Url.Action("Login", "Accounts")">
+                        <div class="login-fields">
+                            <button class="login-button login-icon" type="submit" name="Submit" id="login-button">
+                                [[[LOGIN WITH UMS]]]
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="spacer" style="clear: both;"></div>
+            </div>
+            @Html.Partial("../Shared/_Footer")
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/scripts/accounts")
+</body>
+</html>

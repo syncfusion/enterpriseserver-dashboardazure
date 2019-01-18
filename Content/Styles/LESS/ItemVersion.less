@@ -1,0 +1,165 @@
+﻿@import (reference) "Mixins.less";
+
+#version-window-container{
+    .modal();
+    .modal {
+        display: flex !important;
+        position: relative !important;
+
+        .modal-dialog {
+            height: 584px;
+            margin: 0 !important;
+            padding: 0;
+            width: 100%;
+
+            .modal-content {
+                height: 584px;
+
+                .modal-body {
+                    height: 484px;
+                    max-height: 484px;
+                    padding: 10px;
+
+                    .nav-tabs {
+                        .versions-tab {
+                            margin-left: 20px;
+                        }
+
+                        li {
+                            a {
+                                font-size: 14px;
+                                color: @primary-text-color;
+                            }
+                        }
+
+                        .active {
+                            a {
+                                font-size: 14px;
+                                color: @primary-btn-bg;
+                            }
+                        }
+                    }
+
+                    .version-container-padding {
+                        padding: 20px 0;
+
+                        #item-version-container {
+                            #grid, #loggrid {
+                                .dropdown {
+                                    position: absolute;
+
+                                    .dropdown-menu {
+                                        left: -136px;
+                                    }
+                                }
+
+                                .e-headercell {
+                                    .e-headercelldiv[ej-mappingname='Comment'] {
+                                        cursor: default;
+                                    }
+                                    &:last-child {
+                                        cursor: default;
+                                    }
+                                }
+                            }
+                        }
+
+                        #item-log-container {
+                            #grid, #loggrid {
+                                .dropdown {
+                                    position: absolute;
+
+                                    .dropdown-menu {
+                                        left: -136px;
+                                        margin: 0;
+                                        padding: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .e-gridcontent{
+                        height: auto!important;
+                        .e-content{
+                            width: 100% !important;
+                        }
+                    }
+                    }
+                
+            .secondary-button {
+    .button(@secondary-btn-bg, @secondary-btn-text-color, @secondary-btn-hover, @btn-height-normal, false);
+    border: 1px solid @secondary-btn-border;
+}
+            
+            }
+        }
+    }
+}
+
+#loggrid_WaitingPopup{
+    display:none !important;
+}
+
+.versions{
+ .modal(@app-large-text-size,@textbox-lg-height);
+}
+
+.e-hscrollbar{
+        display: none !important;
+    }
+
+@media screen and (min-width: 1200px){
+    .modal-title{
+        font-size: @app-large-text-size !important;
+    }
+    .modal-body {
+        .nav-tabs {
+                        li {
+                            a {
+                                font-size: 12px !important;
+                            }
+                        }
+
+                        .active {
+                            a {
+                                font-size: 12px !important;
+                            }
+                        }
+                    }
+        }
+    }
+
+@media screen and (min-width: 1400px){
+    .popup-close{
+        font-size: 12px !important;
+    }
+    .modal-title{
+        font-size: @app-large-text-size + 2 !important;
+    }
+    .modal-body{
+        h4{
+            font-size: 14px !important;
+        }
+        font-size: 14px !important;
+
+    .nav-tabs {
+                        li {
+                            a {
+                                font-size: 14px !important;
+                            }
+                        }
+
+                        .active {
+                            a {
+                                font-size: 14px !important;
+                            }
+                        }
+                    }
+    }
+    #close-button{
+            height: 28px !important;
+            line-height: 28px !important;
+            background-color: #fff !important;
+        }
+
+    }

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configFiles>
+	<ConfigFile>
+		<FileName>web.config</FileName>
+		<location>\</location>
+	</ConfigFile>
+	
+	<ConfigFile>
+		<FileName>web.config</FileName>
+		<location>\API\</location>
+	</ConfigFile>
+	
+	<ConfigFile>
+		<FileName>Syncfusion.Server.Base.Dashboards.Scheduler.AzureWebJob.exe.config</FileName>
+		<location>\App_Data\jobs\continuous\DashboardServerScheduler\</location>
+	</ConfigFile>
+
+</configFiles>
