@@ -9,7 +9,7 @@
 
     var requestUrl = HttpContext.Current.Request.Url.ToString();
     var absolutePath = HttpContext.Current.Request.Url.AbsolutePath;
-    var umsUrl = GlobalAppSettings.SystemSettings.UmsUrl + "/" + Request.Cookies["i18n.umslangtag"].Value;
+    var umsUrl = GlobalAppSettings.SystemSettings.UmsUrl;
 }
 
 <div class="header-bar col-lg-12 col-md-12 col-sm-12">

@@ -4,7 +4,7 @@
     var groupList = ViewBag.GroupList;
     ViewBag.Title = GlobalAppSettings.SystemSettings.OrganizationName + " - [[[My Profile]]]";
     var userHomepage = ViewBag.UserHomepage as List<HomepageDetail>;
-    var umsUrl = GlobalAppSettings.SystemSettings.UmsUrl + "/" + Request.Cookies["i18n.umslangtag"].Value;
+    var umsUrl = GlobalAppSettings.SystemSettings.UmsUrl;
 }
 
 @section styles{

@@ -11,7 +11,7 @@
     var defaultAppLogo = Url.Content("~/Content/Images/Application/Main_Logo.png");
     var currentUrl = HttpContext.Current.Request.RawUrl.ToString();
     var isDebug = GlobalAppSettings.SystemSettings.IsDebug;
-    var umsUrl = GlobalAppSettings.SystemSettings.UmsUrl + "/" + Request.Cookies["i18n.umslangtag"].Value;
+    var umsUrl = GlobalAppSettings.SystemSettings.UmsUrl;
 }
 <!DOCTYPE html>
 <html style="height:100%;width:100% ; overflow:hidden;">

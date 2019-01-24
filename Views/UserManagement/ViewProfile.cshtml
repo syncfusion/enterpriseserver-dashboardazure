@@ -6,7 +6,7 @@
     var showInactive = (showDropdown == "hide" && showActive == "hide" && showActiveUser == "hide") ? "show" : "hide";
     var groupList = ViewBag.GroupList;
     ViewBag.Title = GlobalAppSettings.SystemSettings.OrganizationName + " - [[[User Profile]]]";
-    var umsUrl = GlobalAppSettings.SystemSettings.UmsUrl + "/" + Request.Cookies["i18n.umslangtag"].Value;
+    var umsUrl = GlobalAppSettings.SystemSettings.UmsUrl;
 }
 
 @section styles{

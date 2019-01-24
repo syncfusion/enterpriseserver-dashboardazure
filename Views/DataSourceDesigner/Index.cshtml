@@ -12,7 +12,7 @@
     var currentUrlLocalPath = HttpContext.Current.Request.Url.LocalPath.ToLower();
     var currentUrl = HttpContext.Current.Request.RawUrl.ToString();
     var isDebug = GlobalAppSettings.SystemSettings.IsDebug;
-    var umsUrl = GlobalAppSettings.SystemSettings.UmsUrl + "/" + Request.Cookies["i18n.umslangtag"].Value;
+    var umsUrl = GlobalAppSettings.SystemSettings.UmsUrl;
 
     var isImageRequest = currentUrl.IndexOf(".png", StringComparison.CurrentCultureIgnoreCase) > 0 ||
                         currentUrl.IndexOf(".jpg", StringComparison.CurrentCultureIgnoreCase) > 0 ||

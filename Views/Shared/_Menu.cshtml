@@ -18,7 +18,7 @@
     var profilePageUrl = Url.Action("Profilepage", "User");
     var homepagePageUrl = Server.UrlDecode(Url.Action("Homepages", "Homepages"));
     var slideshowPageUrl = Url.Action("Slideshows", "Slideshow");
-    var umsUrl = GlobalAppSettings.SystemSettings.UmsUrl + "/" + Request.Cookies["i18n.umslangtag"].Value;
+    var umsUrl = GlobalAppSettings.SystemSettings.UmsUrl;
 }
 
 <aside class="menu-bar" id="app-navigation">

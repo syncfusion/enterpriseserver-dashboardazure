@@ -1,6 +1,6 @@
 ﻿@{
     Layout = null;
-    var umsUrl = GlobalAppSettings.SystemSettings.UmsUrl + "/" + Request.Cookies["i18n.umslangtag"].Value;
+    var umsUrl = GlobalAppSettings.SystemSettings.UmsUrl;
     var isRenderViewInIframe = ViewBag.RenderNotificationPartialViewInIframe != null ? (bool)ViewBag.RenderNotificationPartialViewInIframe : false;
     var logResponse = isRenderViewInIframe ? (LogResponse)ViewBag.LogResponse : new LogResponse();
     var iframeControllerName = isRenderViewInIframe ? "serverApp" : "";

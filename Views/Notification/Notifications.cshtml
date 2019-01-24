@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = GlobalAppSettings.SystemSettings.OrganizationName + " - [[[Notifications]]]";
     ViewBag.MessageBox = false;
-    var umsUrl = GlobalAppSettings.SystemSettings.UmsUrl + "/" + Request.Cookies["i18n.umslangtag"].Value;
+    var umsUrl = GlobalAppSettings.SystemSettings.UmsUrl;
 }
 @section styles{
     @Styles.Render("~/styles/notification-listing")
