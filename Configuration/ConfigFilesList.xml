@@ -14,5 +14,8 @@
 		<FileName>Syncfusion.Server.Base.Dashboards.Scheduler.AzureWebJob.exe.config</FileName>
 		<location>\App_Data\jobs\continuous\DashboardServerScheduler\</location>
 	</ConfigFile>
-
+    <ConfigFile>
+        <FileName>web.config</FileName>
+        <location>\WebDesignerService\</location>
+    </ConfigFile>
 </configFiles>
