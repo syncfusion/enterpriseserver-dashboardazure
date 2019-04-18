@@ -1,0 +1,155 @@
+﻿@model ItemDetail
+
+@{
+    Layout = null;
+    var categoryList = ViewData["CategoryList"] as List<ItemDetail>;
+    var isValid = ViewData["IsValid"] != null ? Convert.ToBoolean(ViewData["IsValid"].ToString()) : false;
+    var isSuccess = ViewData["IsSuccess"] != null ? Convert.ToBoolean(ViewData["IsSuccess"].ToString()) : false;
+}
+<!DOCTYPE html>
+<html>
+@if (!isSuccess)
+{
+
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+        <title>
+            @ViewBag.Title
+        </title>
+        <script>
+			var isitemexistinsamecategoryUrl = "@Url.Action("isitemexistinsamecategory", "dashboards")";
+        </script>
+
+        @Styles.Render("~/styles/edit-dashboards")
+        @Scripts.Render("~/scripts/edit-dashboards")
+        <script>
+            $(document).ready(function () {
+                $(document).on("click", ".PopupClose", function (e) {
+                    $("#publish-draft-popup").find("iframe").contents().find("html").html("");
+                    eDialog = parent.$("#publish-draft-popup").data("ejDialog");
+                    eDialog.close();
+                });
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+            function load() {
+                if (($(parent.window).width()) > 1400) {
+                    $(".dialog").addClass("iframe");
+                }
+
+                if (($(parent.window).width()) < 1400) {
+                    $(".dialog").removeClass("iframe");
+                }
+            }
+        </script>
+    </head>
+    <body class="white-bg" onload="load();">
+        <form name="addItemForm" id="edit-draft-form" method="post" action="~/dashboards/publishdraftdashboard" enctype="multipart/form-data">
+            <div id="PopupContainer" class="col-lg-12 no-padding edit-dashboard-module dialog">
+                <div class="col-xs-12 dialog-header">
+                    <span class="su su-nav-dashboard Head-icon"></span>
+                    <span class="PopupTitle extendedTitle" data-toggle="tooltip" data-placement="right" data-container="body" title="[[[Publish Draft Dashboard]]]">[[[Publish Dashboard]]]</span>
+                    <a href="javascript:void(0);" data-toggle="tooltip" data-placement="left" data-container="body" title="[[[Close]]]" class="PopupClose"><span class="su su-close"></span></a>
+                </div>
+
+                <div class="dialogBody col-xs-12 no-padding file-content-height dialog-body">
+                    <div id="general-file-container">
+                        <input type="hidden" name="ItemId" value="@Model.Id" />
+                        <table width="100%" cellspacing="10px" cellpadding="0" border="0">
+                            <tbody>
+                                <tr>
+                                    <td class="col-xs-3">
+                                        <div class="bottom-margin35 text-right">[[[Category]]]<span class="mandatory">*</span></div>
+                                    </td>
+                                    <td class="col-xs-9">
+                                        <div>
+                                            <select id="draft_selected_category" data-live-search="true" title='[[[Select category]]]' name="categoryId" class="selectpicker form-control bottom-margin30" data-size="5" style="width:100%;margin-bottom:15px;">
+                                                @for (var item = 0; item < categoryList.Count; item++)
+                                                {
+                                                    <option value="@categoryList[item].Id">@categoryList[item].Name</option>
+                                                }
+                                            </select>
+                                            <input type="hidden" id="draft_category_change_validation" name="isCategoryChanged" value="false" />
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-xs-3 text-right"><div class="bottom-margin30">[[[Name]]]<span class="mandatory">*</span></div></td>
+                                    <td class="col-xs-9">
+                                        <span>
+                                            <input type="text" id="draft_file_name" name="Name" class="form-control draft-text-field bottom-margin30 text" maxlength="255" value="@Model.Name" tabindex="1" autofocus>
+                                            @if (!isValid)
+                                            {
+                                                <span id="draft_validate-name" class="validation-message text">@ViewData["ErrorMessage"]</span>
+                                            }
+                                            else
+                                            {
+                                                <span id="draft_validate-name" class="validation-message text"></span>
+                                            }
+                                            <div id="plugin_validation" class="validation-message text"></div>
+                                            <input type="hidden" id="draft_name_change_validation" name="IsNameChanged" value="false" />
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-xs-3 text-right"><div class="bottom-margin30">[[[Description]]]</div></td>
+                                    <td class="col-xs-9">
+                                        <textarea style="resize: none;" name="description" class="form-control draft-text-field bottom-margin30" maxlength="1024" id="draft_file_description" tabindex="2">@Model.Description</textarea>
+                                        <span class="notification help-text">
+                                            *[[[1024 characters maximum]]]
+                                        </span>
+                                        <input type="hidden" id="draft_description_change_validation" name="IsDescriptionChanged" value="false" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 dialogFooter rightAlign no-left-padding fixed-footer dialog-footer">
+                    <div class="pull-right">
+                        <input type="submit" class="hide-content" style="display: none" />
+                        <input type="button" title="" class="btn primary-button" value="[[[Publish]]]" id="publish_file" onclick="validateDraftFileForm()" disabled tabindex="4">
+                        <input type="button" title="" class="btn secondary-button" id="canceldraftEdit" onclick="closePublishDraftPopup()" value="[[[Cancel]]]" tabindex="4">
+                    </div>
+                </div>
+            </div>
+        </form>
+        <script>
+			$(function () {
+				window.editData = {
+					ItemId: "@Model.Id",
+					Name: "@Model.Name",
+					Description: "@Model.Description",
+					CategoryId:"@Model.CategoryId"
+				}
+				$('#draft_selected_category').val(window.editData.CategoryId.toLowerCase());
+				$("#draft_selected_category").selectpicker("refresh");
+				parent.CurrentItemId = "@Model.Id";
+			});
+        </script>
+    </body>
+}
+else
+{
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+        @Styles.Render("~/styles/iframe", "~/styles/edit-dashboards")
+        @Scripts.Render("~/scripts/iframe", "~/scripts/edit-dashboards")
+        <script>
+            var dashboardScope = parent.angular.element(parent.document.getElementById("server-items-container")).scope();
+            $(document).ready(function () {
+                parent.$("#publish-draft-popup").ejDialog("close");
+                    parent.messageBox("su-nav-dashboard", "[[[Publish Draft Dashboard]]]", "[[[Draft Dashboard has been published successfully.]]]", "success", function () {
+                        var gridName = window.parent.$('#item-grid-container').attr("data-grid-name");
+                        if (gridName == "dashboards") {
+                            dashboardScope.refreshCategorySection("@ViewData["TargetCategoryId"]");
+                        }
+                        parent.onCloseMessageBox();
+                    });
+            });
+        </script>
+    </head>
+}
+</html>

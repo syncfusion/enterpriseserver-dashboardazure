@@ -1,0 +1,56 @@
+﻿﻿﻿﻿﻿@{
+    Layout = null;
+    var isAdmin = ViewBag.IsAdmin;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    @Styles.Render("~/styles/Comment-action")
+    @Scripts.Render("~/scripts/Comment-action")
+</head>
+<body>
+    <div id="messageBox" class="e-dialog e-js e-widget-content e-box" tabindex="0" style="height: 136px; min-height: 120px; display: block; width: 448px;" role="dialog" aria-labelledby="messageBox_title">
+        <div class="message-header"><span class="su su-user-add"></span> <span class="modal-title" data-toggle="tooltip" data-placement="bottom" data-container="body" title="" data-original-title="Add User">License Expired</span></div>
+        <div class="message-box-close"><span class="su su-close"></span></div>
+        <div class="message-content text-center">[[[@(isAdmin ? "The license has expired. Please update the license settings to continue using the dashboard server." : "License is Expired. Please Check with your system administrator to update the license Settings.")]]]</div>
+        <div class="message-box-btn-holder">
+            @if (isAdmin)
+            {
+                <input type="button" class="secondary-button pull-right" value="Cancel">
+                <input type="button" class="primary-button pull-right" onclick='window.location.href="@Url.Action("LicenseSettings", "Administration")"' value="Update License Settings">
+            }
+            else
+            {
+                <input type="button" class="secondary-button" value="OK">
+            }
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var logoutUrl = "@Url.Action("Logout", "accounts")";
+    $(document).ready(function () {
+        $("#messageBox").ejDialog({
+            width: (parent.window.innerWidth > 460) ? "450px" : (parent.window.innerWidth - 10),
+            height: "150px",
+            showOnInit: true,
+            allowDraggable: true,
+            enableResize: false,
+            showHeader: false,
+            enableModal: true,
+            close: "onMessageDialogClose",
+            closeOnEscape: false
+        });
+    });
+
+    $(document).on('click', '.message-box-close', function() {
+        parent.onCloseMessageBox();
+        window.location.href = logoutUrl;
+    });
+
+    $(document).on('click', '.secondary-button', function () {
+        window.location.href = logoutUrl;
+    });
+</script>

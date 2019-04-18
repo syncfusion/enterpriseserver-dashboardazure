@@ -1,0 +1,63 @@
+﻿@{
+    Layout = null;
+    var isDebug = GlobalAppSettings.SystemSettings.IsDebug;
+    var currentUrl = HttpContext.Current.Request.RawUrl.ToString();
+}
+<!DOCTYPE html>
+
+<html style="height:100%;width:100% ; overflow:hidden;">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="dashboard_service:url" content="@GlobalAppSettings.SystemSettings.DashboardServiceUrl" />
+    <meta name="dashboard_server:url" content="@GlobalAppSettings.SystemSettings.BaseUrl" />
+    <meta name="designer_service:url" content="@GlobalAppSettings.SystemSettings.BaseUrl/webdesignerservice/v1.0/design" />
+    <meta name="designer_service:access_token" content="@ViewBag.AccessToken" />
+    <meta name="data_service:url" content="@GlobalAppSettings.SystemSettings.BaseUrl/webdesignerservice/v1.0/datahandler" />
+
+    @*<meta name="datasource:version" content="@ViewBag.Version" />
+    <meta name="datasource:id" content="@ViewBag.DataSourceId" />
+    <meta name="isdraft" content="@ViewBag.IsDraft" />*@
+
+    <meta name="user:culture" content="@ViewBag.Culture" />
+    <meta name="globalization:date_format" content="@GlobalAppSettings.SystemSettings.DateFormat" />
+    <meta name="globalization:time_format" content="@GlobalAppSettings.SystemSettings.TimeFormat.ToString()" />
+
+    <script>
+        var datasourceDesignerUrl = "@Url.Action("Index", "DataSourceDesigner")";
+        var baseUrl = "@GlobalAppSettings.SystemSettings.BaseUrl"; // If you are working on local developemnt change the baseurl as localsource url
+        var currentUrl = "@currentUrl";
+    </script>
+
+    <style>
+        #connectionDesigner {
+            width: 1000px !important;
+            margin: auto !important;
+        }
+    </style>
+</head>
+
+<body id="body" onload="openDatasource()" style="overflow: hidden; position: static; margin: 0; padding: 0; height: 100%; width: 100%">
+
+    <link href="~/Content/Styles/Fonts/font-Roboto.css" rel="stylesheet" />
+    @Styles.Render("~/bundles/styles/dashboard-designer-service")
+    @Styles.Render("~/bundles/styles/connection-designer")
+    @Styles.Render("~/bundles/styles/dashboard-viewer")
+
+    @Scripts.Render("~/bundles/scripts/dashboard-designer-service")
+    @Scripts.Render("~/bundles/scripts/connection-designer")
+    <script>
+        $.getScript("@GlobalAppSettings.SystemSettings.BaseUrl/webdesignerservice/scripts/shapefiles/worldmap_countries.js", function () { });
+    </script>
+    <script src="~/signalr/hubs"></script>
+    @Scripts.Render("~/bundles/scripts/signalr-bundle")
+
+    <div id="connectionDesigner"></div>
+
+    @if (isDebug)
+    {
+        <link href="~/webdesignerservice/Content/ej.dashboardviewer.all.min.css" rel="stylesheet" />
+        <script src="~/webdesignerservice/Scripts/ej.dashboardviewer.all.min.js"></script>
+    }
+</body>
+</html>

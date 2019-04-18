@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataSources xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DataSource Name="Olympics 2012 Dashboard_OlympicsDS" Version="1.1.0.170" Type="Relational" IsEncrypted="true">
+    <Description>This dashboard represents medals details in Olympics 2012</Description>
+    <ConnectionProperties IsEncrypted="true" IsInternalEncrypted="true">
+      <QueryParameters />
+      <ConnectOption>ConnectionString</ConnectOption>
+      <ConnectionOption>TablesAndViews</ConnectionOption>
+      <ConnectionString>gmR5fjcihmX885P/elOIS9lk8FwnNh0JwCCg7CCSg/XDW3ApI6GRUSs+kRqDdVIVpLtDw4VCYRVqPL+Tp7OZkZ6X3QFLr2IzEGuXQp6VMs6xNfrXTg4JwFikAPSE8dERnfIaBF5F+6NLw7bwQApdgSgiATovteuzsm1F2Q0ut6YvOPQRqkmOBiJoSszAm50hVXvlh1cbHwaYobVB4fNjBK8OXGAVN54Iy1KcD0rXu8agwjEfUcdYVw==</ConnectionString>
+      <ConnectionType>SqlServer</ConnectionType>
+      <IsServerModeEnabled>true</IsServerModeEnabled>
+      <ConnectionParameters>
+        <IsEncrypted>true</IsEncrypted>
+        <AuthenticationType>1</AuthenticationType>
+        <Password>WZqAYemH9NKE2gL5UjqVRA==</Password>
+        <Database>SampleDB</Database>
+        <ServerName>ts4/FGRpLDoWUkIMmTNQK1tf9nDLYTxQvqTFjVS/94X6n/Kn9R1cfg==</ServerName>
+        <UserName>Ge3YOi0hspRvup5SjhsRk0BTFhiDD86NoJv0b2BEZLY=</UserName>
+        <ServerType>0</ServerType>
+        <IsDnsConnection>false</IsDnsConnection>
+        <Url>87s5XrVGuJkfzRv8J4pWBQ==</Url>
+        <sourceConnectionType>Files</sourceConnectionType>
+      </ConnectionParameters>
+      <IsQueryMode>false</IsQueryMode>
+      <OdbcDbmsServerType>None</OdbcDbmsServerType>
+      <IsLoadAllData>false</IsLoadAllData>
+    </ConnectionProperties>
+    <LiveConnectionProperties>
+      <LiveConnectionType>Files</LiveConnectionType>
+      <IsPublish>false</IsPublish>
+    </LiveConnectionProperties>
+    <TreeViewSchemaInfo>
+      <Table>
+        <Caption>Medal Table20151029162125564</Caption>
+        <TableKey>[dbo].[Medal Table20151029162125564]</TableKey>
+        <Header>Medal Table20151029162125564</Header>
+        <UniqueColumnName>dbo_Medal Table20151029162125564</UniqueColumnName>
+        <Xposition>104.25</Xposition>
+        <Yposition>76.25</Yposition>
+        <Fields>
+          <FieldInfo>
+            <Key>[dbo_Medal Table20151029162125564].[Country]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>Country</ColumnName>
+            <UniqueColumnName>dbo_Medal Table20151029162125564_Country</UniqueColumnName>
+            <ActualDataType>varchar</ActualDataType>
+            <DataType>String</DataType>
+            <DefaultDataType>String</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>DistinctCount</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>Country</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[dbo_Medal Table20151029162125564].[Gold]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>Gold</ColumnName>
+            <UniqueColumnName>dbo_Medal Table20151029162125564_Gold</UniqueColumnName>
+            <ActualDataType>float</ActualDataType>
+            <DataType>Double</DataType>
+            <DefaultDataType>Double</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>Sum</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>Gold</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[dbo_Medal Table20151029162125564].[Silver]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>Silver</ColumnName>
+            <UniqueColumnName>dbo_Medal Table20151029162125564_Silver</UniqueColumnName>
+            <ActualDataType>float</ActualDataType>
+            <DataType>Double</DataType>
+            <DefaultDataType>Double</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>Sum</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>Silver</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[dbo_Medal Table20151029162125564].[Bronze]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>Bronze</ColumnName>
+            <UniqueColumnName>dbo_Medal Table20151029162125564_Bronze</UniqueColumnName>
+            <ActualDataType>float</ActualDataType>
+            <DataType>Double</DataType>
+            <DefaultDataType>Double</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>Sum</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>Bronze</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[dbo_Medal Table20151029162125564].[Total]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>Total</ColumnName>
+            <UniqueColumnName>dbo_Medal Table20151029162125564_Total</UniqueColumnName>
+            <ActualDataType>float</ActualDataType>
+            <DataType>Double</DataType>
+            <DefaultDataType>Double</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>Sum</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>Total</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>true</IsSelected>
+          </FieldInfo>
+          <FieldInfo>
+            <Key>[dbo_Medal Table20151029162125564].[Weighted total]</Key>
+            <IsPrimaryKey>false</IsPrimaryKey>
+            <IsForeignKey>false</IsForeignKey>
+            <ColumnName>Weighted total</ColumnName>
+            <UniqueColumnName>dbo_Medal Table20151029162125564_Weighted total</UniqueColumnName>
+            <ActualDataType>float</ActualDataType>
+            <DataType>Double</DataType>
+            <DefaultDataType>Double</DefaultDataType>
+            <IsDataTypeChanged>false</IsDataTypeChanged>
+            <SummaryType>Sum</SummaryType>
+            <AxisType>None</AxisType>
+            <SortDirection>Ascending</SortDirection>
+            <DisplaySeries>None</DisplaySeries>
+            <Caption>Weighted total</Caption>
+            <IsExpression>false</IsExpression>
+            <IsAggregation>false</IsAggregation>
+            <IsLeadLag>false</IsLeadLag>
+            <IsTop>false</IsTop>
+            <NumberofTopRecords>0</NumberofTopRecords>
+            <TopNSummaryType>None</TopNSummaryType>
+            <ShowOtherGroup>false</ShowOtherGroup>
+            <HasCondition>false</HasCondition>
+            <ConditionSummaryType>None</ConditionSummaryType>
+            <MeasureConditions>Equals</MeasureConditions>
+            <Expression>
+              <Tables />
+            </Expression>
+            <Format>Default</Format>
+            <FormatProperties>
+              <DecimalPoints>0</DecimalPoints>
+              <Unit>Auto</Unit>
+              <Culture>en-US</Culture>
+              <Type>Default</Type>
+              <NegativeValueFormat>Default</NegativeValueFormat>
+              <Prefix />
+              <Suffix />
+            </FormatProperties>
+            <DateTimeFormat>None</DateTimeFormat>
+            <NullValue>Default</NullValue>
+            <CustomColumnType>None</CustomColumnType>
+            <ColumnType>None</ColumnType>
+            <IsFilter>false</IsFilter>
+            <IsInclude>false</IsInclude>
+            <IsSelectAllForAllowFilter>false</IsSelectAllForAllowFilter>
+            <IsMeasureFilter>false</IsMeasureFilter>
+            <ShowGrandTotal>false</ShowGrandTotal>
+            <IsRelativeDateFilterApplied>false</IsRelativeDateFilterApplied>
+            <IsSelected>false</IsSelected>
+          </FieldInfo>
+        </Fields>
+        <NodeType>Table</NodeType>
+        <TableRelationships />
+        <RelatedChildren />
+      </Table>
+    </TreeViewSchemaInfo>
+    <TempConnectionType>Files</TempConnectionType>
+    <TempOdbcDbmsServerType>None</TempOdbcDbmsServerType>
+    <PublishSettings>
+      <CredentialRetrievalType>Embedded</CredentialRetrievalType>
+    </PublishSettings>
+  </DataSource>
+</DataSources>

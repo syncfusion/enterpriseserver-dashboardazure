@@ -1,0 +1,62 @@
+﻿@{
+    Layout = null;
+    
+}
+
+    <div class="modal-content" id="popup-container">
+    <div class="modal-header">
+        <div class="col-xs-11 col-sm-11 col-md-11 no-padding">
+            <span class="su su-delete"></span>
+            <span class="modal-title popup-title">[[[Delete Expression]]]</span>
+        </div>
+        <div class="col-xs-1 col-sm-1 col-md-1 no-padding">
+            <a href="javascript:void(0);" data-toggle="tooltip" data-placement="left" data-container="body" title="[[[Close]]]" class="popup-close pull-right"><span class="su su-close"></span></a>
+        </div>
+    </div>
+
+    @if (ViewBag.IsMultiDelete)
+            {
+        <div class="modal-body">
+            <div class="multiple-expression">
+                <div>[[[Deleting]]]&nbsp;<span>@ViewBag.ExpressionName</span>&nbsp;[[[ will affect the following expressions.]]]</div>
+                <div class="delete-expression"></div>
+                <div>[[[Are you sure you want to delete?]]]</div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="modal-body" style="height:50px;">
+            <div class="col-xs-12">
+                <div><span style="white-space:nowrap;float:left">[[[Are you sure you want to delete?]]]</span></div>
+            </div>
+        </div>
+    }
+
+
+    <div class="modal-footer">
+        <div class="col-xs-4"></div>
+        <div class="col-xs-8 no-padding padding-top validation-area">
+            <input type="button" class="critical-action-button margin-right" value="[[[Yes]]]" id="delete-expression" data-datasource-id="@ViewData["DataSourceId"]" data-expression-name="@ViewData["ExpressionName"]" tabindex="1" autofocus />
+            <input type="button" id="cancel" class="secondary-button popup-close" value="[[[No]]]" onclick="onDeleteExpressionDialogClose()" tabindex="2" />
+        </div>
+
+    </div>
+</div>
+
+
+<script>
+    var success = "@ViewBag.IsMultiDelete";
+    var deleteExpressionList = [];
+    $(document).ready(function () {
+        if(success.toLowerCase() == "true")
+        {
+            deleteExpressionList = @Html.Raw(Json.Encode(ViewBag.ExpressionList));
+            for (var i = 0; i < deleteExpressionList.length; i++) {
+                $('.delete-expression').append('<div>' + deleteExpressionList[i] + '<div>');
+            }
+        }
+    });
+</script>
+
+

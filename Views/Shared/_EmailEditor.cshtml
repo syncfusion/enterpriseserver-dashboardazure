@@ -1,0 +1,35 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+@Styles.Render("~/Styles/EmailEditor")
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+</head>
+<body>
+
+    <div class="col-sm-12 col-xs-12 no-padding email-editor" id="email-editor-panel">
+        <div class="col-sm-12 col-xs-12 bottom-margin no-padding">
+            <div class="col-sm-1 col-xs-3 no-padding field-width" style="margin-top: 11px;">[[[Select Fields]]] : </div>
+            <div id="email-alert-widget-container" class="col-sm-4 col-xs-4 no-padding no-margin i-search-fields">
+                <select id="widget-items" data-live-search="true" class="selectpicker col-sm-4 col-xs-4 no-padding" data-size="5" data-toggle="tooltip"></select>
+            </div>
+            <div class="col-sm-3 col-xs-3"><input type="button" class="primary-button" id="add-alert-column" value="Insert" />  </div>
+        </div>
+
+        <div class="col-sm-12 col-xs-12 no-padding" id="selected-users-container">
+            <textarea id="rte-post" class="form-control comment-area" maxlength="4000"></textarea>
+            <div class="hidden">
+                <textarea id="temp" class="hidden"></textarea>
+                <div id="toRemoveCulture"></div>
+            </div>
+        </div>
+
+        <div id="email-content-validation" style="visibility: visible;"></div>
+    </div>
+</body>
+</html>
+@Scripts.Render("~/Scripts/EmailEditor")
