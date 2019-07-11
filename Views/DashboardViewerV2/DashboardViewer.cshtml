@@ -1,0 +1,296 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = ViewBag.ItemName + " - " + GlobalAppSettings.SystemSettings.OrganizationName;
+    var isDebug = GlobalAppSettings.SystemSettings.IsDebug;
+    var itemDetail = ViewBag.itemDetail as ItemDetail;
+    var isAdmin = HttpContext.Current.Session["IsAdmin"] != null && Convert.ToBoolean(HttpContext.Current.Session["IsAdmin"]);
+    var displayName = HttpContext.Current.Session["displayname"] != null ? HttpContext.Current.Session["displayname"].ToString() : string.Empty;
+    var emailAddress = HttpContext.Current.Session["emailaddress"] != null ? HttpContext.Current.Session["emailaddress"].ToString() : string.Empty;
+    var enableComment = "false";
+    var isUserAuthenticated = "false";
+    var isMobile = DeviceDetection.IsMobile;
+    var parentId = ViewBag.ParentId;
+    var isPublic = GlobalAppSettings.SystemSettings.IsMarkItemsPublic && itemDetail.IsPublic ? "true" : "false";
+    var canEdit = itemDetail.CanWrite;
+    var loginImage = GlobalAppSettings.SystemSettings.LoginLogo;
+    var dataServiceUrl = GlobalAppSettings.SystemSettings.BaseUrl + "/webdesignerservice";
+    var permissions = ViewBag.ItemAddOptions as Dictionary<ItemType, bool>;
+    var isEmbed = ViewBag.IsEmbed == null ? false : ViewBag.IsEmbed;
+    if (isEmbed)
+    {
+        canEdit = false;
+    }
+    var isUnlisted = itemDetail.IsUnlisted ? "true" : "false";
+    var unlistedcode = itemDetail.UnlistedCode;
+    var isOwner = Convert.ToBoolean(itemDetail.CreatedById == ((HttpContext.Current.User as ServerPrincipal) != null ? (HttpContext.Current.User as ServerPrincipal).UserId : 0)) ? "true" : "false";
+    var umsUrl = GlobalAppSettings.SystemSettings.UmsUrl;
+}
+<!DOCTYPE html>
+
+<html style="height:100%;width:100% ; overflow:hidden;">
+<head>
+    <title>@ViewBag.Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="dashboard_service:url" content="@GlobalAppSettings.SystemSettings.DashboardServiceUrl" />
+    <meta name="dashboard_server:url" content="@GlobalAppSettings.SystemSettings.BaseUrl" />
+    <meta name="designer_service:url" content="@dataServiceUrl/v1.0/design" />
+    <meta name="designer_service:access_token" content="@ViewBag.AccessToken" />
+    <meta name="data_service:url" content="@dataServiceUrl/v1.0/datahandler" />
+    <meta name="data_service_host:url" content="@dataServiceUrl" />
+    <meta name="dashboard:version" content="@ViewBag.Version" />
+    <meta name="dashboard:id" content="@ViewBag.ItemId" />
+    <meta name="dashboard:name" content="@ViewBag.ItemName" />
+    <meta name="category:name" content="@itemDetail.CategoryName" />
+    <meta name="dashboard:description" content="@ViewBag.ItemDescription" />
+    <meta name="datasource:version" content="@ViewBag.DatasourceVersion" />
+    <meta name="datasource:id" content="@ViewBag.DatasourceId" />
+    <meta name="isdraft" content="false" />
+    <meta name="ispublic" content="@isPublic" />
+    <meta name="isunlisted" content="@isUnlisted" />
+    <meta name="unlistedcode" content="@unlistedcode" />
+    <meta name="user:culture" content="@ViewBag.Culture" />
+    <meta name="globalization:date_format" content="@GlobalAppSettings.SystemSettings.DateFormat" />
+    <meta name="globalization:time_format" content="@GlobalAppSettings.SystemSettings.TimeFormat.ToString()" />
+
+    @if (GlobalAppSettings.SystemSettings.StorageType == (int)StorageType.AzureBlob)
+    {
+        <link rel="icon" href="@GlobalAppSettings.AzureBlob.AzureBlobStorageUri/@GlobalAppSettings.AzureBlob.AzureBlobStorageContainerName/@GlobalAppSettings.GetStorageMode()/Content/Images/Application/@GlobalAppSettings.SystemSettings.FavIcon" onerror="if (this.href != '~/Content/Images/Application/Favicon.png') this.href = '~/Content/Images/Application/Favicon.png';" />
+    }
+    else
+    {
+        <link rel="icon" href="~/Content/Images/Application/@GlobalAppSettings.SystemSettings.FavIcon" onerror="if (this.href != '~/Content/Images/Application/Favicon.png') this.href = '~/Content/Images/Application/Favicon.png';" />
+    }
+
+    @Html.Partial("_OGPContent", new ViewDataDictionary { { "PageTitle", ViewBag.Title }, { "OrganizationName", GlobalAppSettings.SystemSettings.OrganizationName }, { "Logo", loginImage }, { "Description", itemDetail.Description } })
+
+    <script>
+        @{
+            var userId = 0;
+            var userName = "";
+            if (HttpContext.Current.Request.IsAuthenticated && HttpContext.Current.User != null && HttpContext.Current.User.Identity != null)
+            {
+                enableComment = ViewBag.IsSlideshow ? "false" : "true";
+                isUserAuthenticated = "true";
+                userId = (HttpContext.Current.User as ServerPrincipal).UserId;
+                userName = (HttpContext.Current.User as ServerPrincipal).UserName.ToLower();
+            }
+            else
+            {
+                enableComment = "false";
+                isUserAuthenticated = "false";
+            }
+        }
+
+        var viewId = "@ViewBag.ViewId";
+        var isDebug = "@isDebug";
+        var displayName = "@displayName";
+        var commentPageUrl = "@Url.Action("CommentPartialView", "Comments")";
+        var baseUrl = "@GlobalAppSettings.SystemSettings.BaseUrl";
+        var userId = "@userId";
+        var userName = "@userName";
+        var enableComment = "@enableComment";
+        var commentedWidgets = @Html.Raw(Json.Encode(ViewBag.CommentedWidgets));
+        var isUserAuthenticated = "@isUserAuthenticated";
+        var viewUrl = "@Url.Action("Index", "FileRender")";
+        var isMultiDashboard = "@ViewBag.IsMultiDashboard";
+        var itemViewShareIframeUrl = "@Url.Action("shareItemView", "items")";
+        var favoriteItemUrl = "@Url.Action("MakeFavorite", "Items")";
+        var addViewUrl = "@Url.Action("onfiltersave", "DashboardViews")";
+        var getSavedViewUrl = "@Url.Action("GetViews", "DashboardViews")";
+        var getViewParameterUrl = "@Url.Action("GetDashboardViewParameter", "DashboardViews")";
+        var deleteViewUrl = "@Url.Action("DeleteView", "DashboardViews")";
+        var updateViewUrl = "@Url.Action("UpdateView", "DashboardViews")";
+        var saveViewPopup = "@Url.Action("SaveView", "DashboardViews")";
+        var pageurl = "@HttpContext.Current.Request.Url.LocalPath";
+        var canEdit = "@canEdit";
+        var dashboardItemDetail = @Html.Raw(Json.Encode(itemDetail));
+        var showMyDashboards = "@ViewBag.ShowMyDashboards";
+        var Commentswidgets = "@Url.Action("WidgetCommentPartialView", "Comments")";
+        var editDashboardUrl = encodeURI("@Url.Action("DashboardDesigner", "Designer")" + "/@itemDetail.Id/@itemDetail.CategoryName/@itemDetail.Name");
+        var viewDashboardUrl = "@Url.Action("Index", "FileRender")";
+        var myDashboardsUrl = encodeURI("@Url.Action("Dashboards", "Dashboards")" + "?view=all");
+        var isSlideshow = @Json.Encode(ViewBag.IsSlideshow);
+        var parentId = "@parentId";
+        var isFavorite = "@ViewBag.IsFavorite";
+        var commonImageIe = "@Url.Content("~/dashboardservice/themes/common-images/IE.png")";
+        var commonImageEdge = "@Url.Content("~/dashboardservice/themes/common-images/Edge.png")";
+        var commonImageFirefox = "@Url.Content("~/dashboardservice/themes/common-images/Firefox.png")";
+        var commonImageChrome = "@Url.Content("~/dashboardservice/themes/common-images/Chrome.png")";
+        var commonImageOpera = "@Url.Content("~/dashboardservice/themes/common-images/Opera.png")";
+        var commonImageSafari = "@Url.Content("~/dashboardservice/themes/common-images/Safari.png")";
+        var parentRefUrl = (window.location != window.parent.location) ? document.referrer : document.location.href.replace(document.location.pathname + document.location.search, "");
+        if (parentRefUrl == "") {
+            var parentUrl = "";
+        }
+        else {
+            var parentUrl = parentRefUrl.match(/:\/\/(.[^/]+)/)[1];
+        }
+        
+        var iframeRefUrl = window.location.href;
+        var iframeUrl = iframeRefUrl.match(/:\/\/(.[^/]+)/)[1];  
+        var isUnlisted = @itemDetail.IsUnlisted.ToString().ToLower();
+        var unlistedCode = "@itemDetail.UnlistedCode";
+        var isOwner = @isOwner;		
+        var isDashboardCommented = @Json.Encode(Convert.ToBoolean(ViewBag.IsDashboardCommented));
+        var isAdmin = @Json.Encode(isAdmin);
+        var umsUrl = "@umsUrl";
+    </script>
+    <style>
+        #warning-alert, #success-alert {
+            font-family: roboto;
+        }
+    </style>
+</head>
+
+<body id="body" style="overflow: hidden; position: static; margin: 0; padding: 0; height: 100%; width: 100%" ng-app="serverApp">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <input id="favorite_Item" type="hidden" data-item-id="@ViewBag.ItemId" data-parent-id="@ViewBag.ParentId" data-favorite-value="@ViewBag.IsFavorite">
+    <input id="dashboard_Comment" type="hidden" data-item-id="@ViewBag.ItemId" data-category-name="@ViewBag.itemDetail.CategoryName" data-item-name="@ViewBag.itemDetail.Name">
+    <input id="isMultiDashboard" type="hidden" data-item-id="@ViewBag.IsMultiDashboard" data-parent-id="@ViewBag.ParentId">
+    <input id="is_mobile" type="hidden" value="@isMobile.ToString().ToLower()">
+    <input id="comment_Type" type="hidden" data-item-id="@ViewBag.DataItemId" data-item-type="@ViewBag.ItemType">
+    <input id="item-version" type="hidden" value="@ViewBag.Version" />
+    <input id="isunlisted" type="hidden" value="@isUnlisted" />
+    <input id="ispublicsettings" type="hidden" value="@GlobalAppSettings.SystemSettings.IsMarkItemsPublic.ToString().ToLower()" />
+    <input id="isdashboardpublic" hidden value="@itemDetail.IsPublic.ToString().ToLower()"/>
+    @Html.Partial("~/Views/DashboardViewerV2/_DashboardViewerScripts.cshtml")
+    @Html.Partial("~/Views/Items/_ItemInfo.cshtml")
+    @if (!isMobile && !ViewBag.IsSlideshow && (isAdmin || userId == itemDetail.CreatedById))
+    {@Html.Partial("../Items/_SharePermission")
+    @Styles.Render("~/bundles/styles/share-permission")
+    @Scripts.Render("~/bundles/scripts/share-permission")
+}
+    <div id="dashboard"></div>
+    @if (isMobile)
+    {
+        <script>
+            $(document)
+                .ready(function () {
+                    //Remove side bar
+                    $("#filter-view").css("display", "none");
+                    $("#dashboard-view-toogle").css("display", "none");
+                });
+        </script>
+
+        <nav id="server-mobile-navbar" class="navbar navbar-inverse custom-bootstrap-styles">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav col-xs-12 no-padding no-margin">
+                    <li class="col-xs-4 icon">
+                        <a href="javascript:void(0)" class="su su-nav-dashboard active"></a>
+                    </li>
+                    <li class="col-xs-4 icon" id="comment-li">
+                        @if (ViewBag.IsDashboardCommented == "true")
+                        {
+                            <a href="javascript:void(0)" class="su su-with-comment server-comment"></a>
+                        }
+                        else
+                        {
+                            <a href="javascript:void(0)" class="su su-without-comment server-comment"></a>
+                        }
+                    </li>
+                    <li class="col-xs-4 icon" id="view-li">
+                        <a href="javascript:void(0)" class="su-view"></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    }
+    <script>
+        function IframeLoad() {
+            if (iframeUrl == parentUrl) {
+                if (window.parent.$("#item-viewer").data("ejWaitingPopup") != undefined) {
+                    window.parent.$("#item-viewer").ejWaitingPopup("hide");
+                }
+            }
+        }
+        $(document).ready(function () {
+            IframeLoad();
+        });
+    </script>
+    @Html.Partial("~/Views/DashboardViewerV2/_DashboardViews.cshtml")
+
+    @if (HttpContext.Current.Request.IsAuthenticated && HttpContext.Current.User != null && HttpContext.Current.User.Identity != null)
+    {
+        <div id="commentModuleContainer" class="displayNone" style="background-color: #fff;">
+            <iframe id="commentModuleContainer_iframe" class="comment-popup-frame" data-item-id="@ViewBag.ItemId" style="height: 100%; width: 100%;"></iframe>
+            <div class="loader-blue loader-icon " id="comment-module-container-loader-icon">
+                <svg class="circular">
+                    <circle class="path" cx="27" cy="27" r="20" fill="none" stroke-width="4" stroke-miterlimit="10"></circle>
+                </svg>
+            </div>
+        </div>
+        <iframe id="delete_popup_iframe" class="comment-popup-frame displayNone" allowtransparency="true" style="position: absolute;"></iframe>
+
+        <div id="widgetCommentModuleContainer" class="displayNone" style="background-color:  #fff; z-index: 1000001;">
+            <iframe id="widgetCommentModuleContainer_iframe" class="comment-popup-frame" style="height: 100%; width: 100%;"></iframe>
+            <div class="loader-blue loader-icon " id="widget-comment-module-container-loader-icon">
+                <svg class="circular">
+                    <circle class="path" cx="27" cy="27" r="20" fill="none" stroke-width="4" stroke-miterlimit="10"></circle>
+                </svg>
+            </div>
+        </div>
+    }
+    <div id="viewShare_popup" class="col-md-12 DisplayNone">
+        <div id="sharepopup_wrapper_WaitingPopup" class="e-waitpopup-sharepopup">
+            <div class="loader-blue loader-icon" id="loader-icon">
+                <svg class="circular">
+                    <circle class="path" cx="27" cy="27" r="20" fill="none" stroke-width="4" stroke-miterlimit="10"></circle>
+                </svg>
+            </div>
+        </div>
+        <iframe id="viewShare_popup_iframe" class="EditIframe"></iframe>
+    </div>
+
+    <div class="ViewShare_popup_shadow"></div>
+
+    @* ******************* Please add new iframes below this line *************** *@
+    <div id="commentImage_popup" class="col-md-12 no-padding hidden custom-bootstrap-styles" style="display: none;">
+        <div class="col-lg-12 no-padding" id="PopupContainer">
+            <div class="col-md-12">
+                <div class="col-xs-12 no-padding" style="float:right">
+                    <a href="javascript:void(0);" onclick="commentImageDialogClose()" class="PopupClose closePopupImage"><span class="su su-close"></span></a>
+                </div>
+            </div>
+            <div class="dialogBody col-xs-12 no-padding">
+                <img id="commentImage_popup_image" src="" style="width: 100%;">
+            </div>
+        </div>
+    </div>
+    <div id="save-view-popup" data-item-id="@(parentId != null ? parentId : itemDetail.Id)" data-widget-id="" data-widget-name="">
+        <iframe id="save-view-popup-iframe" class="" style="height: 100%; width: 100%;"></iframe>
+    </div>
+
+    <div id="success-alert" class="custom-bootstrap-styles">
+        <div id="image-container">
+            <div class="image-holder">
+                <span class="su su-tick" alt="Success Icon"></span>
+            </div>
+        </div>
+        <div id="message">
+            <h1 id="message-header"></h1>
+            <span id="message-content"></span>
+        </div>
+    </div>
+    <div id="warning-alert" class="custom-bootstrap-styles">
+        <div id="image-container">
+            <span class="su su-warning-alt" alt="Warning Icon"></span>
+        </div>
+        <div id="message" class="div-close">
+            <h1 id="message-header"></h1>
+            <span id="message-content"></span>
+        </div>
+        <div class="close-div">
+            <span id="close-content">Close</span>
+        </div>
+    </div>
+
+    <div id="progress-alert-container" class="custom-bootstrap-styles">
+    </div>
+
+    @if (!ViewBag.IsSlideshow)
+    {
+        @Html.Partial("../Items/_GetLink")
+    }
+</body>
+</html>

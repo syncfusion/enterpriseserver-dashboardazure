@@ -1,0 +1,204 @@
+﻿@import (reference) "Mixins.less";
+
+body{
+    overflow: hidden !important;
+}
+
+#base-container {
+    .admin-page-header {
+        #user-title {
+            min-height: @textbox-height;
+
+            .dropdown {
+                .dropdown-toggle {
+                    .caret {
+                        color: @secondary-btn-bg;
+                    }
+                }
+            }
+
+        }
+    }
+
+    #user-list-container {
+        #user_grid {
+            .dropdown {
+                position: absolute;
+                right: 35px;
+
+                .dropdown-menu {
+                    left: -172px;
+                    width: 190px;
+                }
+            }
+
+            table {
+                th:last-child {
+                    cursor: default;
+                }
+            }
+        }
+        .margin{
+            margin-left: 3px;
+        }
+    }
+
+    .ad-azure-indication {
+        padding: 10px 0 0 5px;
+
+        .su{
+            color:@ad-icon-color;
+        }
+    }
+
+    #ums-server{
+        margin-right: 20px;
+    }
+}
+
+
+
+.e-grid .e-gridheader .e-headercell.e-headertemplate {
+    padding-left: 15px !important;
+}
+
+.e-grid .e-gridcontent tr:first-child td, .e-grid tr:first-child.e-editedrow td.e-rowcell, .e-grid .e-gridcontent .e-firstrow > td{
+    border-top:1px solid @grid-border-color;
+}
+
+
+
+.e-dialog {
+    .dialogbox();
+
+    .validation-message {
+        float: left;
+        margin: 0 10px;
+
+        span {
+            float: left;
+            font-size: 11px;
+            padding: 10px;
+        }
+    }
+
+    .modal-body {
+        padding: 0px;
+        .form-control {
+            font-size: @app-text-size;
+            width: 301px;
+            height: @btn-height-normal;
+            line-height: normal;
+        }
+
+        .app-textbox-label {
+            margin-top: 8px;
+            font-weight: 400;
+            padding-right: 50px;
+        }
+
+        .form-padding {
+            padding: 10px;
+        }
+
+        .last-name{
+            margin-bottom:10px;
+        }
+
+
+        .placeholder {
+            height: @textbox-height + 2;
+            padding-left: 12px;
+            position: absolute;
+            top: 0;
+            line-height: @textbox-height;
+            color: @placeholder-color;
+        }
+    }
+}
+
+
+
+/*Hiding no suggestion and waiting popup in Filtering*/
+#user_grid_acString {
+    background-image: none !important;
+}
+
+#user_grid_acString_suggestion {
+    display: none !important;
+}
+
+// To wrap the text in tool tip
+.tooltip-inner {
+    word-break: break-all;
+    white-space: pre;
+    max-width: none;
+}
+
+@media screen and (min-width: 1400px) {
+       #base-container #user-list-container {
+            #search-area {
+                input[type="text"] {
+                    height: @textbox-lg-height;
+                }
+
+                .close-icon {
+                    height: @textbox-lg-height;
+                }
+
+                .su-search {
+                    height: @textbox-lg-height;
+                }
+            }
+        }
+
+        .e-dialog .modal-dialog .modal-content .modal-header {
+            .modal-title, a.close {
+                font-size: @app-large-text-size + 2;
+                filter: none !important;
+            }
+        }
+
+    .e-dialog {
+        .validation-message {
+            span {
+                font-size: @validation-large-text-size;
+            }
+        }
+
+        .modal-body {
+            .form-control {
+                font-size: @app-large-text-size;
+                height: @textbox-lg-height;
+            }
+
+            .app-textbox-label {
+                font-size: @app-large-text-size;
+            }
+
+            .placeholder {
+                line-height: @textbox-height + 4;
+            }
+        }
+    }
+
+
+    }
+
+#messageBox_wrapper {
+    .e-dialog-scroller {
+        height: 150px;
+
+        #messageBox {
+            height: 100% !important;
+            width: 100% !important;
+
+            .message-content {
+                margin: 0px;
+                height: 70px;
+                padding: 15px 15px 15px 15px;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewBag.Title = "_SaveView";
+    var categoryName = ViewBag.CategoryName;
+    var Name = ViewBag.Name;
+    var routeValues = new RouteValueDictionary
+      {
+            { "category",categoryName },
+            { "dashboard",Name },
+      };
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    @Styles.Render("~/styles/save-view")
+    @if (ViewBag.ViewerType == "v2")
+    {
+        @Scripts.Render("~/scripts/save-view-v2")
+    }
+    else
+    {
+        @Scripts.Render("~/scripts/save-view")
+    }
+    <script type="text/javascript">
+        var addViewUrl = "@Url.Action("onfiltersave", "DashboardViews")";
+        var getSavedViewUrl = "@Url.Action("GetViews", "DashboardViews")";
+        var viewUrl = "@Url.Action("Index", "FileRender", routeValues)";
+    </script>
+</head>
+<body class="no-margin">
+    <div id="save-view-container" class="dialog">
+        <div class="col-md-12 dialog-header">
+            <span class="su su-view Head-icon"></span>
+            <span class="PopupTitle">[[[Save View]]]</span>
+            <a href="javascript:void(0);" data-toggle="tooltip" data-placement="left" data-container="body" title="[[[Close]]]" class="PopupClose" onclick="closeSaveViewPopup()"><span class="su su-close"></span></a>
+        </div>
+        <span id="user-name" type="hidden" value="@ViewBag.userName"></span>
+        <span id="user-id" type="hidden" value="@ViewBag.userId"></span>
+        <form name="save-view-form" id="save-view-form" class="dialog-body col-xs-12 no-padding">
+            <div>
+                <div class="col-xs-12 padding20 no-bottom-padding" id="item-name-division">
+                    <div class="col-xs-4 no-padding text-right text-label">[[[Name]]]<span class="mandatory">*</span></div>
+                    <div class="col-xs-1 no-padding"></div>
+                    <div class="col-xs-7 no-padding">
+                        <input type="text" id="view-name" name="viewnewname" maxlength="255" class="form-control site-orgname-fields text" />
+                        <span class="validation-errors"></span>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="col-xs-12 dialog-footer no-right-padding no-left-padding" id="action-button-division">
+            <div class="rightAlign">
+                <input type="button" title="" id="save-button" class="btn primary-button" value=[[[Save]]] />
+                <input type="button" id="cancel-button" title="" class="btn secondary-button" value="[[[Cancel]]]" onclick="closeSaveViewPopup()" />
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            parent.$("#dashboard-view-toogle").ejWaitingPopup();
+            parent.$("#save-view-popup_wrapper").ejWaitingPopup("hide");
+        });
+    </script>
+</body>
+</html>
+
+

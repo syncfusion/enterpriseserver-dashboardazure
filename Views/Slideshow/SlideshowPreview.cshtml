@@ -1,0 +1,62 @@
+﻿@{
+    Layout = null;
+    var model = Model as List<string>;
+}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>@ViewBag.Title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8" />
+        @Styles.Render("~/bundles/styles/slideshow")
+        @Scripts.Render("~/bundles/scripts/slideshow")
+        <script>
+            var permissionDeniedUrl = "@Url.Action("PermissionDenied", "Home")";
+            var sources = @Html.Raw(Json.Encode(ViewBag.UrlList));
+            var loopInterval = "@ViewBag.LoopInterval";
+        </script>
+        @if (GlobalAppSettings.SystemSettings.StorageType == (int)StorageType.AzureBlob)
+        {
+            <link rel="icon" href="@(GlobalAppSettings.AzureBlob != null ? GlobalAppSettings.AzureBlob.AzureBlobStorageUri : string.Empty)/@GlobalAppSettings.AzureBlob.AzureBlobStorageContainerName/@GlobalAppSettings.GetStorageMode()/Content/Images/Application/@GlobalAppSettings.SystemSettings.FavIcon" onerror="if (this.href !== null && this.href.toLowerCase() !== '~/content/images/application/favicon.png') this.href = '~/Content/Images/Application/Favicon.png';" />
+        }
+        else
+        {
+            <link rel="icon" href="~/Content/Images/Application/@GlobalAppSettings.SystemSettings.FavIcon" onerror="if (this.href !== null && this.href.toLowerCase() !== '~/content/images/application/favicon.png') this.href = '~/Content/Images/Application/Favicon.png';" />
+        }
+    </head>
+    <body style="margin: 0px;">
+        <div class="content-container-fluid" style="display:none">
+            <div class="row">
+                <div class="cols-sample-area">
+                    <div class="frame">
+                        <ul id="sliderContent">
+                            @foreach (var slideId in model)
+                            {
+                                <li><iframe id='@slideId' width='100%' height='100%' frameborder='0' src=''></iframe></li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="controls-container" style="display: none">
+            <div id="controls">
+                <button id="slide-previous" class="ctrl-btn su su-left"></button>
+                <button id="slide-play-pause" class="ctrl-btn btn pause">
+                    <span class="bar bar-1"></span>
+                    <span class="bar bar-2"></span>
+                    <span class="bar bar-3"></span>
+                </button>
+                <button id="slide-next" class="ctrl-btn su su-right"></button>
+                <button id="slide-maximize" class="ctrl-btn su su-maximize-1"></button>
+            </div>
+            <hr class="pager-separator" />
+            <div id="pager">1 of 3</div>
+        </div>
+
+        <div id="permission-denied" style="display:none" class="no-padding">
+            <iframe id="permission-iframe"></iframe>
+        </div>
+    </body>
+
+</html>

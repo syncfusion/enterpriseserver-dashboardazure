@@ -1,0 +1,443 @@
+﻿@import (reference) "../Themes/Default.less";
+@import (reference) "../Mixins.less";
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0px;
+    min-height: 100%;
+    padding: 0px;
+}
+
+input::-ms-clear,
+input::-ms-reveal {
+    display: none !important;
+}
+
+.check::after {
+    background-color: @primary-color;
+    border: 1.5px solid @admin-page-bg;
+    height: 16px;
+    margin-bottom: 2px;
+    margin-top: 2px;
+    top: 0px;
+    width: 16px;
+    z-index: 0;
+}
+
+.material-checkbox {
+    .material-checkbox-controls();
+
+    &:checked + input + label::before {
+        bottom: 10px !important;
+        left: 1px;
+    }
+}
+
+.material-checkbox + input + label {
+    padding-top: 6px !important;
+}
+
+
+.placeholder {
+    color: @placeholder-color;
+    line-height: 1.4;
+    margin-top: -32px;
+    padding: 6px 12px;
+    position: absolute;
+    text-align: left;
+    width: 240px;
+}
+
+*:focus {
+    outline: none !important;
+}
+
+body {
+    background-color: @admin-container-bg;
+    display: table;
+    font-family: RobotoRegular;
+    font-size: @app-large-text-size;
+    height: 100%;
+    vertical-align: middle;
+    width: 100%;
+
+    .login-master {
+        display: table;
+        height: 100%;
+        left: 0px;
+        position: absolute;
+        width: 100%;
+
+        .login-main {
+            display: table-cell;
+            height: 100%;
+            transition: all linear 0.5s;
+            transition-duration: 2s;
+            transition-property: padding;
+            vertical-align: middle;
+            width: 100%;
+            transition-property: padding;
+            transition-duration: 2s;
+            transition: all linear 0.5s;
+            padding-bottom: 75px;
+
+            .login-logo {
+                margin: 0px auto 0px;
+                text-align: center;
+            }
+
+            .org-name {
+                font-size: 18px;
+                margin-top: 10px;
+                text-align: center;
+                width: 100%;
+                padding-bottom: 24px;
+            }
+
+
+            .login-container {
+                background-color: @primary-btn-text-color;
+                border-radius: 5px;
+                margin: 0 auto;
+                transition-property: height;
+                transition-duration: 2s;
+                transition: all linear 0.5s;
+
+                .content {
+                    text-align: center;
+                }
+
+                .login-inner-container.no-float {
+                    float: none;
+                }
+
+                .login-inner-container {
+                    margin: auto;
+                    position: relative;
+                    width: 360px;
+                    transition-property: height;
+                    transition-duration: 2s;
+                    transition: all linear 0.5s;
+                    transition-duration: 2s;
+                    transition-property: height;
+                    width: 100%;
+
+                    .login-form {
+                        .login-fields {
+                            clear: both;
+                            margin-left: 10px;
+                            margin-right: 10px;
+
+                            .login-button {
+                                background-color: @primary-btn-bg;
+                                position: relative;
+                                width: 80%;
+                                height: 36px;
+                                border: none;
+                                box-shadow: 2px 6px 4px 0 rgba(0,0,0,0.14), 0 3px 5px 0 rgba(0,0,0,0.12), 0 4px 2px 0px rgba(0,0,0,0.2);
+                            }
+
+                            .login-icon {
+                                color: @grid-header-bg;
+                                font-size: @app-large-text-size;
+                                margin-top: 25px;
+                                margin-bottom: -5px;
+                            }                           
+                        }
+           
+                    }
+                  
+                }              
+            } 
+
+            #login-button[disabled],        
+            #login-button[disabled]:hover    
+             {
+                background-color: @submit-button-disabled !important;
+                color: @notification !important;
+            }
+
+            #login-button:hover,
+            .link-hover {
+                &:hover {
+                    background-color: @primary-btn-hover;
+                    text-decoration: none;
+                }
+            }
+
+            #base-footer-div {
+                background-color: @admin-container-bg;
+                color: @login-font-color;
+
+                .lang-overflow {
+                    color: @login-font-color;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width:1280px) {
+    body .login-master .login-main .login-container {
+        .login-inner-container .login-form .login-fields {
+            .login-button {
+                width: 80% !important;
+            }
+        }
+
+        
+    }
+}
+
+@media (max-width: 400px) {
+    .login-container {
+        .org-name {
+            font-size: 17px !important;
+        }  
+    }
+}
+
+@media (max-width: 366px) {
+    #copyrightinfo {
+        font-size: 9px !important;
+    }
+}
+
+@media (max-width: 423px) {
+    #copyrightinfo {
+        font-size: 10px !important;
+    }
+}
+
+
+@media (max-width: 1400px) {
+    .placeholder {
+        margin-top: -28px !important;
+    }
+
+    body {
+        font-size: @app-text-size;
+
+        .login-master {
+            .login-main {
+                .login-container {
+                    .login-inner-container {
+                        .org-name {
+                            font-size: 16px !important;
+                        }
+ 
+                        .login-form {
+                            .login-button {
+                                width: 100% !important;
+                            }
+
+                            
+                        }        
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*Styles common form desktop view*/
+@media (min-width: 1280px) {
+    body {
+        .login-main {
+            
+
+            .login-container {
+                width: 400px !important;
+                padding: 45px;
+
+                .login-inner-container {
+                    float: left;
+                    width: 320px !important;
+
+                    .login-form .login-fields {
+                        .login-button {
+                            width: 80%;
+                            margin-left: 10%;
+                            margin-right: 10%;
+                        }                        
+                    }
+                }              
+            }
+
+            .login-container.height-adjust {
+                padding-bottom: 75px;
+            }
+        }
+    }
+}
+
+@media (min-width:320px) and (max-width:480px) {
+    body {
+        background-color: @admin-page-bg;
+
+        .login-master {
+            background-color: @admin-page-bg;
+            padding: 0 !important;
+
+            .login-main {
+                background-color: @admin-page-bg;
+                vertical-align: initial;
+                padding: 0 !important;
+            }
+
+            .login-container {
+                background-color: @admin-page-bg !important;
+                margin: 0 !important;
+                width: 100% !important;
+
+                .org-name {
+                    font-size: 17px !important;
+                }
+
+                
+
+                .login-inner-container {
+                    width: 300px !important;
+                    margin-top: 25px !important;
+                    
+                }
+               
+            }
+        }
+    }
+}
+
+@media (min-width:768px) and (max-width:1400px) {
+    body {
+        background-color: @login-bg;
+
+        .login-master {
+            background-color: @login-bg;
+
+            .login-main {
+                .login-container {
+                    background-color: @admin-page-bg;
+                    width: 400px !important;
+                    padding: 45px;
+
+                    .login-inner-container {
+                        float: left;
+                        width: 320px !important;
+                    }
+                   
+                }
+            }
+        }
+    }
+}
+
+@media (min-width:480px) and (max-width:600px) {
+    body {
+        background-color: @admin-page-bg;
+
+        .login-master {
+            background-color: @admin-page-bg;
+
+            .login-main {
+                vertical-align: initial;
+
+                .login-container {
+                    background-color: @admin-page-bg;
+                    width: 400px !important;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width:600px) and (max-width:799px) {
+    body {
+        background-color: @admin-page-bg;
+
+        .login-master {
+            background-color: @admin-page-bg;
+
+            .login-main {
+                vertical-align: initial;
+
+                .login-container {
+                    background-color: @admin-page-bg;
+                    width: 400px !important;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width:768px) and (max-width:1024px) {
+    body {
+        background-color: @admin-page-bg;
+
+        .login-master {
+            background-color: @admin-page-bg;
+
+            .login-main {
+                vertical-align: initial;
+
+                .login-container {
+                    background-color: @admin-page-bg;
+
+                    .login-inner-container {
+                        margin-top: 10%;
+                        float: none;
+                    }
+
+                    
+                }
+            }
+        }
+    }
+}
+
+@media(min-width:1025px) and (max-width:1400px) {
+    body {
+        .login-master .login-main {
+            background-color: @admin-container-bg;
+        }
+    }
+}
+
+@media(width:768px) {
+    #base-footer-div footer {
+        p {
+            white-space: nowrap;
+            margin-left: 160px;
+            margin-top: -28px;
+        }
+
+        #enablefooter #poweredbysyncfusion {
+            margin-top: auto !important;
+        }
+    }
+}
+
+@media(width:1024px) {
+    #base-footer-div footer {
+        p {
+            white-space: nowrap;
+            margin-left: auto !important;
+        }
+    }
+}
+
+@media(max-width:1024px) {
+    .login-main {
+        vertical-align: middle !important;
+    }
+}
+
+
+
+
+
+
+

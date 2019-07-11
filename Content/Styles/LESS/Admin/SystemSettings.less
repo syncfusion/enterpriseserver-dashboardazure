@@ -1,0 +1,405 @@
+﻿@import (reference) "../Mixins.less";
+
+#look-and-feel-container, #mail-settings-container, #active-directory-container {
+     .confirmatioMessage {
+        display: none;
+    }
+}
+
+#look-and-feel-container {
+    .sub-section-heading {
+        font-size: @app-text-size + 2;
+        font-weight: 700;
+        margin: 0 0 20px 0;
+        padding: 0;
+    }
+  
+    .validation-error-image {
+        color:@validation-text-color;
+     }
+    .no-padding > label{
+            font-weight:normal;
+        }
+    .input-group-addon {
+        padding: 0;
+    }
+
+    .filename-text {
+        background: @admin-page-bg;
+    }
+
+    #ssl-selectpicker {
+        padding-right: 15px;
+        padding-left: 15px;
+        float:left;
+        .input-group-addon {
+            border: 0;
+        }
+
+        .bootstrap-select {
+            border: 0;
+            padding: 0;
+            margin: 0;
+        }
+
+        .selectpicker:not(ul) {
+            border-radius: 4px 0px 0px 4px;
+            border-right: 0;
+            height: @btn-height-normal;
+            padding-top: 5px;
+        }
+        ul.selectpicker{
+            overflow:visible !important;
+        }
+    }
+    #help_text{
+        padding-left:0px;
+        padding-top:7px;
+    #ssl-help-message{
+        padding:5px;
+    }
+    }
+
+    #txt_welcome_note{
+        resize: none;
+        height: auto;
+    }
+    .e-selectpart {
+        border: 0;
+
+        .e-inputbtn {
+            background: @admin-page-bg;
+            color: @header-bg;
+            font-size: @app-text-size;
+            font-weight: bolder;
+
+            &:hover {
+                background: @admin-container-bg;
+            }
+        }
+    }
+
+    .sub-section{
+        .highlight-image{
+            margin-left: -22px;
+        }
+        #upload-login-image-textbox, #upload-main-screen-image-textbox, #upload-favicon-image-textbox{
+            cursor: default;
+        }
+    }
+
+    #image-container {
+        border: 1px solid @admin-pages-border-color;
+        border-radius: 4px;
+        display: inline-block;
+
+        td {
+            padding: 15px;
+
+            &.login-img {
+                padding: 15px 50px;
+
+                > span{
+                    display: inline-block;
+            }
+            }
+
+            .app-img-container {
+                border-radius: 4px;
+                display: inline-block;
+                height: 60px;
+                vertical-align: middle;
+                width: 60px;
+
+                &.header-icon {
+                    background-color: @header-bg;
+                    padding: 10px;
+                }
+
+                &.favicon {
+                    border-radius: 4px;
+                    border: 1px solid @admin-pages-border-color;
+                    padding: 18px;                    
+                }
+            }
+        }
+    }
+    .lang-ingo-tag{
+        padding:5px 0px 0px 0px;
+        margin-top:3px;
+        .dropdown-menu{
+            padding:5px;
+        }
+    }
+    .top-padding{
+        padding-top:5px;
+    }
+
+    .admin-page-body {
+        margin-bottom: 30px;
+    }
+}
+
+#system-settings-db-selection-container {
+            margin-top: 10px;
+            display: block;
+                .text-wrap{
+                    .bootstrap-select li a > span.text {
+                        display: block;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        width: 240px;
+                    }
+                }
+
+                //Database selection container styles
+                .system-settings-db-selection-field {
+                    
+                    #umpdb-checkbox{
+                        margin-top: 10px;
+                    }
+                    .material-checkbox {
+                        .material-checkbox-controls();
+                    }
+                    .material-checkbox:checked+input+label::before{
+                        bottom: 10px;
+                    }
+                    .disable-text-select{
+                        font-size: @app-large-text-size;
+                        left: -18px;
+                    }
+                    /*.database-types {
+                        margin-bottom: 15px;                       
+                    }*/
+                    .database-dropdown-margin {
+                        margin-bottom: 10px;
+
+                        > div.bootstrap-select {
+                            width: 300px !important;
+                        }                       
+                    }
+
+                    .sqlcenot {
+                        display: none;
+                        position: relative;
+
+                        .su {
+                            display: block;
+                            color: @sub-text-color;
+                        }
+
+                        .dropdown-menu {                            
+                            padding: 8px;
+                            top: -59px;
+                            width: 300px;                            
+                        }
+                    }
+                    #connection-validation {
+
+                        .validation-errors {
+                            display: none;
+                            color: @validation-text-color;
+                            font-size: @app-text-size;
+                        }
+                    }
+
+                    label {
+                        font-weight: 500;
+                        cursor: pointer;
+                    }
+                    .new-db {
+                        display:inline-block;
+                        float:left;
+                        margin:11px -15px;    
+                    }
+
+                    .existing-db {
+                        display:inline-block;
+                        float:left;
+                        margin:11px 0px;
+                        padding-left:36px;
+                        padding-top:0px;    
+                    }                               
+                 
+                    #db-content-holder{               
+                        .database-for{
+                            margin-top: 10px;
+                            margin-bottom: -5px;
+                        }
+                        .databse-dropdown {
+                            .bootstrap-select {
+                                margin:0px;
+                            }
+
+                            #waiting-icon, ump-waiting-icon {
+                                right: 35px;
+                                top: 4px;
+                                position: absolute;
+                            }
+                        }                      
+
+                        .dropdown-menu{
+                            .inner{
+                                a {
+                                    padding: 5px 10px;
+                                    height:30px;
+                                }
+                            }
+                        }
+
+                        .dropdown-menu li {
+                           height: auto;
+                           width: 100%;
+                        }
+                    } 
+                    
+                    .system-settings-startup-page-fields, db-fields {
+                      border-width: 1px;
+                      width: 300px;
+                      margin: 0px auto 5px 0px;
+                    }          
+
+                }
+
+                .placeholder {
+                    position: absolute;
+                    left: 50%;
+                    margin-left: -136px;
+                    margin-top: -28px;
+                    color: @AuthorColor;
+                }
+
+                .form-group {
+                    margin-bottom: 10px;
+                }
+
+                .form-group-radio {
+                    margin-bottom: 0px;
+                    margin-top: -10px;
+                    height: 45px;
+                }
+
+                .show-hide-password {
+                    cursor: pointer;
+                    position: absolute;
+                    right: auto;
+                    left:292px;
+                    top: 9px;
+                }
+
+                .display-none {
+                display: none;
+                }
+
+                .startup-validation {
+                display: block;
+                color: @validation-text-color;
+                font-size: @app-text-size;
+                text-align: left;
+                }
+
+                .fake-password{
+                visibility: hidden; 
+                position: absolute; 
+                left:-99999px;
+            }    
+
+        } //Database selection container ends
+
+#active-directory-container {
+    ul{
+        list-style: none;
+    }
+     .ums-schedule {
+    background: #fff;
+    border: 0;
+    border-radius: 2px;
+    color: #009aef;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    height: 28px;
+    line-height: 28px;
+    min-width: 90px;
+    outline: none;
+    text-align: center;
+    border: 1px solid #009aef;
+    padding: 0 15px;
+    }
+
+    .admin-page-body {
+        border-top: none;
+    }
+
+    #ad-tab-nav {
+        border-color: @admin-body-border-color;
+
+        li:first-child {
+            margin-left: 20px;
+        }
+        li a{
+            color:@primary-text-color;
+        }
+        li.active{
+            a{
+            color:@primary-color;
+            }
+        }
+    }
+
+    .schedule-synchronization {
+        margin-left: 15px;
+    }
+
+    .test-connection {
+        margin-right: 15px;
+    }
+    
+    input::-ms-clear, input::-ms-reveal {
+         display: none;
+    }
+    .waiting-icon {
+        right: -25px;
+        top: 7px;
+        position: absolute;
+}
+}
+
+#mail-settings-container{
+    
+    input::-ms-clear, input::-ms-reveal {
+         display: none;
+    }
+}
+
+.placeholder {
+    position: absolute;
+    width: 240px;
+    padding: 6px 12px;
+    line-height: 1.4;
+    color: @placeholder-color;
+    text-align:left;
+    top:0px;
+    z-index:100;
+}
+
+.bootstrap-select.btn-group {
+    .no-results {
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: 1041px) and (max-width: 1399px)
+{
+     #ssl-help-message, #language-help-message {
+                font-size: @app-text-size;
+     }
+}
+
+.time{
+top:0px;
+position:absolute;
+margin-left:62px;
+}

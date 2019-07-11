@@ -1,0 +1,13 @@
+﻿@{
+    Layout = null;
+    var isDebug = GlobalAppSettings.SystemSettings.IsDebug;
+    var isMobile = DeviceDetection.IsMobile;
+}
+@Styles.Render("~/bundles/Styles/ej-web-all")
+@Styles.Render("~/bundles/Styles/dashboard-designer-service")
+@Styles.Render(isMobile ? "~/bundles/styles/dashboard-viewer-mobile-v2" : "~/bundles/styles/dashboard-viewer-v2")
+@Scripts.Render("~/bundles/Scripts/dashboard-designer-dependency")
+@*Referred directly in the view page due to pivot grid changes and sfcompressor minification issue*@
+<script src="/webdesignerservice/scripts/ej.dashboard.web.all.min.js"></script>
+@Scripts.Render("~/bundles/Scripts/dashboard-designer-component")
+@Scripts.Render(isMobile ? "~/bundles/scripts/dashboard-viewer-mobile-v2" : "~/bundles/scripts/dashboard-viewer-v2")

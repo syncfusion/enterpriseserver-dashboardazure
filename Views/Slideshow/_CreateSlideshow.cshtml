@@ -1,0 +1,188 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<head>
+    <title>[[[Create Slideshow]]]</title>
+    <script>
+        var checkSlideshowNameExistUrl = "@Url.Action("IsslideshowNameExist", "Slideshow")";
+        var createSlideShowUrl = "@Url.Action("AddSlideshow", "Slideshow")";
+        var getCreateSlideShowDetailUrl = "@Url.Action("GetCreateSlideshowDetail", "Slideshow")";
+        var geteditSlideshowDetailUrl = "@Url.Action("GetEditSlideshowDetail", "Slideshow")";
+        var slideshowListingPageUrl = "@Url.Action("Slideshows", "Slideshow")";
+    </script>
+
+    @Styles.Render("~/bundles/Styles/create-slideshow")
+    @Scripts.Render("~/bundles/Scripts/create-slideshow")
+
+	<style>
+       .loader-icon{display: block;}
+       .loader-icon {
+           left: 0px !important;
+           position: relative;
+           margin: 0px auto;
+           width: 54px;
+           height: 54px;
+       }
+
+        .loader-icon .circular {
+	        -webkit-animation: rotate 2s linear infinite;
+			        animation: rotate 2s linear infinite;
+	        height: 54px;
+	        width: 54px;
+	        position: relative;
+        }
+
+        .loader-icon .path {
+	        stroke-dasharray: 1,200;
+	        stroke-dashoffset: 0;
+	        -webkit-animation:  dash 1.5s ease-in-out infinite ;
+			        animation:  dash 1.5s ease-in-out infinite ;
+	        stroke: #5592FB;
+	        stroke-linecap: square;
+        }
+
+        @@keyframes rotate{
+	        100%{
+		        transform: rotate(360deg);
+	        }
+        }
+        @@-webkit-keyframes rotate{
+	        100%{
+		        transform: rotate(360deg);
+	        }
+        }
+
+        @@keyframes dash{
+	        0%{
+		        stroke-dasharray: 1,200;
+		        stroke-dashoffset: 0;
+	        }
+	        50%{
+		        stroke-dasharray: 89,200;
+		        stroke-dashoffset: -35;
+	        }
+	        100%{
+		        stroke-dasharray: 89,200;
+		        stroke-dashoffset: -124;
+	        }
+        }
+
+        @@-webkit-keyframes dash{
+	        0%{
+		        stroke-dasharray: 1,200;
+		        stroke-dashoffset: 0;
+	        }
+	        50%{
+		        stroke-dasharray: 89,200;
+		        stroke-dashoffset: -35;
+	        }
+	        100%{
+		        stroke-dasharray: 89,200;
+		        stroke-dashoffset: -124;
+	        }
+        }
+   </style>
+</head>
+
+<div class="overflow-none create-presentation-popup" id="create-presentation-container">
+    <div class="modal col-xs-12 no-padding" tabindex="-1" role="dialog" style="display:none">
+        <div class="modal-dialog col-xs-12 popup-header no-padding" role="document">
+            <div class="modal-content no-padding col-xs-12" id="slideshow-popup-container" data-spy="scroll">
+                <div class="col-xs-12 modal-header no-padding">
+                    <div class="col-xs-11 no-padding">
+                        <span class="su su-slideshow"></span>
+                            <span class="modal-title popup-title slideshow-popup-title ellipsis col-xs-10" data-container='presentation-container'>[[[Create Slideshow]]]</span>
+                    </div>
+                    <div class="col-lg-1 col-xs-1 col-sm-1 col-md-1  no-padding pull-right">
+                        <a href="javascript:void(0);" title="[[[Close]]]" data-toggle='tooltip' data-placement="left" class="create-presentation-popup-close pull-right popup-close"><span class="su su-close"></span></a>
+                    </div>
+                </div>
+                <div class="modal-body col-xs-12 no-padding">
+                    <div id="presentation-container" class="col-xs-12 create-presentation-container no-padding">
+                        <div class="col-xs-5 slideshow-name form-row no-padding">
+                            <span class="form-label col-xs-12">
+                                [[[Name]]]
+                                <span class="mandatory">*</span>
+                            </span>
+                            <span class="form-field col-xs-12">
+                                <input type="text" id="slideshow-name" autofocus name="slideshowName" class="form-control bottom-margin30 text" tabindex="1">
+                                <span id="name-validation-message" style="display:none" class="ErrorMessage"></span>
+                            </span>
+                        </div>
+                        <div class="col-xs-7 form-row no-padding">
+                            <span class="form-label col-xs-12">
+                                [[[Duration (Min: 5 & Max: 300 secs)]]]
+                                <span class="mandatory">*</span>
+                            </span>
+                            <span class="form-field col-xs-12">
+                                <input id="loop_interval" type="text" name="duration" class="form-control bottom-margin30 text" tabindex="2" min="5" max="300">
+                                <span id="duration-validation-message" style="display:none" class="ErrorMessage"></span>
+                            </span>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="col-xs-12 no-padding display-dashboard">
+                                <ul id="sortable" class="col-xs-12 display-dashboard-container no-padding">
+                                </ul>
+                                <div id="add-dashboard-widgets" class="col-xs-12 no-padding">
+                                    <div class="col-xs-12 add-dashboard-widgets-button">
+                                        <a class="add-button-content" href="javascript:void(0)" tabindex="3">
+                                            <span class="su su-add"></span> 
+                                            <span class="add-btn-text">[[[Add Dashboards & Widgets]]]</span>
+                                        </a>
+                                    </div>
+                                    <div class="item-dropdown-container col-xs-12 no-padding" style="display: none">
+                                        <div id="item-dropdowns" class="col-xs-10 no-padding">
+                                            <div class="form-field col-xs-3 item-type-dropdown">
+                                                <select class="selectpicker dropup" id="select_type" style="width: 100%; margin-bottom: 15px;">
+                                                    <option value="@((int)ItemType.Dashboard)" selected="selected">[[[Dashboards]]]</option>
+                                                    <option value="@((int)ItemType.Widget)">[[[Widgets]]]</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-field col-xs-4 slide-category-dropdown">
+                                                <select class="selectpicker dropup" id="select_category"  data-size="5" data-live-search="true" title='[[[Select category]]]' style="width: 100%; margin-bottom: 15px;">
+                                                    <option value="" selected="selected" class="hide-option" disabled="disabled">[[[Select category]]]</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-field slide-dashboard-dropdown col-xs-5" style="display: none">
+                                                <select class="selectpicker dropup" id="select_dashboard" data-size="5" data-live-search="true" title='[[[Select dashboard]]]' style="width: 100%; margin-bottom: 15px;">
+                                                    <option value="" selected="selected" class="hide-option" disabled="disabled">[[[Select dashboard]]]</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-field slide-childdashboard-dropdown col-xs-4" style="display: none">
+                                                <select id="select_childdashboard" data-live-search="true" title='[[[Select tab]]]' name="childdashboardId" class="selectpicker dropup" data-size="5">
+                                                    <option value="" selected="selected" class="hide-option" disabled="disabled">[[[Select tab]]]</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-field slide-view-dropdown col-xs-4" style="display: none">
+                                                <select id="select_view" data-live-search="true" title='[[[Select view]]]' name="childdashboardId" class="selectpicker dropup" data-size="5">
+                                                    <option value="" selected="selected" class="hide-option" disabled="disabled">[[[Select view]]]</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-field slide-widget-dropdown col-xs-5" style="display: none">
+                                                <select class="selectpicker dropup" id="select_widget" data-size="5" data-live-search="true" title='[[[Select widget]]]' style="width: 100%; margin-bottom: 15px;">
+                                                    <option value="" selected="selected" class="hide-option" disabled="disabled">[[[Select Widget]]]</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-field col-xs-2">
+                                            <input type="button" id="add-slide-button" title="[[[Add]]]" class="primary-button pull-right" disabled value="[[[Add]]]"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                </div>
+                <div class="modal-footer col-xs-12 no-padding">
+                    <div class="col-lg-12 margin-top">
+                        <input type="button" title="" class="btn primary-button" style="display:none" id="edit-slideshow" disabled onclick="editSlideshow()" tabindex="4" value="[[[Save]]]">
+                        <input type="button" title="" class="btn primary-button" id="create-slideshow" disabled onclick="createSlideshow()" tabindex="4" value="[[[Create]]]">
+                        <input type="button" title="" class="btn secondary-button" id="cancel-slideshow" value="[[[Cancel]]]" tabindex="5">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
